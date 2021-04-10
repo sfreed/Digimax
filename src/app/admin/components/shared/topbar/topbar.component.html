@@ -1,0 +1,43 @@
+<header style="top: 0; right: 0px; left: 0px; background-color: white;">
+  <div class="navbar-header">
+    <div class="d-flex">
+      <!-- LOGO -->
+      <div class="navbar-brand-box">
+        <a href="/" class="logo logo-dark">
+          <span class="logo-sm">
+            <img src="assets/images/ag-logo-sm-white.png" alt="" height="40">
+          </span>
+          <span class="logo-lg">
+            <img src="assets/images/ag-logo-white.png" alt="" height="40">
+          </span>
+        </a>
+
+        <a href="/" class="logo logo-light">
+          <span class="logo-sm">
+            <img src="assets/images/ag-logo-sm-white.png" alt="" height="40">
+          </span>
+          <span class="logo-lg">
+            <img src="assets/images/ag-logo-white.png" alt="" height="40">
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <div class="dropdown d-none d-lg-inline-block mt-1">
+        <dx-drop-down-button
+          [splitButton]="true"
+          [useSelectMode]="false"
+          [height]="40"
+          text="{{authService.getAuthUserData().displayName}}"
+          icon="{{authService.getAuthUserData().photoURL}}g"
+          [items]="profileSettings"
+          displayExpr="name"
+          keyExpr="id"
+          (onButtonClick)="onButtonClick($event)"
+          (onItemClick)="onItemClick($event)">
+        </dx-drop-down-button>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,24 @@
+<dx-tabs #apiTabs [dataSource]="tabs" (onItemClick)="selectTab($event)" [width]="'100%'"></dx-tabs>
+<ng-template [ngIf]="selectedTab == 'General Administration'">
+    <div>
+        <app-agent-general-administration></app-agent-general-administration>
+    </div>
+</ng-template>
+
+<ng-template [ngIf]="selectedTab == 'Menu Administration'">
+    <div>
+        <app-menu-administration></app-menu-administration>
+    </div>
+</ng-template>
+
+<ng-template [ngIf]="selectedTab == 'Card Administration'">
+    <div>
+
+    </div>
+</ng-template>
+
+<ng-template [ngIf]="selectedTab == 'Page Administration'">
+    <div>
+        <app-agent-page-administration></app-agent-page-administration>
+    </div>
+</ng-template>

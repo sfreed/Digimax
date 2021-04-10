@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-body">
+      <dx-data-grid
+        [dataSource]="dataSource"
+        [showRowLines]="true"
+        [showBorders]="true"
+        [columnAutoWidth]="true"
+        focusedRowEnabled="true"
+        [(focusedRowKey)]="selectedItem"
+        (onRowUpdating)="onRowUpdating($event)"
+        (onFocusedRowChanged)="onFocusedRowChanged($event)">
+        <dxo-search-panel 
+          [visible]="true" 
+          [width]="240" 
+          placeholder="Search..."></dxo-search-panel>
+        <dxo-selection mode="single"></dxo-selection>
+        <dxo-editing
+          [useIcons]="true"
+          [allowUpdating]="true"
+          [allowAdding]="true"
+          [allowDeleting]="true">
+        </dxo-editing>
+        <dxi-column dataField="dbId" [visible]="false"></dxi-column>
+        <dxi-column dataField="label"></dxi-column>
+        <dxi-column dataField="link"></dxi-column>
+        <dxi-column dataField="icon"></dxi-column>
+        <dxi-column dataField="order"></dxi-column>
+      </dx-data-grid>
+    </div>
+  </div>
+  
+  <dx-popup
+    [width]="500"
+    [height]="500"
+    [showTitle]="true"
+    title="Select File"
+    [dragEnabled]="false"
+    [closeOnOutsideClick]="false"
+    [(visible)]="pageSelectVisible"
+    [showCloseButton]="false">
+
+    <div class="row">
+      <div class="col-12">
+        <dx-list
+          height="250"
+          [displayExpr]="'name'"
+          [dataSource]="pageList"
+          selectionMode="single"
+          [showSelectionControls]="true"
+          [showScrollbar]="true"
+          [(selectedItems)]="selectedPage">
+      </dx-list>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <dx-button style="float: right; margin-top: 10px;" name="save"(onClick)="closePageWindow()">Cancel</dx-button>
+        <dx-button style="float: right; margin-top: 10px;" name="save"(onClick)="selectPage($event)">Save</dx-button>
+      </div>
+    </div>
+  </dx-popup>
+  
+  <dx-popup
+    [width]="500"
+    [height]="500"
+    [showTitle]="true"
+    title="Select File"
+    [dragEnabled]="false"
+    [closeOnOutsideClick]="false"
+    [(visible)]="pageExternalSelectVisible"
+    [showCloseButton]="false">
+    <div class="dx-field">
+      <div class="dx-field-label">Link Name</div>
+      <div class="dx-field-value">
+        <dx-text-box [(ngModel)]="selectedPage[0].name"></dx-text-box>
+      </div>
+    </div>
+    <div class="dx-field">
+      <div class="dx-field-label">Link Url</div>
+      <div class="dx-field-value">
+        <dx-text-box [(ngModel)]="selectedPage[0].dbId"></dx-text-box>
+      </div>
+    </div>
+    <dx-button style="float: right; margin-top: 10px;" name="save"(onClick)="closeExternalPageWindow()">Cancel</dx-button>
+    <dx-button style="float: right; margin-top: 10px;" name="save"(onClick)="addExternalPage($event)">Save</dx-button>
+  </dx-popup>
+</div>

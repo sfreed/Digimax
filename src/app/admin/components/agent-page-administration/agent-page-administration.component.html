@@ -1,0 +1,251 @@
+<div class="container-fluid">
+  <div class="card-deck mt-2">
+      <div class="card">
+        <div class="card-header">Sections</div>
+        <div class="card-body">
+          <div class="form">
+            <div class="dx-field">
+              <div class="row">
+                <div class="col-10">
+                  <dx-select-box #Header  [placeholder]="'Header'" style="width: 100%; float: left" [items] = "['header-3', 'header-4']"></dx-select-box>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'add'" (onClick)="addHeader('Header', Header.selectedItem)"></dx-button>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
+                </div>
+              </div>
+            </div>
+            <div class="dx-field">
+              <div class="row">
+                <div class="col-10">
+                  <dx-select-box #Hero [placeholder]="'Hero'" [items] = "['hero-1', 'hero-2', 'hero-3', 'hero-4', 'hero-5']"></dx-select-box>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Hero', Hero.selectedItem)"></dx-button>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
+                </div>
+              </div>
+            </div>
+            <div class="dx-field">
+              <div class="row">
+                <div class="col-10">
+                  <dx-select-box #Promotion [placeholder]="'Promotion'" [items] = "['promo-1', 'promo-2']"></dx-select-box>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Promotion', Promotion.selectedItem)"></dx-button>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
+                </div>
+              </div>
+            </div>
+            <div class="dx-field">
+              <div class="row">
+                <div class="col-10">
+                  <dx-select-box #Content [placeholder]="'Content'" [items] = "['content-1', 'content-2', 'content-3', 'content-4', 'content-5']"></dx-select-box>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Content', Content.selectedItem)"></dx-button>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
+                </div>
+              </div>
+            </div>
+            <div class="dx-field">
+              <div class="row">
+                <div class="col-10">
+                  <dx-select-box #Services [placeholder]="'Services'" [items] = "['service-1', 'service-2', 'service-3', 'service-4', 'service-5', 'service-6']"></dx-select-box>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Services', Services.selectedItem)"></dx-button>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
+                </div>
+              </div>
+            </div>
+            <div class="dx-field">
+              <div class="row">
+                <div class="col-10">
+                  <dx-select-box #Portfolio [placeholder]="'Portfolio'" [items] = "['portfolio-1', 'portfolio-2']"></dx-select-box>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Portfolio', Portfolio.selectedItem)"></dx-button>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
+                </div>
+              </div>
+            </div>
+            <div class="dx-field">
+              <div class="row">
+                <div class="col-10">
+                  <dx-select-box #Pricing [placeholder]="'Pricing'" [items] = "['pricing-1', 'pricing-2', 'pricing-3']"></dx-select-box>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Pricing', Pricing.selectedItem)"></dx-button>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
+                </div>
+              </div>
+            </div>
+            <div class="dx-field">
+              <div class="row">
+                <div class="col-10">
+                  <dx-select-box #Review [placeholder]="'Review'" [items] = "['review-1', 'review-2', 'review-3']"></dx-select-box>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Review', Review.selectedItem)"></dx-button>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
+                </div>
+              </div>
+            </div>
+            <div class="dx-field">
+              <div class="row">
+                <div class="col-10">
+                  <dx-select-box #Contact [placeholder]="'Contact'" [items] = "['contact-1', 'contact-2']"></dx-select-box>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Contact', Contact.selectedItem)"></dx-button>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
+                </div>
+              </div>
+            </div>
+            <div class="dx-field">
+              <div class="row">
+                <div class="col-10">
+                  <dx-select-box #Extras [placeholder]="'Extras'" [items] = "['cta', 'branding', 'video', 'search']"></dx-select-box>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Extras', Extras.selectedItem)"></dx-button>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
+                </div>
+              </div>
+            </div>
+            <div class="dx-field">
+              <div class="row">
+                <div class="col-10">
+                  <dx-select-box #Footer [placeholder]="'Footer'" [items] = "['footer-1', 'footer-2']"></dx-select-box>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'add'" (onClick)="addFooter('Footer', Contact.selectedItem)"></dx-button>
+                </div>
+                <div class="col-1">
+                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">Selected Sections</div>
+        <div class="card-body">
+          <div class="row mb-2" *ngIf="header">
+            <div class="col-12">
+              <div class="dx-field">
+                <div class="dx-field-label">Header</div>
+                <div class="dx-field-value">
+                  <dx-text-box [(ngModel)]="header.name" [readOnly]="true"></dx-text-box>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <dx-data-grid
+                id="gridContainer"
+                [dataSource]="cards"
+                [showBorders]="true"
+                [columns]="['type', 'name']">
+                <dxo-row-dragging
+                  [allowReordering]="true"
+                  [onReorder]="onReorder"
+                  [showDragIcons]="true">
+                </dxo-row-dragging>
+                <dxo-editing
+                  [mode]="'popup'"
+                  [allowUpdating]="true"
+                  [allowDeleting]="true"
+                  [useIcons]="true">
+                </dxo-editing>
+              </dx-data-grid>
+            </div>
+          </div>
+          <div class="row mt-2" *ngIf="footer">
+            <div class="col-12">
+              <div class="dx-field">
+                <div class="dx-field-label">Footer</div>
+                <div class="dx-field-value">
+                  <dx-text-box [(ngModel)]="footer.name" [readOnly]="true"></dx-text-box>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <div class="row d-flex justify-content-center">
+        <button class="btn btn-primary mr-3" (click)="showSavePopup()">Save</button>
+        <button class="btn btn-primary" (click)="showCancelPopup()">Cancel</button>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>           
+</div>
+  
+<dx-popup
+  [width]="300"
+  [height]="250"
+  [showTitle]="true"
+  title="Save Menu Changes?"
+  [dragEnabled]="false"
+  [closeOnOutsideClick]="true"
+  [(visible)]="confirmPageSaveVisible">
+  Are you sure you want to save this Card?
+  <div class="row d-flex justify-content-around mt-5">
+    <button class="btn btn-primary" (click)="saveChanges()"> Yes </button>
+    <button class="btn btn-primary" (click)="closeSaveChanges()">Cancel</button>
+  </div>
+</dx-popup>
+<dx-popup
+  [width]="300"
+  [height]="250"
+  [showTitle]="true"
+  title="Cancel Menu Changes?"
+  [dragEnabled]="false"
+  [closeOnOutsideClick]="true"
+  [(visible)]="confirmPageCancelVisible">
+  Are you sure you want to cancel this Card? This will cause you to lose any of your current changes?
+  <div class="row d-flex justify-content-around  mt-5">
+    <button class="btn btn-primary" (click)="cancelChanges()"> Yes </button>
+    <button class="btn btn-primary" (click)="closeCancelChanges()">Cancel</button>
+  </div>
+</dx-popup>
+
+<dx-popup
+  [width]="'100%'"
+  [height]="'95%'"
+  [(visible)]="confirmPageCancelVisible">
+  <dx-scroll-view>
+    
+    <div class="row d-flex justify-content-center mt-1">
+      <button class="btn btn-primary" (click)="closePreview()">Close</button>
+    </div>
+  </dx-scroll-view>
+</dx-popup>

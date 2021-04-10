@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "alliance-group-portal": {
+      "hosting": {
+        "digimax": [
+          "alliance-group-portal"
+        ]
+      }
+    }
+  }
+}

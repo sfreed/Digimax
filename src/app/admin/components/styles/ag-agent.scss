@@ -1,0 +1,42 @@
+//Agent General Administration
+
+.general-forms {
+    justify-content: space-evenly;
+}
+.dx-field-label {
+    font-size: 15px;
+}
+#profile-form {
+    margin: 2% 0 0 0;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 20px;
+    width: 40%;
+    display: inline-block;
+ }
+ .form-header {
+     align-items: center;
+     margin: 0 0 5% 0;
+ }
+ .form-header h3 {
+     font-weight: 700;
+ }
+ .profile-save {
+     float: right;
+     margin: 15px 0 0 0 !important;
+ }
+ .admin-list {
+    margin: 2% 0 0 0;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 20px;
+    width: 40%;
+    display: inline-block;
+ }
+ .toolbar-label {
+    font-weight: 700;
+ }
+ .admin-email-buttons {
+     float: right;
+     margin: 5% 0 0 0;
+ }

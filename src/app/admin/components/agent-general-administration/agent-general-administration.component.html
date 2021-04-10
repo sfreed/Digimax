@@ -1,0 +1,108 @@
+<div class="row general-forms">
+  <div class="col-md-5" id="profile-form" *ngIf="(website | async) as website">
+    <div class="form-header">
+      <h3>Profile Container</h3>
+    </div>
+      <div class="dx-field">
+          <div class="dx-field-label">First Name</div>
+          <div class="dx-field-value">
+            <dx-text-box [(ngModel)] = "website.agent.fname"></dx-text-box>
+          </div>
+      </div>
+      <div class="dx-field">
+          <div class="dx-field-label">Last Name</div>
+          <div class="dx-field-value">
+            <dx-text-box [(ngModel)] = "website.agent.lname"></dx-text-box>
+          </div>
+      </div>
+      <div class="dx-field">
+          <div class="dx-field-label">Title</div>
+          <div class="dx-field-value">
+            <dx-text-box [(ngModel)] = "website.agent.title"></dx-text-box>
+          </div>
+      </div>
+      <div class="dx-field">
+          <div class="dx-field-label">Phone</div>
+          <div class="dx-field-value">
+            <dx-text-box [(ngModel)] = "website.agent.phone"></dx-text-box>
+          </div>
+      </div>
+      <div class="dx-field">
+          <div class="dx-field-label">Email</div>
+          <div class="dx-field-value">
+            <dx-text-box [(ngModel)] = "website.agent.email"></dx-text-box>
+          </div>
+      </div>
+      <div class="dx-field">
+          <div class="dx-field-label">Address</div>
+          <div class="dx-field-value">
+            <dx-text-box [(ngModel)] = "website.agent.address"></dx-text-box>
+          </div>
+      </div>
+      <button class="btn btn-primary mr-3 profile-save" (click)="saveAgentInfo()">Save</button>
+  </div>
+
+  <div class="col-md-5 admin-list" *ngIf="(admins | async)">
+    <div class="form-header">
+      <dx-toolbar>
+        <dxi-item 
+          location="left" 
+          widget="dxButton" 
+          locateInMenu="never">
+          <div *dxTemplate>
+            <div class='toolbar-label'><h3>Admin List</h3></div>
+          </div>        
+        </dxi-item>
+        <dxi-item 
+          location="after" 
+          widget="dxButton" 
+          locateInMenu="auto" 
+          [options]="addButtonOptions">
+        </dxi-item>
+      </dx-toolbar>
+    </div>
+    <dx-list #list
+      [allowItemDeleting]="true" 
+      (onItemDeleting) = "showEmailDelete($event)"
+      [dataSource]="admins | async" 
+      [displayExpr]="'email'" 
+      [height]="150" >
+    </dx-list>
+  </div>
+
+  <dx-popup 
+    [width]="700"
+    [height]="200"
+    [showTitle]="true"
+    title="Add Admins"
+    [dragEnabled]="true"
+    [closeOnOutsideClick]="false"
+    [(visible)]="viewConfig"
+    [showCloseButton]="true">
+    <div class="dx-field admin-email-form">
+      <div class="dx-field-label" style="width: 19%;">Email</div>
+      <div class="dx-field-value" style="width: 81%;">
+        <dx-text-box #email></dx-text-box>
+      </div>
+    </div>
+    <div class="admin-email-buttons">
+      <button class="btn btn-primary mr-5" (click)="saveEmail(email.value)">Save</button>
+      <button class="btn btn-primary" >Cancel</button>
+    </div>
+  </dx-popup>
+
+  <dx-popup
+    [width]="700"
+    [height]="200"
+    [showTitle]="true"
+    title="Are you sure you want to delete?"
+    [dragEnabled]="true"
+    [closeOnOutsideClick]="false"
+    [(visible)]="viewConfirm"
+    [showCloseButton]="true">
+    <div class="admin-email-buttons">
+      <button class="btn btn-primary mr-5" (click)="onEmailDelete($event)">Yes</button>
+      <button class="btn btn-primary" (click)="cancelEmail($event)">Cancel</button>
+    </div>
+  </dx-popup>
+</div>
