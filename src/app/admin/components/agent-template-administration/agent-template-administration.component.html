@@ -1,0 +1,93 @@
+<div class="card">
+    <div class="card-header"><h5>Please select a template from the list below to get started setting up your web site.</h5></div>
+    <div class="card-body">
+        <div class="row justify-content-around">
+            <div class="col-8">
+                <p class="mb-2">1. Each template below has a mixture of predefined sections that can be customized for your particular web site.</p>
+                <p class="mb-2">2. You can take a "sneak peek" at what the templated looks like with demo data by clicking the "spyglass" on the template row.</p>
+                <p class="mb-2">3. In the next step, you will be able to add a new section or remove a section that you do not wish to have on your web site.</p>
+            </div>
+        </div>
+ 
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">Templates</div>
+    <div class="card-body">
+        <div class="row justify-content-around">
+            <div class="col-10">
+                <dx-data-grid
+                    id="gridContainer"
+                    [dataSource]="templates"
+                    [showBorders]="true"
+                    [columns]="['type', 'name', 'description']"
+                    [focusedRowEnabled]="true"
+                    [keyExpr]="'name'"
+                    [height]="330"
+                    (onFocusedRowChanged)="selectTemplate($event)">
+                    <dxo-load-panel [enabled]="true"></dxo-load-panel>
+                    <dxo-scrolling mode="virtual"></dxo-scrolling>
+                    <dxi-column dataField="type" [width]="'20%'"></dxi-column>
+                    <dxi-column dataField="name" [width]="'20%'"></dxi-column>
+                    <dxi-column dataField="description"></dxi-column>
+                    <dxi-column type="buttons" [caption]="'Preview'" [width]="75">
+                        <dxi-button
+                            hint="Preview"
+                            icon="search"
+                            [visible]="true"
+                            [onClick]="previewTemplate.bind(this)">
+                        </dxi-button>
+                    </dxi-column>
+                </dx-data-grid>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card" *ngIf="showPreview">
+    <div class="card-body">
+        <div class="row justify-content-around">
+            <div class="col-12">
+                <dx-scroll-view>
+                    <ng-container *ngIf="selectedTemplate.name == 'Template 1'">
+                        <app-theme-one></app-theme-one>
+                    </ng-container>
+                    <ng-container *ngIf="selectedTemplate.name == 'Template 2'">
+                        <app-theme-two></app-theme-two>
+                    </ng-container>
+                    <ng-container *ngIf="selectedTemplate.name == 'Template 3'">
+                        <app-theme-three></app-theme-three>
+                    </ng-container>
+                    <ng-container *ngIf="selectedTemplate.name == 'Template 4'">
+                        <app-theme-four></app-theme-four>
+                    </ng-container>
+                    <ng-container *ngIf="selectedTemplate.name == 'Template 5'">
+                        <app-theme-five></app-theme-five>
+                    </ng-container>
+                    <ng-container *ngIf="selectedTemplate.name == 'Template 6'">
+                        <app-theme-six></app-theme-six>
+                    </ng-container>
+                    <ng-container *ngIf="selectedTemplate.name == 'Template 7'">
+                        <app-theme-seven></app-theme-seven>
+                    </ng-container>
+                    <ng-container *ngIf="selectedTemplate.name == 'Template 8'">
+                        <app-theme-eight></app-theme-eight>
+                    </ng-container>
+                    <ng-container *ngIf="selectedTemplate.name == 'Template 9'">
+                        <app-theme-nine></app-theme-nine>
+                    </ng-container>
+                    <ng-container *ngIf="selectedTemplate.name == 'Template 10'">
+                        <app-theme-one></app-theme-one>
+                    </ng-container>
+                    <ng-container *ngIf="selectedTemplate.name == 'Template 11'">
+                        <app-theme-ten></app-theme-ten>
+                    </ng-container>
+                    <ng-container *ngIf="selectedTemplate.name == 'Template 12'">
+                        <app-theme-eleven></app-theme-eleven>
+                    </ng-container>
+                    <app-theme-twelve></app-theme-twelve>
+                </dx-scroll-view>
+            </div>
+        </div>
+    </div>
+</div>

@@ -33,6 +33,7 @@ import { PageOneComponent } from './pages/page-one/page-one.component';
 
 const routes: Routes = [
   {path: '', component: ThemeOneComponent},
+  {path: 'theme-one', component: ThemeOneComponent},
   {path: 'theme-two', component: ThemeTwoComponent},
   {path: 'theme-three', component: ThemeThreeComponent},
   {path: 'theme-four', component: ThemeFourComponent},
@@ -61,7 +62,7 @@ const routes: Routes = [
   {path: 'blog-details-left-sidebar', component: BlogDetailsLeftSidebarComponent},
   {path: 'blog-details-right-sidebar', component: BlogDetailsRightSidebarComponent},
   {path: 'login', component: LoginComponent},
-  { path: 'admin', loadChildren: () => import('./admin/components/components.module').then(m => m.ComponentsModule) },
+  { path: 'admin', loadChildren: () => import('./admin/components/admin-components.module').then(m => m.AdminComponentsModule) },
 
   {path: 'preview', component: PageOneComponent},
 ];

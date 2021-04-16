@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ComponentsRoutingModule } from './components-routing.module';
+import { ComponentsRoutingModule } from './admin-components-routing.module';
 import { AdminManagerComponent } from './admin-manager/admin-manager.component';
-import { AgentFooterComponent } from './shared/footer/footer.component';
-import { AgentTopbarComponent } from './shared/topbar/topbar.component';
-import { DxButtonModule, DxCheckBoxModule, DxContextMenuModule, DxDataGridModule, DxDropDownButtonModule, DxListModule, DxPopupModule, DxScrollViewModule, DxSelectBoxModule, DxTabsModule, DxTextBoxModule, DxToolbarModule, DxTooltipModule, DxTreeListModule } from 'devextreme-angular';
+import { DxButtonModule, DxCheckBoxModule, DxContextMenuModule, DxDataGridModule, DxDropDownButtonModule, DxListModule, DxPopupModule, DxScrollViewModule, DxSelectBoxModule, DxSpeedDialActionModule, DxTabsModule, DxTextBoxModule, DxToolbarModule, DxTooltipModule, DxTreeListModule } from 'devextreme-angular';
 import { AgentGeneralAdministrationComponent } from './agent-general-administration/agent-general-administration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AgentMenuAdministrationComponent } from './agent-menu-administration/agent-menu-administration.component';
-import { MenuAdministrationComponent } from './menu-administration/menu-administration.component';
 import { IconsModule } from 'src/app/views/icons/icons.module';
 import { AgentPageAdministrationComponent } from './agent-page-administration/agent-page-administration.component';
+import { ViewComponentsModule } from 'src/app/components/view-components.module';
+import { AgentTemplateAdministrationComponent } from './agent-template-administration/agent-template-administration.component';
+import { NgWizardModule } from 'ng-wizard';
 
 
 @NgModule({
@@ -19,14 +19,13 @@ import { AgentPageAdministrationComponent } from './agent-page-administration/ag
     AdminManagerComponent, 
     AgentGeneralAdministrationComponent, 
     AgentMenuAdministrationComponent,
-    AgentFooterComponent, 
-    AgentTopbarComponent,
-    MenuAdministrationComponent,
-    AgentPageAdministrationComponent
+    AgentPageAdministrationComponent,
+    AgentTemplateAdministrationComponent,
   ],
   imports: [
     CommonModule,
     ComponentsRoutingModule,
+    ViewComponentsModule,
     FormsModule,
     ReactiveFormsModule,
 
@@ -46,6 +45,9 @@ import { AgentPageAdministrationComponent } from './agent-page-administration/ag
     DxSelectBoxModule, 
     DxCheckBoxModule,
     DxTooltipModule,
+    DxSpeedDialActionModule,
+
+    NgWizardModule
   ]
 })
-export class ComponentsModule { }
+export class AdminComponentsModule { }

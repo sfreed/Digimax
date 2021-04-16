@@ -1,251 +1,402 @@
-<div class="container-fluid">
-  <div class="card-deck mt-2">
-      <div class="card">
-        <div class="card-header">Sections</div>
-        <div class="card-body">
-          <div class="form">
-            <div class="dx-field">
-              <div class="row">
-                <div class="col-10">
-                  <dx-select-box #Header  [placeholder]="'Header'" style="width: 100%; float: left" [items] = "['header-3', 'header-4']"></dx-select-box>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'add'" (onClick)="addHeader('Header', Header.selectedItem)"></dx-button>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
-                </div>
+<ng-container *ngIf="mode=='edit'">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header"><h5>Add, Edit, or Delete any Sections from the template.</h5></div>
+      <div class="card-body">
+          <div class="row justify-content-around">
+              <div class="col-8">
+                  <p class="mb-2">1. Each section below will be displayed on either your home page or a subpage on your web site.</p>
+                  <p class="mb-2">2. You can take a "sneak peek" at what the section looks like with demo data by clicking the "spyglass" on the section row.</p>
+                  <p class="mb-2">3. You can add a new section, delete an existing section, select a different section or change the order of the sections.</p>
               </div>
-            </div>
-            <div class="dx-field">
-              <div class="row">
-                <div class="col-10">
-                  <dx-select-box #Hero [placeholder]="'Hero'" [items] = "['hero-1', 'hero-2', 'hero-3', 'hero-4', 'hero-5']"></dx-select-box>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Hero', Hero.selectedItem)"></dx-button>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
-                </div>
-              </div>
-            </div>
-            <div class="dx-field">
-              <div class="row">
-                <div class="col-10">
-                  <dx-select-box #Promotion [placeholder]="'Promotion'" [items] = "['promo-1', 'promo-2']"></dx-select-box>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Promotion', Promotion.selectedItem)"></dx-button>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
-                </div>
-              </div>
-            </div>
-            <div class="dx-field">
-              <div class="row">
-                <div class="col-10">
-                  <dx-select-box #Content [placeholder]="'Content'" [items] = "['content-1', 'content-2', 'content-3', 'content-4', 'content-5']"></dx-select-box>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Content', Content.selectedItem)"></dx-button>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
-                </div>
-              </div>
-            </div>
-            <div class="dx-field">
-              <div class="row">
-                <div class="col-10">
-                  <dx-select-box #Services [placeholder]="'Services'" [items] = "['service-1', 'service-2', 'service-3', 'service-4', 'service-5', 'service-6']"></dx-select-box>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Services', Services.selectedItem)"></dx-button>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
-                </div>
-              </div>
-            </div>
-            <div class="dx-field">
-              <div class="row">
-                <div class="col-10">
-                  <dx-select-box #Portfolio [placeholder]="'Portfolio'" [items] = "['portfolio-1', 'portfolio-2']"></dx-select-box>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Portfolio', Portfolio.selectedItem)"></dx-button>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
-                </div>
-              </div>
-            </div>
-            <div class="dx-field">
-              <div class="row">
-                <div class="col-10">
-                  <dx-select-box #Pricing [placeholder]="'Pricing'" [items] = "['pricing-1', 'pricing-2', 'pricing-3']"></dx-select-box>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Pricing', Pricing.selectedItem)"></dx-button>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
-                </div>
-              </div>
-            </div>
-            <div class="dx-field">
-              <div class="row">
-                <div class="col-10">
-                  <dx-select-box #Review [placeholder]="'Review'" [items] = "['review-1', 'review-2', 'review-3']"></dx-select-box>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Review', Review.selectedItem)"></dx-button>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
-                </div>
-              </div>
-            </div>
-            <div class="dx-field">
-              <div class="row">
-                <div class="col-10">
-                  <dx-select-box #Contact [placeholder]="'Contact'" [items] = "['contact-1', 'contact-2']"></dx-select-box>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Contact', Contact.selectedItem)"></dx-button>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
-                </div>
-              </div>
-            </div>
-            <div class="dx-field">
-              <div class="row">
-                <div class="col-10">
-                  <dx-select-box #Extras [placeholder]="'Extras'" [items] = "['cta', 'branding', 'video', 'search']"></dx-select-box>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'add'" (onClick)="addCard('Extras', Extras.selectedItem)"></dx-button>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
-                </div>
-              </div>
-            </div>
-            <div class="dx-field">
-              <div class="row">
-                <div class="col-10">
-                  <dx-select-box #Footer [placeholder]="'Footer'" [items] = "['footer-1', 'footer-2']"></dx-select-box>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'add'" (onClick)="addFooter('Footer', Contact.selectedItem)"></dx-button>
-                </div>
-                <div class="col-1">
-                  <dx-button style="float: right" [icon]="'search'" (onClick)="showPreview()"></dx-button>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header">Selected Sections</div>
-        <div class="card-body">
-          <div class="row mb-2" *ngIf="header">
-            <div class="col-12">
-              <div class="dx-field">
-                <div class="dx-field-label">Header</div>
-                <div class="dx-field-value">
-                  <dx-text-box [(ngModel)]="header.name" [readOnly]="true"></dx-text-box>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <dx-data-grid
-                id="gridContainer"
-                [dataSource]="cards"
-                [showBorders]="true"
-                [columns]="['type', 'name']">
-                <dxo-row-dragging
-                  [allowReordering]="true"
-                  [onReorder]="onReorder"
-                  [showDragIcons]="true">
-                </dxo-row-dragging>
-                <dxo-editing
-                  [mode]="'popup'"
-                  [allowUpdating]="true"
-                  [allowDeleting]="true"
-                  [useIcons]="true">
-                </dxo-editing>
-              </dx-data-grid>
-            </div>
-          </div>
-          <div class="row mt-2" *ngIf="footer">
-            <div class="col-12">
-              <div class="dx-field">
-                <div class="dx-field-label">Footer</div>
-                <div class="dx-field-value">
-                  <dx-text-box [(ngModel)]="footer.name" [readOnly]="true"></dx-text-box>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-  <div class="row mt-5">
-    <div class="col-3"></div>
-    <div class="col-6">
-      <div class="row d-flex justify-content-center">
-        <button class="btn btn-primary mr-3" (click)="showSavePopup()">Save</button>
-        <button class="btn btn-primary" (click)="showCancelPopup()">Cancel</button>
       </div>
     </div>
-    <div class="col-3"></div>
-  </div>           
-</div>
-  
-<dx-popup
-  [width]="300"
-  [height]="250"
-  [showTitle]="true"
-  title="Save Menu Changes?"
-  [dragEnabled]="false"
-  [closeOnOutsideClick]="true"
-  [(visible)]="confirmPageSaveVisible">
-  Are you sure you want to save this Card?
-  <div class="row d-flex justify-content-around mt-5">
-    <button class="btn btn-primary" (click)="saveChanges()"> Yes </button>
-    <button class="btn btn-primary" (click)="closeSaveChanges()">Cancel</button>
-  </div>
-</dx-popup>
-<dx-popup
-  [width]="300"
-  [height]="250"
-  [showTitle]="true"
-  title="Cancel Menu Changes?"
-  [dragEnabled]="false"
-  [closeOnOutsideClick]="true"
-  [(visible)]="confirmPageCancelVisible">
-  Are you sure you want to cancel this Card? This will cause you to lose any of your current changes?
-  <div class="row d-flex justify-content-around  mt-5">
-    <button class="btn btn-primary" (click)="cancelChanges()"> Yes </button>
-    <button class="btn btn-primary" (click)="closeCancelChanges()">Cancel</button>
-  </div>
-</dx-popup>
+    <div class="card">
+      <div class="card-header">Selected Sections</div>
+      <div class="card-body">
+        <div class="row justify-content-around">
+          <div class="col-10">
+            <dx-data-grid
+              id="gridContainer"
+              [dataSource]="cards"
+              [showBorders]="true"
+              [columns]="['type', 'name']"
+              [height]="330"
+              (onEditorPreparing)="onEditorPreparing($event)">
+              <dxo-load-panel [enabled]="true"></dxo-load-panel>
+              <dxo-scrolling mode="virtual"></dxo-scrolling>
+              <dxo-row-dragging
+                [allowReordering]="true"
+                [onReorder]="onReorder"
+                [showDragIcons]="true">
+              </dxo-row-dragging>
+              <dxo-editing
+                mode="cell"
+                [allowAdding]="true"
+                [allowUpdating]="true"
+                [allowDeleting]="true"
+                [useIcons]="true">
+                <dxi-item [dataField]="'type'"></dxi-item>
+                <dxi-item [dataField]="'name'"></dxi-item>
+              </dxo-editing>
+              <dxi-column dataField="type" [setCellValue]="setTypeValue" >
+                <dxo-lookup 
+                  [dataSource]="sectionTypes"
+                  displayExpr="name"
+                  valueExpr="name">
+                </dxo-lookup>
+              </dxi-column> 
+              <dxi-column dataField="name">
+                <dxo-lookup 
+                  [dataSource]="getFilteredSections"
+                  displayExpr="name"
+                  valueExpr="name">
+                </dxo-lookup>
+              </dxi-column> 
+              <dxi-column type="buttons" [caption]="'Preview'" [width]="75">
+                <dxi-button
+                    hint="Preview"
+                    icon="search"
+                    [visible]="true"
+                    [onClick]="showSectionPreview.bind(this)">
+                </dxi-button>
+              </dxi-column>
+              <dxi-column type="buttons" [caption]="'Delete'" [width]="75">
+                <dxi-button name="delete"></dxi-button>
+              </dxi-column>
+            </dx-data-grid>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</ng-container>
 
-<dx-popup
-  [width]="'100%'"
-  [height]="'95%'"
-  [(visible)]="confirmPageCancelVisible">
-  <dx-scroll-view>
-    
-    <div class="row d-flex justify-content-center mt-1">
-      <button class="btn btn-primary" (click)="closePreview()">Close</button>
+
+<ng-container *ngIf="sectionPreviewVisible">
+  <dx-popup
+    [(visible)]="sectionPreviewVisible"
+    [showCloseButton]="true"
+    [dragEnabled]="true"
+    [showTitle]="true"
+    [title]="selectedCard.name"
+    [resizeEnabled]="true"
+    [height]="500"
+    [width]="800">
+    <dx-scroll-view>
+      <div *ngIf="selectedCard.name == 'header-1'">
+        <app-header-one></app-header-one>
+      </div>
+      <div *ngIf="selectedCard.name == 'header-2'">
+        <app-header-two></app-header-two>
+      </div>
+      <div *ngIf="selectedCard.name == 'header-3'">
+        <app-header-three></app-header-three>
+      </div>
+      <div *ngIf="selectedCard.name == 'header-4'">
+        <app-header-four></app-header-four>
+      </div>
+
+      <div *ngIf="selectedCard.name == 'hero-1'">
+        <app-hero-one></app-hero-one>
+      </div>
+      <div *ngIf="selectedCard.name == 'hero-2'">
+        <app-hero-two></app-hero-two>
+      </div>
+      <div *ngIf="selectedCard.name == 'hero-3'">
+        <app-hero-three></app-hero-three>
+      </div>
+      <div *ngIf="selectedCard.name == 'hero-4'">
+        <app-hero-four></app-hero-four>
+      </div>
+      <div *ngIf="selectedCard.name == 'hero-5'">
+        <app-hero-five></app-hero-five>
+      </div>
+      <div *ngIf="selectedCard.name == 'hero-6'">
+        <app-hero-six></app-hero-six>
+      </div>
+
+      <div *ngIf="selectedCard.name == 'promo-1'">
+        <app-promo-one></app-promo-one>
+      </div>
+      <div *ngIf="selectedCard.name == 'promo-2'">
+        <app-promo-two></app-promo-two>
+      </div>
+
+      <div *ngIf="selectedCard.name == 'content-1'">
+        <app-content-one></app-content-one>
+      </div>
+      <div *ngIf="selectedCard.name == 'content-2'">
+        <app-content-two></app-content-two>
+      </div>
+      <div *ngIf="selectedCard.name == 'content-3'">
+        <app-content-three></app-content-three>
+      </div>
+      <div *ngIf="selectedCard.name == 'content-4'">
+        <app-content-four></app-content-four>
+      </div>
+      <div *ngIf="selectedCard.name == 'content-5'">
+        <app-content-five></app-content-five>
+      </div>
+
+      <div *ngIf="selectedCard.name == 'service-1'">
+        <app-service-one></app-service-one>
+      </div>
+      <div *ngIf="selectedCard.name == 'service-2'">
+        <app-service-two></app-service-two>
+      </div>
+      <div *ngIf="selectedCard.name == 'service-3'">
+        <app-service-three></app-service-three>
+      </div>
+      <div *ngIf="selectedCard.name == 'service-4'">
+        <app-service-four></app-service-four>
+      </div>
+      <div *ngIf="selectedCard.name == 'service-5'">
+        <app-service-five></app-service-five>
+      </div>
+      <div *ngIf="selectedCard.name == 'service-6'">
+        <app-service-six></app-service-six>
+      </div>
+      <div *ngIf="selectedCard.name == 'service-7'">
+        <app-service-seven></app-service-seven>
+      </div>
+
+      <div *ngIf="selectedCard.name == 'portfolio-1'">
+        <app-portfolio-one></app-portfolio-one>
+      </div>
+      <div *ngIf="selectedCard.name == 'portfolio-2'">
+        <app-portfolio-two></app-portfolio-two>
+      </div>
+
+      <div *ngIf="selectedCard.name == 'pricing-1'">
+        <app-pricing-one></app-pricing-one>>
+      </div>
+      <div *ngIf="selectedCard.name == 'pricing-2'">
+        <app-pricing-two></app-pricing-two>
+      </div>
+      <div *ngIf="selectedCard.name == 'pricing-3'">
+        <app-pricing-three></app-pricing-three>
+      </div>
+      <div *ngIf="selectedCard.name == 'pricing-4'">
+        <app-pricing-four></app-pricing-four>
+      </div>
+
+      <div *ngIf="selectedCard.name == 'review-1'">
+        <app-review-one></app-review-one>
+      </div>
+      <div *ngIf="selectedCard.name == 'review-2'">
+        <app-review-two></app-review-two>
+      </div>
+      <div *ngIf="selectedCard.name == 'review-3'">
+        <app-review-three></app-review-three>
+      </div>
+
+      <div *ngIf="selectedCard.name == 'contact-1'">
+        <app-contact-one></app-contact-one>
+      </div>
+      <div *ngIf="selectedCard.name == 'contact-2'">
+        <app-contact-two></app-contact-two>
+      </div>
+      <div *ngIf="selectedCard.name == 'contact-3'">
+        <app-contact-three></app-contact-three>
+      </div>
+      <div *ngIf="selectedCard.name == 'team-1'">
+        <app-team-one></app-team-one>
+      </div>
+      <div *ngIf="selectedCard.name == 'team-2'">
+        <app-team-two></app-team-two>
+      </div>
+
+      <div *ngIf="selectedCard.name == 'cta'">
+        <app-cta></app-cta>
+      </div>
+      <div *ngIf="selectedCard.name == 'branding'">
+        <app-branding></app-branding>
+      </div>
+      <div *ngIf="selectedCard.name == 'video'">
+        <app-video></app-video>
+      </div>
+      <div *ngIf="selectedCard.name == 'search'">
+        <app-modal-search></app-modal-search>
+      </div>
+
+      <div *ngIf="selectedCard.name == 'footer-1'">
+        <app-footer-one></app-footer-one>
+      </div>
+      <div *ngIf="selectedCard.name == 'footer-2'">
+        <app-footer-two></app-footer-two>
+      </div>
+      <div *ngIf="selectedCard.name == 'footer-3'">
+        <app-footer-three></app-footer-three>
+      </div>
+    </dx-scroll-view>
+  </dx-popup>
+</ng-container>
+<ng-container *ngIf="mode=='preview'">
+  <div class="main overflow-hidden mb-2">
+    <app-scrollup></app-scrollup>
+    <div *ngFor="let card of cards">
+      <div *ngIf="card.name == 'header-1'">
+        <app-header-one></app-header-one>
+      </div>
+      <div *ngIf="card.name == 'header-2'">
+        <app-header-two></app-header-two>
+      </div>
+      <div *ngIf="card.name == 'header-3'">
+        <app-header-three></app-header-three>
+      </div>
+      <div *ngIf="card.name == 'header-4'">
+        <app-header-four></app-header-four>
+      </div>
+
+      <div *ngIf="card.name == 'hero-1'">
+        <app-hero-one></app-hero-one>
+      </div>
+      <div *ngIf="card.name == 'hero-2'">
+        <app-hero-two></app-hero-two>
+      </div>
+      <div *ngIf="card.name == 'hero-3'">
+        <app-hero-three></app-hero-three>
+      </div>
+      <div *ngIf="card.name == 'hero-4'">
+        <app-hero-four></app-hero-four>
+      </div>
+      <div *ngIf="card.name == 'hero-5'">
+        <app-hero-five></app-hero-five>
+      </div>
+      <div *ngIf="card.name == 'hero-6'">
+        <app-hero-six></app-hero-six>
+      </div>
+
+      <div *ngIf="card.name == 'promo-1'">
+        <app-promo-one></app-promo-one>
+      </div>
+      <div *ngIf="card.name == 'promo-2'">
+        <app-promo-two></app-promo-two>
+      </div>
+
+      <div *ngIf="card.name == 'content-1'">
+        <app-content-one></app-content-one>
+      </div>
+      <div *ngIf="card.name == 'content-2'">
+        <app-content-two></app-content-two>
+      </div>
+      <div *ngIf="card.name == 'content-3'">
+        <app-content-three></app-content-three>
+      </div>
+      <div *ngIf="card.name == 'content-4'">
+        <app-content-four></app-content-four>
+      </div>
+      <div *ngIf="card.name == 'content-5'">
+        <app-content-five></app-content-five>
+      </div>
+
+      <div *ngIf="card.name == 'service-1'">
+        <app-service-one></app-service-one>
+      </div>
+      <div *ngIf="card.name == 'service-2'">
+        <app-service-two></app-service-two>
+      </div>
+      <div *ngIf="card.name == 'service-3'">
+        <app-service-three></app-service-three>
+      </div>
+      <div *ngIf="card.name == 'service-4'">
+        <app-service-four></app-service-four>
+      </div>
+      <div *ngIf="card.name == 'service-5'">
+        <app-service-five></app-service-five>
+      </div>
+      <div *ngIf="card.name == 'service-6'">
+        <app-service-six></app-service-six>
+      </div>
+      <div *ngIf="card.name == 'service-7'">
+        <app-service-seven></app-service-seven>
+      </div>
+
+      <div *ngIf="card.name == 'portfolio-1'">
+        <app-portfolio-one></app-portfolio-one>
+      </div>
+      <div *ngIf="card.name == 'portfolio-2'">
+        <app-portfolio-two></app-portfolio-two>
+      </div>
+
+      <div *ngIf="card.name == 'pricing-1'">
+        <app-pricing-one></app-pricing-one>>
+      </div>
+      <div *ngIf="card.name == 'pricing-2'">
+        <app-pricing-two></app-pricing-two>
+      </div>
+      <div *ngIf="card.name == 'pricing-3'">
+        <app-pricing-three></app-pricing-three>
+      </div>
+      <div *ngIf="card.name == 'pricing-4'">
+        <app-pricing-four></app-pricing-four>
+      </div>
+
+      <div *ngIf="card.name == 'review-1'">
+        <app-review-one></app-review-one>
+      </div>
+      <div *ngIf="card.name == 'review-2'">
+        <app-review-two></app-review-two>
+      </div>
+      <div *ngIf="card.name == 'review-3'">
+        <app-review-three></app-review-three>
+      </div>
+
+      <div *ngIf="card.name == 'contact-1'">
+        <app-contact-one></app-contact-one>
+      </div>
+      <div *ngIf="card.name == 'contact-2'">
+        <app-contact-two></app-contact-two>
+      </div>
+      <div *ngIf="card.name == 'contact-3'">
+        <app-contact-three></app-contact-three>
+      </div>
+      <div *ngIf="card.name == 'team-1'">
+        <app-team-one></app-team-one>
+      </div>
+      <div *ngIf="card.name == 'team-2'">
+        <app-team-two></app-team-two>
+      </div>
+
+      <div *ngIf="card.name == 'cta'">
+        <app-cta></app-cta>
+      </div>
+      <div *ngIf="card.name == 'branding'">
+        <app-branding></app-branding>
+      </div>
+      <div *ngIf="card.name == 'video'">
+        <app-video></app-video>
+      </div>
+      <div *ngIf="card.name == 'search'">
+        <app-modal-search></app-modal-search>
+      </div>
+
+      <div *ngIf="card.name == 'footer-1'">
+        <app-footer-one></app-footer-one>
+      </div>
+      <div *ngIf="card.name == 'footer-2'">
+        <app-footer-two></app-footer-two>
+      </div>
+      <div *ngIf="card.name == 'footer-3'">
+        <app-footer-three></app-footer-three>
+      </div>
     </div>
-  </dx-scroll-view>
-</dx-popup>
+  </div>
+</ng-container>
+
+<dx-speed-dial-action
+  icon="search"
+  label="Edit Mode"
+  [index]="1"
+  [visible]="mode=='preview'"
+  (onClick)="switchMode('edit')">
+</dx-speed-dial-action>
+<dx-speed-dial-action
+  icon="search"
+  label="Preview Mode"
+  [index]="2"
+  [visible]="mode=='edit'"
+  (onClick)="switchMode('preview')">
+</dx-speed-dial-action>

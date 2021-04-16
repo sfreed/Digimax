@@ -1,5 +1,8 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import config from "devextreme/core/config";
+import { Section, sections, sectionType, SectionType } from '../config/template-list';
+import { TemplateWizardService } from '../services/template-wizard.service';
 
 export class Card{
   type: string;
@@ -11,29 +14,39 @@ export class Card{
   styleUrls: ['./agent-page-administration.component.css']
 })
 export class AgentPageAdministrationComponent implements OnInit {
-  header: Card;
-  footer: Card;
-  
   cards: Card[] = [];
+  selectedCard: Card;
 
   imageSelectVisible = false;
   confirmPageSaveVisible = false;
   confirmPageCancelVisible = false
   previewSection = false;
+  sectionPreviewVisible = false;
+
+  mode='edit'
+
+  sectionTypes: SectionType [] = [] ;
+  sections: Section[]
 
   constructor(private route: ActivatedRoute,
     public ngZone: NgZone,
-    public router: Router,) {
+    public router: Router,
+    private wizard: TemplateWizardService) 
+  {
     this.onReorder = this.onReorder.bind(this);
+    config().floatingActionButtonConfig.position = { at: "right top", my: "right top", offset: "-10 5" };
+    this.sections = sections;
+    this.sectionTypes = sectionType;
+    
+    this.getFilteredSections = this.getFilteredSections.bind(this);
   }
 
-  ngOnInit(): void {}
-
-  addHeader(type, name){
-    let card: Card = new Card();
-    card.type = type;
-    card.name = name
-    this.header = card;
+  ngOnInit(): void {
+    this.wizard.selectedTemplate.subscribe(selectedTemplate => {
+      selectedTemplate.sections.forEach(section => {
+        this.cards.push({type: section.split("-")[0], name: section})
+      })
+    })
   }
 
   addCard(type, name){
@@ -41,13 +54,6 @@ export class AgentPageAdministrationComponent implements OnInit {
     card.type = type;
     card.name = name
     this.cards.push(card);
-  }
-
-  addFooter(type, name){
-    let card: Card = new Card();
-    card.type = type;
-    card.name = name
-    this.footer = card;
   }
 
   returnToPageAdministrator(){
@@ -92,11 +98,44 @@ export class AgentPageAdministrationComponent implements OnInit {
     this.cards.splice(toIndex, 0, e.itemData);
   }
 
-  showPreview(){
+  showPreview(e){
+    this.selectedCard = e.row.data;
     this.previewSection = true;
   }
+
   closePreview(){
     this.previewSection = false;
+  }
+
+  showSectionPreview(e){
+    this.selectedCard = e.row.data;
+    this.sectionPreviewVisible = true;
+  }
+
+  closeSectionPreview(){
+    this.sectionPreviewVisible = false;
+  }
+
+  switchMode(val: string){
+    this.mode=val;
+  }
+
+  getFilteredSections(options) {
+    return {
+        store: this.sections,
+        filter: options.data ? ["type", "=", options.data.type] : null
+    };
+  }
+
+  onEditorPreparing(e) {
+    if(e.parentType === "dataRow" && e.dataField === "name") {
+        e.editorOptions.disabled = (typeof e.row.data.type !== "string");
+    }
+  }
+
+  setTypeValue(rowData: any, value: any): void {
+      rowData.name = null;
+      (<any>this).defaultSetCellValue(rowData, value);
   }
 
 }
