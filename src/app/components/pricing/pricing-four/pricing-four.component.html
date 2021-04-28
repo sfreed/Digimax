@@ -8,22 +8,22 @@
                         <div class="single-price-plan color-1 bg-hover hover-top text-center p-5">
                             <!-- Plan Title -->
                             <div class="plan-title mb-2 mb-sm-3">
-                                <h3 class="mb-2">Basic</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, nemo.</p>
+                                <h3 class="mb-2">{{pricing.title1}}</h3>
+                                <p>{{pricing.statement1}}</p>
                             </div>
                             <!-- Plan Price -->
                             <div class="plan-price pb-2 pb-sm-3">
                                 <span class="color-primary fw-7">$</span>
-                                <span class="h1 fw-7">49</span>
-                                <sub class="validity text-muted fw-5">/mo</sub>
+                                <span class="h1 fw-7">{{pricing.price1}}</span>
+                                <sub class="validity text-muted fw-5">/{{pricing.frequency}}</sub>
                             </div>
                             <!-- Plan Description -->
                             <div class="plan-description">
                                 <ul class="plan-features">
-                                    <li class="py-2">5GB Linux Web Space</li>
-                                    <li class="py-2">5 MySQL Databases</li>
-                                    <li class="py-2 text-muted">24/7 Tech Support</li>
-                                    <li class="py-2 text-muted">Daily Backups</li>
+                                    <li class="py-2">{{pricing.feature}}</li>
+                                    <li class="py-2">{{pricing.feature}}</li>
+                                    <li class="py-2 text-muted">{{pricing.feature}}</li>
+                                    <li class="py-2 text-muted">{{pricing.feature}}</li>
                                 </ul>
                             </div>
                             <!-- Plan Button -->
@@ -37,22 +37,22 @@
                         <div class="single-price-plan color-2 bg-hover active hover-top text-center p-5">
                             <!-- Plan Title -->
                             <div class="plan-title mb-2 mb-sm-3">
-                                <h3 class="mb-2">Pro <sup><span class="badge badge-pill badge-warning ml-2">Save 20%</span></sup></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, nemo.</p>
+                                <h3 class="mb-2">{{pricing.title2}} <sup><span class="badge badge-pill badge-warning ml-2">{{pricing.badge}}</span></sup></h3>
+                                <p>{{pricing.statement2}}</p>
                             </div>
                             <!-- Plan Price -->
                             <div class="plan-price pb-2 pb-sm-3">
                                 <span class="color-primary fw-7">$</span>
-                                <span class="h1 fw-7">129</span>
-                                <sub class="validity text-muted fw-5">/mo</sub>
+                                <span class="h1 fw-7">{{pricing.price2}}</span>
+                                <sub class="validity text-muted fw-5">/{{pricing.frequency}}</sub>
                             </div>
                             <!-- Plan Description -->
                             <div class="plan-description">
                                 <ul class="plan-features">
-                                    <li class="py-2">10GB Linux Web Space</li>
-                                    <li class="py-2">50 MySQL Databases</li>
-                                    <li class="py-2">Unlimited Email</li>
-                                    <li class="py-2">Daily Backups</li>
+                                    <li class="py-2">{{pricing.feature}}</li>
+                                    <li class="py-2">{{pricing.feature}}</li>
+                                    <li class="py-2">{{pricing.feature}}</li>
+                                    <li class="py-2">{{pricing.feature}}</li>
                                 </ul>
                             </div>
                             <!-- Plan Button -->
@@ -78,13 +78,13 @@
                                     <div class="card-header bg-inherit border-0 p-0">
                                         <h2 class="mb-0">
                                             <button class="btn px-0 py-3" type="button">
-                                                What is a digital agency?
+                                               {{pricing.question}}
                                             </button>
                                         </h2>
                                     </div>
                                     <!-- Card Body -->
                                     <div class="card-body px-0 py-3">
-                                        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.
+                                        {{pricing.answer}}
                                     </div>
                                 </div>
                                 <!-- Single Card -->

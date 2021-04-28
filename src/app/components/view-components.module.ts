@@ -105,6 +105,8 @@ import { TeamTwoComponent } from './team/team-two/team-two.component';
 import { VideoComponent } from './video/video.component';
 import { NavbarComponent } from '../views/navbar/navbar.component';
 import { ViewsModule } from '../views/views.module';
+import { DxTextAreaModule, DxTextBoxModule } from 'devextreme-angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -216,7 +218,12 @@ import { ViewsModule } from '../views/views.module';
   ],
   imports: [
     CommonModule,
-    ViewsModule
+    ViewsModule,
+    DxTextBoxModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DxTextAreaModule
+  
   ],
   exports: [
     HeaderOneComponent,

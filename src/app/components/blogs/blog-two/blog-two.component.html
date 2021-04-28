@@ -6,19 +6,19 @@
                 <div class="single-blog res-margin">
                     <!-- Blog Thumb -->
                     <div class="blog-thumb">
-                        <a href="#"><img src="assets/img/blog_1.jpg" alt=""></a>
+                        <a href="{{blog.url}}"><img src="{{blog.img}}" alt=""></a>
                     </div>
                     <!-- Blog Content -->
                     <div class="blog-content">
                         <!-- Meta Info -->
                         <ul class="meta-info d-flex justify-content-between">
-                            <li>By <a href="#">Anna Sword</a></li>
-                            <li><a href="#">Feb 05, 2020</a></li>
+                            <li>By <a href="{{blog.url}}">{{blog.name}}</a></li>
+                            <li><a href="{{blog.url}}">{{blog.date}}</a></li>
                         </ul>
                         <!-- Blog Title -->
-                        <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
-                        <a href="#" class="blog-btn mt-3">Read More</a>
+                        <h3 class="blog-title my-3"><a href="{{blog.url}}">{{blog.title}}</a></h3>
+                        <p>{{blog.statement}}</p>
+                        <a href="{{blog.url}}" class="blog-btn mt-3">Read More</a>
                     </div>
                 </div>
             </div>

@@ -3,24 +3,24 @@
         <div class="row align-items-center">
             <!-- Welcome Intro Start -->
             <div class="col-12 col-md-7">
-                <div class="welcome-intro">
-                    <h1 class="text-white"><span class="fw-4">Get your business on</span> Google Search</h1>
-                    <p class="text-white-50 my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nihil tenetur minus quidem est deserunt molestias accusamus harum ullam tempore debitis et, expedita, repellat delectus aspernatur neque itaque qui quod.</p>
+                <div class="welcome-intro" *ngFor="let sectionItem of hero.sectionList">
+                    <h1 class="text-white"><span class="fw-4">{{sectionItem.header}}</span> {{sectionItem.headerBold}}</h1>
+                    <p class="text-white-50 my-4">{{sectionItem.statement1}}</p>
                     <!-- Buttons -->
-                    <div class="button-group">
-                        <a href="#" class="btn btn-bordered-white active">Start a Project</a>
-                        <a href="#" class="btn btn-bordered-white d-none d-sm-inline-block">Contact Us</a>
+                    <div class="button-group" *ngFor="let button of hero.buttons">
+                        <a href="{{button.url}}" class="btn btn-bordered-white active">{{button.name}}</a>
+                        <a href="{{button.url}}" class="btn btn-bordered-white d-none d-sm-inline-block">{{button.name}}</a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-5">
                 <!-- Welcome Thumb -->
-                <div class="welcome-thumb-wrapper mt-5 mt-md-0">
+                <div class="welcome-thumb-wrapper mt-5 mt-md-0" *ngFor="let imageItem of hero.images">
                     <span class="welcome-thumb-1">
-                        <img class="d-block ml-auto" src="assets/img/welcome_thumb_11.png" alt="">
+                        <img class="d-block ml-auto" src="{{imageItem.url373x437}}" alt="">
                     </span>
                     <span class="welcome-thumb-2">
-                        <img class="welcome-animation d-block" src="assets/img/welcome_thumb_12.png" alt="">
+                        <img class="welcome-animation d-block" src="{{imageItem.url237x281}}" alt="">
                     </span>
                 </div>
             </div>

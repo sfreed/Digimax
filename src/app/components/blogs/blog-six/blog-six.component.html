@@ -6,30 +6,30 @@
                 <article class="single-blog-details">
                     <!-- Blog Thumb -->
                     <div class="blog-thumb">
-                        <a href="#"><img src="assets/img/blog_7.jpg" alt=""></a>
+                        <a href="{{blog.url}}"><img src="{{blog.img}}" alt=""></a>
                     </div>
                     <!-- Blog Content -->
                     <div class="blog-content digimax-blog p-3">
                         <!-- Meta Info -->
                         <div class="meta-info d-flex flex-wrap align-items-center py-2">
                             <ul>
-                                <li class="d-inline-block p-2">By <a href="#">Anna Swford</a></li>
-                                <li class="d-none d-md-inline-block p-2"><a href="#">05 Feb, 2020</a></li>
-                                <li class="d-inline-block p-2"><a href="#">2 Comments</a></li>
+                                <li class="d-inline-block p-2">By <a href="{{blog.url}}">{{blog.name}}</a></li>
+                                <li class="d-none d-md-inline-block p-2"><a href="{{blog.url}}">{{blog.date}}</a></li>
+                                <li class="d-inline-block p-2"><a href="">{{blog.commentsNum}} Comments</a></li>
                             </ul>
                             <!-- Blog Share -->
                             <div class="blog-share ml-auto d-none d-sm-block">
                                 <!-- Social Icons -->
                                 <div class="social-icons d-flex justify-content-center">
-                                    <a class="bg-white facebook" href="#">
+                                    <a class="bg-white facebook" href="{{blog.facebookUrl}}">
                                         <i class="fab fa-facebook-f"></i>
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
-                                    <a class="bg-white twitter" href="#">
+                                    <a class="bg-white twitter" href="{{blog.twitterUrl}}">
                                         <i class="fab fa-twitter"></i>
                                         <i class="fab fa-twitter"></i>
                                     </a>
-                                    <a class="bg-white google-plus" href="#">
+                                    <a class="bg-white google-plus" href="{{blog.googleUrl}}">
                                         <i class="fab fa-google-plus-g"></i>
                                         <i class="fab fa-google-plus-g"></i>
                                     </a>
@@ -38,15 +38,15 @@
                         </div>
                         <!-- Blog Details -->
                         <div class="blog-details">
-                            <h3 class="blog-title py-3"><a href="#">Blog Content Here</a></h3>
-                            <p class="d-none d-sm-block">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.</p>
-                            <p class="d-block d-sm-none">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage.</p>
+                            <h3 class="blog-title py-3"><a href="{{blog.url}}">{{blog.title}}</a></h3>
+                            <p class="d-none d-sm-block">{{blog.statement}}</p>
+                            <p class="d-block d-sm-none">{{blog.statementMobile}}</p>
                             <blockquote class="blockquote px-4 py-3 my-3 ml-4">
-                                <p class="font-italic d-none d-sm-block">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature.</p>
-                                <p class="font-italic d-block d-sm-none">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+                                <p class="font-italic d-none d-sm-block">{{blog.blockquote}}</p>
+                                <p class="font-italic d-block d-sm-none">{{blog.blockquoteMobile}}</p>
                             </blockquote>
-                            <p class="d-none d-sm-block">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-                            <p class="d-block d-sm-none">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33.</p>
+                            <p class="d-none d-sm-block">{{blog.statement}}</p>
+                            <p class="d-block d-sm-none">{{blog.statementMobile}}</p>
                         </div>
                     </div>
                     <!-- Blog Comments -->
@@ -152,13 +152,13 @@
                             <!-- Category Widget Content -->
                             <div class="widget-content">
                                 <!-- Category Widget Items -->
-                                <ul class="widget-items">
-                                    <li><a href="#" class="d-flex py-3"><span>Web Design</span><span class="ml-auto">(14)</span></a></li>
-                                    <li><a href="#" class="d-flex py-3"><span>Digital Agency</span><span class="ml-auto">(32)</span></a></li>
-                                    <li><a href="#" class="d-flex py-3"><span>Wordpress</span><span class="ml-auto">(27)</span></a></li>
-                                    <li><a href="#" class="d-flex py-3"><span>UI Design</span><span class="ml-auto">(18)</span></a></li>
-                                    <li><a href="#" class="d-flex py-3"><span>Marketing</span><span class="ml-auto">(15)</span></a></li>
-                                    <li><a href="#" class="d-flex py-3"><span>Web Template</span><span class="ml-auto">(29)</span></a></li>
+                                <ul class="widget-items"  *ngFor="let category of blog.categories">
+                                    <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
+                                    <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
+                                    <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
+                                    <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
+                                    <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
+                                    <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -171,52 +171,52 @@
                             <!-- Post Widget Content -->
                             <div class="widget-content">
                                 <!-- Post Widget Items -->
-                                <ul class="widget-items">
+                                <ul class="widget-items"   *ngFor="let popular of blog.popular">
                                     <li>
-                                        <a href="#" class="single-post media py-3">
+                                        <a href="{{popular.url}}" class="single-post media py-3">
                                             <!-- Post Thumb -->
                                             <div class="post-thumb avatar-lg h-100 d-flex align-self-center">
-                                                <img src="assets/img/case_studies_1.jpg" alt="">
+                                                <img src="{{popular.img}}" alt="">
                                             </div>
                                             <div class="post-content media-body ml-3 py-2">
-                                                <p class="post-date mb-2">05 Feb, 2020</p>
-                                                <h6>Post Tile Here</h6>
+                                                <p class="post-date mb-2">{{popular.date}}</p>
+                                                <h6>{{popular.title}}</h6>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="single-post media py-3">
+                                        <a href="{{popular.url}}" class="single-post media py-3">
                                             <!-- Post Thumb -->
                                             <div class="post-thumb avatar-lg h-100 d-flex align-self-center">
-                                                <img src="assets/img/case_studies_2.jpg" alt="">
+                                                <img src="{{popular.img}}" alt="">
                                             </div>
                                             <div class="post-content media-body ml-3 py-2">
-                                                <p class="post-date mb-2">09 Apr, 2020</p>
-                                                <h6>Post Tile Here</h6>
+                                                <p class="post-date mb-2">{{popular.date}}</p>
+                                                <h6>{{popular.title}}</h6>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="single-post media py-3">
+                                        <a href="{{popular.url}}" class="single-post media py-3">
                                             <!-- Post Thumb -->
                                             <div class="post-thumb avatar-lg h-100 d-flex align-self-center">
-                                                <img src="assets/img/case_studies_3.jpg" alt="">
+                                                <img src="{{popular.img}}" alt="">
                                             </div>
                                             <div class="post-content media-body ml-3 py-2">
-                                                <p class="post-date mb-2">13 Jul, 2020</p>
-                                                <h6>Post Tile Here</h6>
+                                                <p class="post-date mb-2">{{popular.date}}</p>
+                                                <h6>{{popular.title}}</h6>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="single-post media py-3">
+                                        <a href="{{popular.url}}" class="single-post media py-3">
                                             <!-- Post Thumb -->
                                             <div class="post-thumb avatar-lg h-100 d-flex align-self-center">
-                                                <img src="assets/img/case_studies_4.jpg" alt="">
+                                                <img src="{{popular.img}}" alt="">
                                             </div>
                                             <div class="post-content media-body ml-3 py-2">
-                                                <p class="post-date mb-2">03 Oct, 2020</p>
-                                                <h6>Post Tile Here</h6>
+                                                <p class="post-date mb-2">{{popular.date}}</p>
+                                                <h6>{{popular.title}}</h6>
                                             </div>
                                         </a>
                                     </li>
@@ -232,19 +232,19 @@
                             <!-- Tags Widget Content -->
                             <div class="widget-content">
                                 <!-- Tags Widget Items -->
-                                <div class="widget-content tags-widget-items pt-2">
-                                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Digimax</a>
-                                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Bootstrap</a>
-                                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Agency</a>
-                                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Marketing</a>
-                                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Landing Page</a>
-                                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Business</a>
-                                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Fashion</a>
-                                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Media</a>
-                                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Lifestyle</a>
-                                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Wordpress</a>
-                                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Web Design</a>
-                                    <a href="#" class="d-inline-block mt-2 mr-1 px-2 py-1">Mobile App</a>
+                                <div class="widget-content tags-widget-items pt-2"  *ngFor="let popular of blog.popular">
+                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
                                 </div>
                             </div>
                         </div>

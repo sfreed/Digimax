@@ -3,28 +3,28 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-7">
                 <!-- Section Heading -->
-                <div class="section-heading text-center">
+                <div class="section-heading text-center" *ngFor="let sectionItems of portfolio.sectionList">
                     <h2>Case Studies</h2>
-                    <p class="d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.</p>
-                    <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati.</p>
+                    <p class="d-none d-sm-block mt-4">{{sectionItems.statment1}}</p>
+                    <p class="d-block d-sm-none mt-4">{{sectionItems.statementMobile}}</p>
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row"  *ngFor="let marketing of portfolio.marketing">
             <div class="col-12 col-md-6 col-lg-4">
                 <!-- Single Case Studies -->
                 <div class="single-case-studies">
                     <!-- Case Studies Thumb -->
-                    <a href="#">
-                        <img src="assets/img/case_studies_7.jpg" alt="">
+                    <a href="{{marketing.imgUrl}}">
+                        <img src="{{marketing.img}}" alt="">
                     </a>
                     <!-- Case Studies Overlay -->
-                    <a href="assets/img/case_studies_7.jpg" data-fancybox="images" class="case-studies-overlay">
+                    <a href="{{marketing.img}}" data-fancybox="images" class="case-studies-overlay">
                         <!-- Overlay Text -->
                         <span class="overlay-text text-center p-3">
                             <i class="fas fa-search-plus fa-2x text-white"></i>
-                            <h3 class="text-white mt-2 mb-3">Web Design</h3>
-                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, eligendi pariatur corporis libero distinctio, corrupti.</p>
+                            <h3 class="text-white mt-2 mb-3">{{marketing.header}}</h3>
+                            <p class="text-white">{{marketing.statement}}</p>
                         </span>
                     </a>
                 </div>
@@ -33,16 +33,16 @@
                 <!-- Single Case Studies -->
                 <div class="single-case-studies">
                     <!-- Case Studies Thumb -->
-                    <a href="#">
-                        <img src="assets/img/case_studies_8.jpg" alt="">
+                    <a href="{{marketing.imgUrl}}">
+                        <img src="{{marketing.img}}" alt="">
                     </a>
                     <!-- Case Studies Overlay -->
-                    <a href="assets/img/case_studies_8.jpg" data-fancybox="images" class="case-studies-overlay">
+                    <a href="{{marketing.img}}" data-fancybox="images" class="case-studies-overlay">
                         <!-- Overlay Text -->
                         <span class="overlay-text text-center p-3">
                             <i class="fas fa-search-plus fa-2x text-white"></i>
-                            <h3 class="text-white mt-2 mb-3">App Development</h3>
-                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, eligendi pariatur corporis libero distinctio, corrupti.</p>
+                            <h3 class="text-white mt-2 mb-3">{{marketing.header}}</h3>
+                            <p class="text-white">{{marketing.statement}}</p>
                         </span>
                     </a>
                 </div>
@@ -51,16 +51,16 @@
                 <!-- Single Case Studies -->
                 <div class="single-case-studies">
                     <!-- Case Studies Thumb -->
-                    <a href="#">
-                        <img src="assets/img/case_studies_9.jpg" alt="">
+                    <a href="{{marketing.imgUrl}}">
+                        <img src="{{marketing.img}}" alt="">
                     </a>
                     <!-- Case Studies Overlay -->
-                    <a href="assets/img/case_studies_9.jpg" data-fancybox="images" class="case-studies-overlay">
+                    <a href="{{marketing.img}}" data-fancybox="images" class="case-studies-overlay">
                         <!-- Overlay Text -->
                         <span class="overlay-text text-center p-3">
                             <i class="fas fa-search-plus fa-2x text-white"></i>
-                            <h3 class="text-white mt-2 mb-3">Data Analysis</h3>
-                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, eligendi pariatur corporis libero distinctio, corrupti.</p>
+                            <h3 class="text-white mt-2 mb-3">{{marketing.header}}</h3>
+                            <p class="text-white">{{marketing.statement}}</p>
                         </span>
                     </a>
                 </div>
@@ -69,16 +69,16 @@
                 <!-- Single Case Studies -->
                 <div class="single-case-studies">
                     <!-- Case Studies Thumb -->
-                    <a href="#">
-                        <img src="assets/img/case_studies_10.jpg" alt="">
+                    <a href="{{marketing.imgUrl}}">
+                        <img src="{{marketing.img}}" alt="">
                     </a>
                     <!-- Case Studies Overlay -->
-                    <a href="assets/img/case_studies_10.jpg" data-fancybox="images" class="case-studies-overlay">
+                    <a href="{{marketing.img}}" data-fancybox="images" class="case-studies-overlay">
                         <!-- Overlay Text -->
                         <span class="overlay-text text-center p-3">
                             <i class="fas fa-search-plus fa-2x text-white"></i>
-                            <h3 class="text-white mt-2 mb-3">Content Management</h3>
-                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, eligendi pariatur corporis libero distinctio, corrupti.</p>
+                            <h3 class="text-white mt-2 mb-3">{{marketing.header}}</h3>
+                            <p class="text-white">{{marketing.statement}}</p>
                         </span>
                     </a>
                 </div>
@@ -87,16 +87,16 @@
                 <!-- Single Case Studies -->
                 <div class="single-case-studies">
                     <!-- Case Studies Thumb -->
-                    <a href="#">
-                        <img src="assets/img/case_studies_11.jpg" alt="">
+                    <a href="{{marketing.imgUrl}}">
+                        <img src="{{marketing.img}}" alt="">
                     </a>
                     <!-- Case Studies Overlay -->
-                    <a href="assets/img/case_studies_11.jpg" data-fancybox="images" class="case-studies-overlay">
+                    <a href="{{marketing.img}}" data-fancybox="images" class="case-studies-overlay">
                         <!-- Overlay Text -->
                         <span class="overlay-text text-center p-3">
                             <i class="fas fa-search-plus fa-2x text-white"></i>
-                            <h3 class="text-white mt-2 mb-3">SEO Marketing</h3>
-                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, eligendi pariatur corporis libero distinctio, corrupti.</p>
+                            <h3 class="text-white mt-2 mb-3">{{marketing.header}}</h3>
+                            <p class="text-white">{{marketing.statement}}</p>
                         </span>
                     </a>
                 </div>
@@ -105,23 +105,23 @@
                 <!-- Single Case Studies -->
                 <div class="single-case-studies">
                     <!-- Case Studies Thumb -->
-                    <a href="#">
-                        <img src="assets/img/case_studies_12.jpg" alt="">
+                    <a href="{{marketing.imgUrl}}">
+                        <img src="{{marketing.img}}" alt="">
                     </a>
                     <!-- Case Studies Overlay -->
-                    <a href="assets/img/case_studies_12.jpg" data-fancybox="images" class="case-studies-overlay">
+                    <a href="{{marketing.img}}" data-fancybox="images" class="case-studies-overlay">
                         <!-- Overlay Text -->
                         <span class="overlay-text text-center p-3">
                             <i class="fas fa-search-plus fa-2x text-white"></i>
-                            <h3 class="text-white mt-2 mb-3">Marketing Strategy</h3>
-                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, eligendi pariatur corporis libero distinctio, corrupti.</p>
+                            <h3 class="text-white mt-2 mb-3">{{marketing.header}}</h3>
+                            <p class="text-white">{{marketing.statement}}</p>
                         </span>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <a href="#" class="btn btn-bordered mt-4">View More</a>
+        <div class="row justify-content-center"  *ngFor="let button of portfolio.buttons">
+            <a href="{{button.url}}" class="btn btn-bordered mt-4">{{button.name}}</a>
         </div>
     </div>
 </section>

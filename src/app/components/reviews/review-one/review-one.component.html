@@ -3,10 +3,10 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-7">
                 <!-- Section Heading -->
-                <div class="section-heading text-center">
-                    <h2 class="text-white">Our clients says</h2>
-                    <p class="text-white d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.</p>
-                    <p class="text-white d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati.</p>
+                <div class="section-heading text-center" *ngFor="let sectionList of review.sectionList">
+                    <h2 class="text-white">{{sectionList.header}}</h2>
+                    <p class="text-white d-none d-sm-block mt-4">{{sectionList.statement1}}</p>
+                    <p class="text-white d-block d-sm-none mt-4">{{sectionList.statementMobile}}</p>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
                     <div class="review-content">
                         <!-- Review Text -->
                         <div class="review-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam est modi amet error earum aperiam, fuga labore facere rem ab nemo possimus cum excepturi expedita. Culpa rerum, quaerat qui non.</p>
+                            <p>{{review.quote}}</p>
                         </div>
                         <!-- Quotation Icon -->
                         <div class="quot-icon">
@@ -30,12 +30,12 @@
                     <div class="reviewer media mt-3">
                         <!-- Reviewer Thumb -->
                         <div class="reviewer-thumb">
-                            <img class="avatar-lg radius-100" src="assets/img/avatar_1.png" alt="">
+                            <img class="avatar-lg radius-100" src="{{review.thumbUrl}}" alt="">
                         </div>
                         <!-- Reviewer Media -->
                         <div class="reviewer-meta media-body align-self-center ml-4">
-                            <h5 class="reviewer-name color-primary mb-2">Junaid Hasan</h5>
-                            <h6 class="text-secondary fw-6">CEO, Themeland</h6>
+                            <h5 class="reviewer-name color-primary mb-2">{{review.name}}</h5>
+                            <h6 class="text-secondary fw-6">{{review.title}}</h6>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                     <div class="review-content">
                         <!-- Review Text -->
                         <div class="review-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam est modi amet error earum aperiam, fuga labore facere rem ab nemo possimus cum excepturi expedita. Culpa rerum, quaerat qui non.</p>
+                            <p>{{review.quote}}</p>
                         </div>
                         <!-- Quotation Icon -->
                         <div class="quot-icon">
@@ -56,12 +56,12 @@
                     <div class="reviewer media mt-3">
                         <!-- Reviewer Thumb -->
                         <div class="reviewer-thumb">
-                            <img class="avatar-lg radius-100" src="assets/img/avatar_2.png" alt="">
+                            <img class="avatar-lg radius-100" src="{{review.thumbUrl}}" alt="">
                         </div>
                         <!-- Reviewer Media -->
                         <div class="reviewer-meta media-body align-self-center ml-4">
-                            <h5 class="reviewer-name color-primary mb-2">Yasmin Akter</h5>
-                            <h6 class="text-secondary fw-6">Founder, Themeland</h6>
+                            <h5 class="reviewer-name color-primary mb-2">{{review.name}}</h5>
+                            <h6 class="text-secondary fw-6">{{review.title}}</h6>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                     <div class="review-content">
                         <!-- Review Text -->
                         <div class="review-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam est modi amet error earum aperiam, fuga labore facere rem ab nemo possimus cum excepturi expedita. Culpa rerum, quaerat qui non.</p>
+                            <p>{{review.quote}}</p>
                         </div>
                         <!-- Quotation Icon -->
                         <div class="quot-icon">
@@ -82,12 +82,12 @@
                     <div class="reviewer media mt-3">
                         <!-- Reviewer Thumb -->
                         <div class="reviewer-thumb">
-                            <img class="avatar-lg radius-100" src="assets/img/avatar_3.png" alt="">
+                            <img class="avatar-lg radius-100" src="{{review.thumbUrl}}" alt="">
                         </div>
                         <!-- Reviewer Media -->
                         <div class="reviewer-meta media-body align-self-center ml-4">
-                            <h5 class="reviewer-name color-primary mb-2">Md. Arham</h5>
-                            <h6 class="text-secondary fw-6">CEO, Themeland</h6>
+                            <h5 class="reviewer-name color-primary mb-2">{{review.name}}</h5>
+                            <h6 class="text-secondary fw-6">{{review.title}}</h6>
                         </div>
                     </div>
                 </div>

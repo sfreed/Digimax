@@ -3,13 +3,13 @@
         <div class="row align-items-center">
             <!-- Welcome Intro Start -->
             <div class="col-12 col-md-7">
-                <div class="welcome-intro">
-                    <h1>We make the path to your digital presence</h1>
-                    <p class="my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nihil tenetur minus quidem est deserunt molestias accusamus harum ullam tempore debitis et, expedita, repellat delectus aspernatur neque itaque qui quod.</p>
+                <div class="welcome-intro" *ngFor="let section of hero.sectionList">
+                    <h1>{{section.header}}</h1>
+                    <p class="my-4">{{section.statement1}}</p>
                     <!-- Buttons -->
-                    <div class="button-group">
-                        <a href="#" class="btn btn-bordered">Work with Us</a>
-                        <a href="#" class="btn btn-bordered d-none d-sm-inline-block">View Process</a>
+                    <div class="button-group" *ngFor="let button of hero.buttons">
+                        <a href="{{button.url}}" class="btn btn-bordered">{{button.name}}</a>
+                        <a href="{{button.url}}" class="btn btn-bordered d-none d-sm-inline-block">{{button.name}}</a>
                     </div>
                 </div>
             </div>

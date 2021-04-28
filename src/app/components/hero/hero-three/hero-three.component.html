@@ -3,14 +3,14 @@
         <div class="row align-items-center">
             <!-- Welcome Intro Start -->
             <div class="col-12 col-md-6">
-                <div class="welcome-intro">
-                    <h1 class="text-white text-center text-md-left">Marketing <br> <span class="fw-4">strategy</span></h1>
-                    <p class="text-white text-center text-md-left my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nihil tenetur minus quidem est deserunt molestias accusamus harum ullam tempore debitis et, expedita, repellat delectus aspernatur neque itaque qui quod.</p>
+                <div class="welcome-intro" *ngFor="let sectionItem of hero.sectionList">
+                    <h1 class="text-white text-center text-md-left">{{sectionItem.headerBold}} <br> <span class="fw-4">{{sectionItem.header}}</span></h1>
+                    <p class="text-white text-center text-md-left my-4">{{sectionItem.statement1}}</p>
                     <!-- Buttons -->
-                    <div class="button-group d-flex align-items-center justify-content-center justify-content-md-start">
-                        <a href="#" class="btn btn-bordered-white">Start a Project</a>
+                    <div class="button-group d-flex align-items-center justify-content-center justify-content-md-start" *ngFor="let button of hero.buttons">
+                        <a href="{{button.url}}" class="btn btn-bordered-white">{{button.name}}</a>
                         <!-- Play Button -->
-                        <a class="play-btn" data-fancybox data-width="640" data-height="360" data-small-btn="true" href="https://youtu.be/TKnufs85hXk">
+                        <a class="play-btn" data-fancybox data-width="640" data-height="360" data-small-btn="true" href="{{button.playVideoUrl}}">
                             <div class="btn-circle play-animation"></div>
                             <div class="btn-circle play-animation animation-short"></div>
                             <!-- Play Icon -->
@@ -23,18 +23,18 @@
             </div>
             <div class="col-12 col-md-6">
                 <!-- Welcome Thumb -->
-                <div class="welcome-thumb-wrapper pt-3 pt-md-5 mt-5">
+                <div class="welcome-thumb-wrapper pt-3 pt-md-5 mt-5" *ngFor="let imageItem of hero.images">
                     <span class="welcome-thumb-1">
-                        <img class="welcome-animation d-block ml-auto" src="assets/img/welcome_thumb_7.png" alt="">
+                        <img class="welcome-animation d-block ml-auto" src="{{imageItem.url640x410}}" alt="">
                     </span>
                     <span class="welcome-thumb-2">
-                        <img class="welcome-animation d-block" src="assets/img/welcome_thumb_8.png" alt="">
+                        <img class="welcome-animation d-block" src="{{imageItem.url410x269}}" alt="">
                     </span>
                     <span class="welcome-thumb-3">
-                        <img class="welcome-animation d-block" src="assets/img/welcome_thumb_9.png" alt="">
+                        <img class="welcome-animation d-block" src="{{imageItem.url411x261}}" alt="">
                     </span>
                     <span class="welcome-thumb-4">
-                        <img class="welcome-animation d-block" src="assets/img/welcome_thumb_10.png" alt="">
+                        <img class="welcome-animation d-block" src="{{imageItem.url411x261}}" alt="">
                     </span>
                 </div>
             </div>
