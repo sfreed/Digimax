@@ -108,6 +108,7 @@ export class AgentPageAdministrationComponent implements OnInit {
   }
 
   showSectionPreview(e){
+    console.log(e);
     this.selectedCard = e.row.data;
     this.sectionPreviewVisible = true;
   }

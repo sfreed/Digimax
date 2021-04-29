@@ -1,152 +1,321 @@
-<section id="blog" class="section blog-area ptb_100">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <!-- Single Blog -->
-                <div class="single-blog res-margin">
-                    <!-- Blog Thumb -->
-                    <div class="blog-thumb">
-                        <a href="#"><img src="assets/img/blog_1.jpg" alt=""></a>
+<ng-container *ngIf="view == 'preview'">
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showConfigure()">Configure Blog Section</button>
+    </div>    
+    <section id="blog" class="section blog-area ptb_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <!-- Single Blog -->
+                    <div class="single-blog res-margin">
+                        <!-- Blog Thumb -->
+                        <div class="blog-thumb">
+                            <a href="{{blog.url}}"><img src="{{blog.img}}" alt=""></a>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <!-- Meta Info -->
+                            <ul class="meta-info d-flex justify-content-between">
+                                <li>By <a href="{{blog.url}}">{{blog.name}}</a></li>
+                                <li><a href="{{blog.url}}">{{blog.date}}</a></li>
+                            </ul>
+                            <!-- Blog Title -->
+                            <h3 class="blog-title my-3"><a href="#">{{blog.title}}</a></h3>
+                            <p>{{blog.statement}}</p>
+                            <a *ngFor="let button of blog.buttons" href="{{blog.url}}" class="blog-btn mt-3">{{button.name}}</a>
+                        </div>
                     </div>
-                    <!-- Blog Content -->
-                    <div class="blog-content">
-                        <!-- Meta Info -->
-                        <ul class="meta-info d-flex justify-content-between">
-                            <li>By <a href="#">Anna Sword</a></li>
-                            <li><a href="#">Feb 05, 2020</a></li>
-                        </ul>
-                        <!-- Blog Title -->
-                        <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
-                        <a href="#" class="blog-btn mt-3">Read More</a>
+                </div>
+                <div class="col-12 col-md-6">
+                    <!-- Single Blog -->
+                    <div class="single-blog res-margin">
+                        <!-- Blog Thumb -->
+                        <div class="blog-thumb">
+                            <a href="#"><img src="assets/img/blog_2.jpg" alt=""></a>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <!-- Meta Info -->
+                            <ul class="meta-info d-flex justify-content-between">
+                                <li>By <a href="#">Jassica William</a></li>
+                                <li><a href="#">Feb 05, 2020</a></li>
+                            </ul>
+                            <!-- Blog Title -->
+                            <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
+                            <a href="#" class="blog-btn mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <!-- Single Blog -->
+                    <div class="single-blog">
+                        <!-- Blog Thumb -->
+                        <div class="blog-thumb">
+                            <a href="#"><img src="assets/img/blog_3.jpg" alt=""></a>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <!-- Meta Info -->
+                            <ul class="meta-info d-flex justify-content-between">
+                                <li>By <a href="#">John Doe</a></li>
+                                <li><a href="#">Mar 05, 2020</a></li>
+                            </ul>
+                            <!-- Blog Title -->
+                            <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
+                            <a href="#" class="blog-btn mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <!-- Single Blog -->
+                    <div class="single-blog res-margin">
+                        <!-- Blog Thumb -->
+                        <div class="blog-thumb">
+                            <a href="#"><img src="assets/img/blog_4.jpg" alt=""></a>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <!-- Meta Info -->
+                            <ul class="meta-info d-flex justify-content-between">
+                                <li>By <a href="#">Anna Sword</a></li>
+                                <li><a href="#">Feb 05, 2020</a></li>
+                            </ul>
+                            <!-- Blog Title -->
+                            <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
+                            <a href="#" class="blog-btn mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <!-- Single Blog -->
+                    <div class="single-blog res-margin">
+                        <!-- Blog Thumb -->
+                        <div class="blog-thumb">
+                            <a href="#"><img src="assets/img/blog_5.jpg" alt=""></a>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <!-- Meta Info -->
+                            <ul class="meta-info d-flex justify-content-between">
+                                <li>By <a href="#">Jassica William</a></li>
+                                <li><a href="#">Feb 05, 2020</a></li>
+                            </ul>
+                            <!-- Blog Title -->
+                            <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
+                            <a href="#" class="blog-btn mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <!-- Single Blog -->
+                    <div class="single-blog">
+                        <!-- Blog Thumb -->
+                        <div class="blog-thumb">
+                            <a href="#"><img src="assets/img/blog_6.jpg" alt=""></a>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <!-- Meta Info -->
+                            <ul class="meta-info d-flex justify-content-between">
+                                <li>By <a href="#">John Doe</a></li>
+                                <li><a href="#">Mar 05, 2020</a></li>
+                            </ul>
+                            <!-- Blog Title -->
+                            <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
+                            <a href="#" class="blog-btn mt-3">Read More</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6">
-                <!-- Single Blog -->
-                <div class="single-blog res-margin">
-                    <!-- Blog Thumb -->
-                    <div class="blog-thumb">
-                        <a href="#"><img src="assets/img/blog_2.jpg" alt=""></a>
-                    </div>
-                    <!-- Blog Content -->
-                    <div class="blog-content">
-                        <!-- Meta Info -->
-                        <ul class="meta-info d-flex justify-content-between">
-                            <li>By <a href="#">Jassica William</a></li>
-                            <li><a href="#">Feb 05, 2020</a></li>
-                        </ul>
-                        <!-- Blog Title -->
-                        <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
-                        <a href="#" class="blog-btn mt-3">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6">
-                <!-- Single Blog -->
-                <div class="single-blog">
-                    <!-- Blog Thumb -->
-                    <div class="blog-thumb">
-                        <a href="#"><img src="assets/img/blog_3.jpg" alt=""></a>
-                    </div>
-                    <!-- Blog Content -->
-                    <div class="blog-content">
-                        <!-- Meta Info -->
-                        <ul class="meta-info d-flex justify-content-between">
-                            <li>By <a href="#">John Doe</a></li>
-                            <li><a href="#">Mar 05, 2020</a></li>
-                        </ul>
-                        <!-- Blog Title -->
-                        <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
-                        <a href="#" class="blog-btn mt-3">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6">
-                <!-- Single Blog -->
-                <div class="single-blog res-margin">
-                    <!-- Blog Thumb -->
-                    <div class="blog-thumb">
-                        <a href="#"><img src="assets/img/blog_4.jpg" alt=""></a>
-                    </div>
-                    <!-- Blog Content -->
-                    <div class="blog-content">
-                        <!-- Meta Info -->
-                        <ul class="meta-info d-flex justify-content-between">
-                            <li>By <a href="#">Anna Sword</a></li>
-                            <li><a href="#">Feb 05, 2020</a></li>
-                        </ul>
-                        <!-- Blog Title -->
-                        <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
-                        <a href="#" class="blog-btn mt-3">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6">
-                <!-- Single Blog -->
-                <div class="single-blog res-margin">
-                    <!-- Blog Thumb -->
-                    <div class="blog-thumb">
-                        <a href="#"><img src="assets/img/blog_5.jpg" alt=""></a>
-                    </div>
-                    <!-- Blog Content -->
-                    <div class="blog-content">
-                        <!-- Meta Info -->
-                        <ul class="meta-info d-flex justify-content-between">
-                            <li>By <a href="#">Jassica William</a></li>
-                            <li><a href="#">Feb 05, 2020</a></li>
-                        </ul>
-                        <!-- Blog Title -->
-                        <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
-                        <a href="#" class="blog-btn mt-3">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6">
-                <!-- Single Blog -->
-                <div class="single-blog">
-                    <!-- Blog Thumb -->
-                    <div class="blog-thumb">
-                        <a href="#"><img src="assets/img/blog_6.jpg" alt=""></a>
-                    </div>
-                    <!-- Blog Content -->
-                    <div class="blog-content">
-                        <!-- Meta Info -->
-                        <ul class="meta-info d-flex justify-content-between">
-                            <li>By <a href="#">John Doe</a></li>
-                            <li><a href="#">Mar 05, 2020</a></li>
-                        </ul>
-                        <!-- Blog Title -->
-                        <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
-                        <a href="#" class="blog-btn mt-3">Read More</a>
-                    </div>
+            <div class="row">
+                <div class="col-12">
+                    <!-- Pagination -->
+                    <ul class="pagination justify-content-center">
+                        <li class="disabled px-1">
+                            <a href="#" aria-label="Previous">
+                                <i class="fas fa-arrow-left"></i>
+                            </a>
+                        </li>
+                        <li class="px-1"><a href="#">1</a></li>
+                        <li class="active px-1"><a href="#">2</a></li>
+                        <li class="px-1"><a href="#">3</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <!-- Pagination -->
-                <ul class="pagination justify-content-center">
-                    <li class="disabled px-1">
-                        <a href="#" aria-label="Previous">
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
-                    </li>
-                    <li class="px-1"><a href="#">1</a></li>
-                    <li class="active px-1"><a href="#">2</a></li>
-                    <li class="px-1"><a href="#">3</a></li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    </section>
+</ng-container>
+
+
+
+
+<ng-container *ngIf="view =='edit'" >
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showPreview()">Preview Blog Section</button>
     </div>
-</section>
+    <section id="blog" class="section blog-area ptb_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <!-- Single Blog -->
+                    <div class="single-blog res-margin">
+                        <!-- Blog Thumb -->
+                        <div class="blog-thumb">
+                            <dx-text-box [(ngModel)]="blog.url" ></dx-text-box>
+                            <dx-text-box [(ngModel)]="blog.img" ></dx-text-box>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <!-- Meta Info -->
+                            <ul class="meta-info d-flex justify-content-between">
+                                <dx-text-box [(ngModel)]="blog.name" ></dx-text-box>
+                                <dx-text-box [(ngModel)]="blog.date" ></dx-text-box>
+                            </ul>
+                            <!-- Blog Title -->
+                            <dx-text-box [(ngModel)]="blog.title" ></dx-text-box>
+                            <dx-text-area [(ngModel)]="blog.statement" height="100"></dx-text-area>
+                            <a *ngFor="let button of blog.buttons" class="blog-btn mt-3">
+                                <dx-text-box [(ngModel)]="button.name" ></dx-text-box>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <!-- Single Blog -->
+                    <div class="single-blog res-margin">
+                        <!-- Blog Thumb -->
+                        <div class="blog-thumb">
+                            <a href="#"><img src="assets/img/blog_2.jpg" alt=""></a>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <!-- Meta Info -->
+                            <ul class="meta-info d-flex justify-content-between">
+                                <li>By <a href="#">Jassica William</a></li>
+                                <li><a href="#">Feb 05, 2020</a></li>
+                            </ul>
+                            <!-- Blog Title -->
+                            <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
+                            <a href="#" class="blog-btn mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <!-- Single Blog -->
+                    <div class="single-blog">
+                        <!-- Blog Thumb -->
+                        <div class="blog-thumb">
+                            <a href="#"><img src="assets/img/blog_3.jpg" alt=""></a>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <!-- Meta Info -->
+                            <ul class="meta-info d-flex justify-content-between">
+                                <li>By <a href="#">John Doe</a></li>
+                                <li><a href="#">Mar 05, 2020</a></li>
+                            </ul>
+                            <!-- Blog Title -->
+                            <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
+                            <a href="#" class="blog-btn mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <!-- Single Blog -->
+                    <div class="single-blog res-margin">
+                        <!-- Blog Thumb -->
+                        <div class="blog-thumb">
+                            <a href="#"><img src="assets/img/blog_4.jpg" alt=""></a>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <!-- Meta Info -->
+                            <ul class="meta-info d-flex justify-content-between">
+                                <li>By <a href="#">Anna Sword</a></li>
+                                <li><a href="#">Feb 05, 2020</a></li>
+                            </ul>
+                            <!-- Blog Title -->
+                            <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
+                            <a href="#" class="blog-btn mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <!-- Single Blog -->
+                    <div class="single-blog res-margin">
+                        <!-- Blog Thumb -->
+                        <div class="blog-thumb">
+                            <a href="#"><img src="assets/img/blog_5.jpg" alt=""></a>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <!-- Meta Info -->
+                            <ul class="meta-info d-flex justify-content-between">
+                                <li>By <a href="#">Jassica William</a></li>
+                                <li><a href="#">Feb 05, 2020</a></li>
+                            </ul>
+                            <!-- Blog Title -->
+                            <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
+                            <a href="#" class="blog-btn mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <!-- Single Blog -->
+                    <div class="single-blog">
+                        <!-- Blog Thumb -->
+                        <div class="blog-thumb">
+                            <a href="#"><img src="assets/img/blog_6.jpg" alt=""></a>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <!-- Meta Info -->
+                            <ul class="meta-info d-flex justify-content-between">
+                                <li>By <a href="#">John Doe</a></li>
+                                <li><a href="#">Mar 05, 2020</a></li>
+                            </ul>
+                            <!-- Blog Title -->
+                            <h3 class="blog-title my-3"><a href="#">Blog Title Here</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione obcaecati, animi vitae recusandae, praesentium quae.</p>
+                            <a href="#" class="blog-btn mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <!-- Pagination -->
+                    <ul class="pagination justify-content-center">
+                        <li class="disabled px-1">
+                            <a href="#" aria-label="Previous">
+                                <i class="fas fa-arrow-left"></i>
+                            </a>
+                        </li>
+                        <li class="px-1"><a href="#">1</a></li>
+                        <li class="active px-1"><a href="#">2</a></li>
+                        <li class="px-1"><a href="#">3</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</ng-container>
