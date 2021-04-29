@@ -1,18 +1,51 @@
-<section id="home" class="section welcome-area overflow-hidden d-flex align-items-center">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Welcome Intro Start -->
-            <div class="col-12 col-md-7">
-                <div class="welcome-intro" *ngFor="let section of hero.sectionList">
-                    <h1>{{section.header}}</h1>
-                    <p class="my-4">{{section.statement1}}</p>
-                    <!-- Buttons -->
-                    <div class="button-group" *ngFor="let button of hero.buttons">
-                        <a href="{{button.url}}" class="btn btn-bordered">{{button.name}}</a>
-                        <a href="{{button.url}}" class="btn btn-bordered d-none d-sm-inline-block">{{button.name}}</a>
+<ng-container *ngIf="view == 'preview'">
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showConfigure()">Configure Hero Section</button>
+    </div>
+    <section id="home" class="section welcome-area overflow-hidden d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Welcome Intro Start -->
+                <div class="col-12 col-md-7">
+                    <div class="welcome-intro" *ngFor="let sectionItem of hero.sectionList">
+                        <h1>{{sectionItem.header}}</h1>
+                        <p class="my-4">{{sectionItem.statement1}}</p>
+                        <!-- Buttons -->
+                        <div class="button-group" *ngFor="let button of hero.buttons">
+                            <a href="{{button.url}}" class="btn btn-bordered">{{button.name}}</a>
+                            <a href="{{button.url}}" class="btn btn-bordered d-none d-sm-inline-block">{{button.name}}</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+</ng-container>
+
+
+
+<ng-container *ngIf="view =='edit'" >
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showPreview()">Preview Hero Section</button>
     </div>
-</section>
+    <section id="home" class="section welcome-area overflow-hidden d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Welcome Intro Start -->
+                <div class="col-12 col-md-7">
+                    <div class="welcome-intro" *ngFor="let sectionItem of hero.sectionList">
+                        <dx-text-box [(ngModel)]="sectionItem.header"></dx-text-box>
+                        <dx-text-area [(ngModel)]="sectionItem.statement1"></dx-text-area>
+                        <!-- Buttons -->
+                        <div class="button-group" *ngFor="let button of hero.buttons">
+                            <dx-text-box [(ngModel)]="button.url"></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.name"></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.url"></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.name"></dx-text-box>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</ng-container>

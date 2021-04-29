@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SectionList, Button } from '../components.model';
 import { Goals } from './goal.model';
 
@@ -7,6 +7,8 @@ import { Goals } from './goal.model';
   templateUrl: './goal.component.html'
 })
 export class GoalComponent implements OnInit {
+  @Input('view') view: string = "preview";
+
   goal: Goals = new Goals();
 
   constructor() { }
@@ -20,5 +22,13 @@ export class GoalComponent implements OnInit {
     
     this.goal.goalThumBUrl = "assets/img/about_thumb_2.jpg";
   }
+
+  showConfigure() {
+    this.view = 'edit';
+  }
+  showPreview() {
+    this.view = 'preview';
+  }
+
 
 }

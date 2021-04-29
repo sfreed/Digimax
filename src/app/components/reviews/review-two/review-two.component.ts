@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Button, SectionList } from '../../components.model';
 import { Review } from '../review.model';
 
@@ -7,6 +7,8 @@ import { Review } from '../review.model';
   templateUrl: './review-two.component.html'
 })
 export class ReviewTwoComponent implements OnInit {
+  @Input('view') view: string = "preview";
+
   review: Review = new Review();
 
   constructor() { }
@@ -17,6 +19,13 @@ export class ReviewTwoComponent implements OnInit {
 
     let button: Button = new Button();
     this.review.buttons.push(button);
+  }
+
+  showConfigure() {
+    this.view = 'edit';
+  }
+  showPreview() {
+    this.view = 'preview';
   }
 
 }

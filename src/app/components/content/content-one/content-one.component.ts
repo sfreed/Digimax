@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Button, SectionList } from '../../components.model';
 import { Content, ContentList} from '../content.model';
 
@@ -7,6 +7,8 @@ import { Content, ContentList} from '../content.model';
   templateUrl: './content-one.component.html'
 })
 export class ContentOneComponent implements OnInit {
+  @Input('view') view: string = "preview";
+
   content: Content = new Content();
 
   constructor() { }
@@ -21,6 +23,13 @@ export class ContentOneComponent implements OnInit {
     let buttons: Button = new Button();
     this.content.buttons.push(buttons);
 
+  }
+
+  showConfigure() {
+    this.view = 'edit';
+  }
+  showPreview() {
+    this.view = 'preview';
   }
 
 }

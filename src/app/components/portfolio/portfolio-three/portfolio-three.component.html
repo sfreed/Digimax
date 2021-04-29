@@ -1,162 +1,293 @@
-<section id="portfolio" class="portfolio-area bg-gray overflow-hidden ptb_100">
-    <div class="container">
-        <div class="row justify-content-center"  *ngFor="let marketing of portfolio.marketing">
-            <div class="col-12 col-sm-6 col-lg-4">
-                <!-- Single Case Studies -->
-                <div class="single-case-studies">
-                    <!-- Case Studies Thumb -->
-                    <a href="{{marketing.imgUrl}}">
-                        <img src="{{marketing.img}}" alt="">
-                    </a>
-                    <!-- Case Studies Overlay -->
-                    <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
-                        <!-- Overlay Text -->
-                        <span class="overlay-text text-center p-3">
-                            <h3 class="text-white mb-3">{{marketing.header}}</h3>
-                            <p class="text-white">{{marketing.statement}}</p>
-                        </span>
-                    </a>
+<ng-container *ngIf="view == 'preview'">
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showConfigure()">Configure Portfolio Section</button>
+    </div>  
+    <section id="portfolio" class="portfolio-area bg-gray overflow-hidden ptb_100">
+        <div class="container">
+            <div class="row justify-content-center"  *ngFor="let marketing of portfolio.marketing">
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <a href="{{marketing.imgUrl}}">
+                            <img src="{{marketing.img}}" alt="">
+                        </a>
+                        <!-- Case Studies Overlay -->
+                        <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
+                            <!-- Overlay Text -->
+                            <span class="overlay-text text-center p-3">
+                                <h3 class="text-white mb-3">{{marketing.header}}</h3>
+                                <p class="text-white">{{marketing.statement}}</p>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <a href="{{marketing.imgUrl}}">
+                            <img src="{{marketing.img}}" alt="">
+                        </a>
+                        <!-- Case Studies Overlay -->
+                        <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
+                            <!-- Overlay Text -->
+                            <span class="overlay-text text-center p-3">
+                                <h3 class="text-white mb-3">{{marketing.header}}</h3>
+                                <p class="text-white">{{marketing.statement}}</p>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <a href="{{marketing.imgUrl}}">
+                            <img src="{{marketing.img}}" alt="">
+                        </a>
+                        <!-- Case Studies Overlay -->
+                        <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
+                            <!-- Overlay Text -->
+                            <span class="overlay-text text-center p-3">
+                                <h3 class="text-white mb-3">{{marketing.header}}</h3>
+                                <p class="text-white">{{marketing.statement}}</p>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <a href="{{marketing.imgUrl}}">
+                            <img src="{{marketing.img}}" alt="">
+                        </a>
+                        <!-- Case Studies Overlay -->
+                        <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
+                            <!-- Overlay Text -->
+                            <span class="overlay-text text-center p-3">
+                                <h3 class="text-white mb-3">{{marketing.header}}</h3>
+                                <p class="text-white">{{marketing.statement}}</p>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <a href="{{marketing.imgUrl}}">
+                            <img src="{{marketing.img}}" alt="">
+                        </a>
+                        <!-- Case Studies Overlay -->
+                        <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
+                            <!-- Overlay Text -->
+                            <span class="overlay-text text-center p-3">
+                                <h3 class="text-white mb-3">{{marketing.header}}</h3>
+                                <p class="text-white">{{marketing.statement}}</p>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <a href="{{marketing.imgUrl}}">
+                            <img src="{{marketing.img}}" alt="">
+                        </a>
+                        <!-- Case Studies Overlay -->
+                        <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
+                            <!-- Overlay Text -->
+                            <span class="overlay-text text-center p-3">
+                                <h3 class="text-white mb-3">{{marketing.header}}</h3>
+                                <p class="text-white">{{marketing.statement}}</p>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <a href="{{marketing.imgUrl}}">
+                            <img src="{{marketing.img}}" alt="">
+                        </a>
+                        <!-- Case Studies Overlay -->
+                        <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
+                            <!-- Overlay Text -->
+                            <span class="overlay-text text-center p-3">
+                                <h3 class="text-white mb-3">{{marketing.header}}</h3>
+                                <p class="text-white">{{marketing.statement}}</p>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <a href="{{marketing.imgUrl}}">
+                            <img src="{{marketing.img}}" alt="">
+                        </a>
+                        <!-- Case Studies Overlay -->
+                        <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
+                            <!-- Overlay Text -->
+                            <span class="overlay-text text-center p-3">
+                                <h3 class="text-white mb-3">{{marketing.header}}</h3>
+                                <p class="text-white">{{marketing.statement}}</p>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <a href="{{marketing.imgUrl}}">
+                            <img src="{{marketing.img}}" alt="">
+                        </a>
+                        <!-- Case Studies Overlay -->
+                        <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
+                            <!-- Overlay Text -->
+                            <span class="overlay-text text-center p-3">
+                                <h3 class="text-white mb-3">{{marketing.header}}</h3>
+                                <p class="text-white">{{marketing.statement}}</p>
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <!-- Single Case Studies -->
-                <div class="single-case-studies">
-                    <!-- Case Studies Thumb -->
-                    <a href="{{marketing.imgUrl}}">
-                        <img src="{{marketing.img}}" alt="">
-                    </a>
-                    <!-- Case Studies Overlay -->
-                    <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
-                        <!-- Overlay Text -->
-                        <span class="overlay-text text-center p-3">
-                            <h3 class="text-white mb-3">{{marketing.header}}</h3>
-                            <p class="text-white">{{marketing.statement}}</p>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <!-- Single Case Studies -->
-                <div class="single-case-studies">
-                    <!-- Case Studies Thumb -->
-                    <a href="{{marketing.imgUrl}}">
-                        <img src="{{marketing.img}}" alt="">
-                    </a>
-                    <!-- Case Studies Overlay -->
-                    <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
-                        <!-- Overlay Text -->
-                        <span class="overlay-text text-center p-3">
-                            <h3 class="text-white mb-3">{{marketing.header}}</h3>
-                            <p class="text-white">{{marketing.statement}}</p>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <!-- Single Case Studies -->
-                <div class="single-case-studies">
-                    <!-- Case Studies Thumb -->
-                    <a href="{{marketing.imgUrl}}">
-                        <img src="{{marketing.img}}" alt="">
-                    </a>
-                    <!-- Case Studies Overlay -->
-                    <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
-                        <!-- Overlay Text -->
-                        <span class="overlay-text text-center p-3">
-                            <h3 class="text-white mb-3">{{marketing.header}}</h3>
-                            <p class="text-white">{{marketing.statement}}</p>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <!-- Single Case Studies -->
-                <div class="single-case-studies">
-                    <!-- Case Studies Thumb -->
-                    <a href="{{marketing.imgUrl}}">
-                        <img src="{{marketing.img}}" alt="">
-                    </a>
-                    <!-- Case Studies Overlay -->
-                    <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
-                        <!-- Overlay Text -->
-                        <span class="overlay-text text-center p-3">
-                            <h3 class="text-white mb-3">{{marketing.header}}</h3>
-                            <p class="text-white">{{marketing.statement}}</p>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <!-- Single Case Studies -->
-                <div class="single-case-studies">
-                    <!-- Case Studies Thumb -->
-                    <a href="{{marketing.imgUrl}}">
-                        <img src="{{marketing.img}}" alt="">
-                    </a>
-                    <!-- Case Studies Overlay -->
-                    <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
-                        <!-- Overlay Text -->
-                        <span class="overlay-text text-center p-3">
-                            <h3 class="text-white mb-3">{{marketing.header}}</h3>
-                            <p class="text-white">{{marketing.statement}}</p>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <!-- Single Case Studies -->
-                <div class="single-case-studies">
-                    <!-- Case Studies Thumb -->
-                    <a href="{{marketing.imgUrl}}">
-                        <img src="{{marketing.img}}" alt="">
-                    </a>
-                    <!-- Case Studies Overlay -->
-                    <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
-                        <!-- Overlay Text -->
-                        <span class="overlay-text text-center p-3">
-                            <h3 class="text-white mb-3">{{marketing.header}}</h3>
-                            <p class="text-white">{{marketing.statement}}</p>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <!-- Single Case Studies -->
-                <div class="single-case-studies">
-                    <!-- Case Studies Thumb -->
-                    <a href="{{marketing.imgUrl}}">
-                        <img src="{{marketing.img}}" alt="">
-                    </a>
-                    <!-- Case Studies Overlay -->
-                    <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
-                        <!-- Overlay Text -->
-                        <span class="overlay-text text-center p-3">
-                            <h3 class="text-white mb-3">{{marketing.header}}</h3>
-                            <p class="text-white">{{marketing.statement}}</p>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <!-- Single Case Studies -->
-                <div class="single-case-studies">
-                    <!-- Case Studies Thumb -->
-                    <a href="{{marketing.imgUrl}}">
-                        <img src="{{marketing.img}}" alt="">
-                    </a>
-                    <!-- Case Studies Overlay -->
-                    <a href="{{marketing.headerUrl}}" class="case-studies-overlay">
-                        <!-- Overlay Text -->
-                        <span class="overlay-text text-center p-3">
-                            <h3 class="text-white mb-3">{{marketing.header}}</h3>
-                            <p class="text-white">{{marketing.statement}}</p>
-                        </span>
-                    </a>
-                </div>
+            <div class="row justify-content-center"  *ngFor="let button of portfolio.buttons">
+                <a href="{{button.url}}" class="btn btn-bordered mt-4">{{button.name}}</a>
             </div>
         </div>
-        <div class="row justify-content-center"  *ngFor="let button of portfolio.buttons">
-            <a href="{{button.url}}" class="btn btn-bordered mt-4">{{button.name}}</a>
-        </div>
+    </section>
+</ng-container>
+
+
+
+
+<ng-container *ngIf="view =='edit'" >
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showPreview()">Preview Contact Section</button>
     </div>
-</section>
+    <section id="portfolio" class="portfolio-area bg-gray overflow-hidden ptb_100">
+        <div class="container">
+            <div class="row justify-content-center"  *ngFor="let marketing of portfolio.marketing">
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <dx-text-box  [(ngModel)]="marketing.img" placeholder="Image Url or Source"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.imgUrl" placeholder="A URL you may want to link to form the image"></dx-text-box>
+                        <!-- Case Studies Overlay -->
+                        <dx-text-box [(ngModel)]="marketing.headerUrl" placeholder="A URL you may want to link to form the header"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.header" placeholder="The Header of this box"></dx-text-box>
+                        <dx-text-area [(ngModel)]="marketing.statement" height="100" placeholder="The text area of this box"></dx-text-area>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <dx-text-box  [(ngModel)]="marketing.img" placeholder="Image Url or Source"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.imgUrl" placeholder="A URL you may want to link to form the image"></dx-text-box>
+                        <!-- Case Studies Overlay -->
+                        <dx-text-box [(ngModel)]="marketing.headerUrl" placeholder="A URL you may want to link to form the header"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.header" placeholder="The Header of this box"></dx-text-box>
+                        <dx-text-area [(ngModel)]="marketing.statement" height="100" placeholder="The text area of this box"></dx-text-area>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <dx-text-box  [(ngModel)]="marketing.img" placeholder="Image Url or Source"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.imgUrl" placeholder="A URL you may want to link to form the image"></dx-text-box>
+                        <!-- Case Studies Overlay -->
+                        <dx-text-box [(ngModel)]="marketing.headerUrl" placeholder="A URL you may want to link to form the header"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.header" placeholder="The Header of this box"></dx-text-box>
+                        <dx-text-area [(ngModel)]="marketing.statement" height="100" placeholder="The text area of this box"></dx-text-area>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <dx-text-box  [(ngModel)]="marketing.img" placeholder="Image Url or Source"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.imgUrl" placeholder="A URL you may want to link to form the image"></dx-text-box>
+                        <!-- Case Studies Overlay -->
+                        <dx-text-box [(ngModel)]="marketing.headerUrl" placeholder="A URL you may want to link to form the header"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.header" placeholder="The Header of this box"></dx-text-box>
+                        <dx-text-area [(ngModel)]="marketing.statement" height="100" placeholder="The text area of this box"></dx-text-area>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <dx-text-box  [(ngModel)]="marketing.img" placeholder="Image Url or Source"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.imgUrl" placeholder="A URL you may want to link to form the image"></dx-text-box>
+                        <!-- Case Studies Overlay -->
+                        <dx-text-box [(ngModel)]="marketing.headerUrl" placeholder="A URL you may want to link to form the header"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.header" placeholder="The Header of this box"></dx-text-box>
+                        <dx-text-area [(ngModel)]="marketing.statement" height="100" placeholder="The text area of this box"></dx-text-area>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <dx-text-box  [(ngModel)]="marketing.img" placeholder="Image Url or Source"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.imgUrl" placeholder="A URL you may want to link to form the image"></dx-text-box>
+                        <!-- Case Studies Overlay -->
+                        <dx-text-box [(ngModel)]="marketing.headerUrl" placeholder="A URL you may want to link to form the header"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.header" placeholder="The Header of this box"></dx-text-box>
+                        <dx-text-area [(ngModel)]="marketing.statement" height="100" placeholder="The text area of this box"></dx-text-area>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <dx-text-box  [(ngModel)]="marketing.img" placeholder="Image Url or Source"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.imgUrl" placeholder="A URL you may want to link to form the image"></dx-text-box>
+                        <!-- Case Studies Overlay -->
+                        <dx-text-box [(ngModel)]="marketing.headerUrl" placeholder="A URL you may want to link to form the header"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.header" placeholder="The Header of this box"></dx-text-box>
+                        <dx-text-area [(ngModel)]="marketing.statement" height="100" placeholder="The text area of this box"></dx-text-area>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <dx-text-box  [(ngModel)]="marketing.img" placeholder="Image Url or Source"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.imgUrl" placeholder="A URL you may want to link to form the image"></dx-text-box>
+                        <!-- Case Studies Overlay -->
+                        <dx-text-box [(ngModel)]="marketing.headerUrl" placeholder="A URL you may want to link to form the header"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.header" placeholder="The Header of this box"></dx-text-box>
+                        <dx-text-area [(ngModel)]="marketing.statement" height="100" placeholder="The text area of this box"></dx-text-area>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <!-- Single Case Studies -->
+                    <div class="single-case-studies">
+                        <!-- Case Studies Thumb -->
+                        <dx-text-box  [(ngModel)]="marketing.img" placeholder="Image Url or Source"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.imgUrl" placeholder="A URL you may want to link to form the image"></dx-text-box>
+                        <!-- Case Studies Overlay -->
+                        <dx-text-box [(ngModel)]="marketing.headerUrl" placeholder="A URL you may want to link to form the header"></dx-text-box>
+                        <dx-text-box [(ngModel)]="marketing.header" placeholder="The Header of this box"></dx-text-box>
+                        <dx-text-area [(ngModel)]="marketing.statement" height="100" placeholder="The text area of this box"></dx-text-area>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center"  *ngFor="let button of portfolio.buttons">
+                <a href="{{button.url}}" class="btn btn-bordered mt-4">{{button.name}}</a>
+            </div>
+        </div>
+    </section>
+</ng-container>

@@ -1,15 +1,46 @@
-<section class="section cta-area bg-overlay ptb_100">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-10">
-                <!-- Section Heading -->
-                <div class="section-heading text-center m-0" *ngFor="let sectionItem of cta.sectionList">
-                    <h2 class="text-white">{{sectionItem.header}}</h2>
-                    <p class="text-white d-none d-sm-block mt-4">{{sectionItem.statement1}}</p>
-                    <p class="text-white d-block d-sm-none mt-4">{{sectionItem.statementMobile}}</p>
-                    <a *ngFor="let button of cta.buttons" href="{{button.url}}" class="btn btn-bordered-white mt-4">{{button.name}}</a>
+<ng-container *ngIf="view == 'preview'">
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showConfigure()">Configure CTA Section</button>
+    </div> 
+    <section class="section cta-area bg-overlay ptb_100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center m-0" *ngFor="let sectionItem of cta.sectionList">
+                        <h2 class="text-white">{{sectionItem.header}}</h2>
+                        <p class="text-white d-none d-sm-block mt-4">{{sectionItem.statement1}}</p>
+                        <p class="text-white d-block d-sm-none mt-4">{{sectionItem.statementMobile}}</p>
+                        <a *ngFor="let button of cta.buttons" href="{{button.url}}" class="btn btn-bordered-white mt-4">{{button.name}}</a>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+</ng-container>
+
+
+<ng-container *ngIf="view =='edit'" >
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showPreview()">Preview CTA Section</button>
     </div>
-</section>
+    <section class="section cta-area bg-overlay ptb_100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center m-0" *ngFor="let sectionItem of cta.sectionList">
+                        <dx-text-box [(ngModel)]="sectionItem.header" ></dx-text-box>
+                        <dx-text-area [(ngModel)]="sectionItem.statement1" [height]="100"></dx-text-area>
+                        <dx-text-box [(ngModel)]="sectionItem.statementMobile" ></dx-text-box>
+                
+                        <a *ngFor="let button of cta.buttons" class="btn btn-bordered-white mt-4">
+                            <dx-text-box [(ngModel)]="button.name"></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.url"></dx-text-box>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</ng-container>

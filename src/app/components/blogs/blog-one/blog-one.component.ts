@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Button } from '../../components.model';
 import { Blog } from '../blog.model';
 
@@ -7,6 +7,8 @@ import { Blog } from '../blog.model';
   templateUrl: './blog-one.component.html'
 })
 export class BlogOneComponent implements OnInit {
+  @Input('view') view: string = "preview";
+
   blog: Blog = new Blog();
 
   constructor() { }
@@ -15,5 +17,14 @@ export class BlogOneComponent implements OnInit {
     let button: Button = new Button();
     this.blog.buttons.push(button);
   }
+
+  
+  showConfigure() {
+    this.view = 'edit';
+  }
+  showPreview() {
+    this.view = 'preview';
+  }
+
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Service } from '../service.model';
 import { Button, SectionList } from '../../components.model';
 
@@ -7,6 +7,8 @@ import { Button, SectionList } from '../../components.model';
   templateUrl: './service-three.component.html'
 })
 export class ServiceThreeComponent implements OnInit {
+  @Input('view') view: string = "preview";
+  
   service: Service = new Service();
 
   constructor() { }
@@ -17,6 +19,13 @@ export class ServiceThreeComponent implements OnInit {
 
     let buttons: Button = new Button();
     this.service.buttons.push(buttons);
+  }
+  
+  showConfigure() {
+    this.view = 'edit';
+  }
+  showPreview() {
+    this.view = 'preview';
   }
 
 }

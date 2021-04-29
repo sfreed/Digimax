@@ -1,35 +1,78 @@
-<section class="section about-area ptb_100">
-    <div class="container">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-12 col-lg-6">
-                <!-- About Thumb -->
-                <div class="about-thumb text-center">
-                    <img src="{{aboutUs.aboutThumbUrl}}" alt="">
+<ng-container *ngIf="view == 'preview'">
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showConfigure()">Configure About Us Section</button>
+    </div>  
+   <section class="section about-area ptb_100">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-12 col-lg-6">
+                    <!-- About Thumb -->
+                    <div class="about-thumb text-center">
+                        <img src="{{aboutUs.aboutThumbUrl}}" alt="">
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <!-- About Content -->
-                <div class="about-content section-heading text-center text-lg-left pl-md-4 mt-5 mt-lg-0 mb-0" *ngFor="let sectionList of aboutUs.sectionList">
-                    <h2 class="mb-3">{{sectionList.header}}</h2>
-                    <p>{{sectionList.statement1}}</p><br>
-                    <p>{{sectionList.statement2}}</p>
-                    <!-- Counter Area -->
-                    <div class="couter-area mt-5">
-                        <!-- Single Counter -->
-                        <div class="single-counter d-block d-md-inline-block m-4 m-md-2" *ngFor="let counterList of aboutUs.counterList">
-                            <div class="counter-inner">
-                                <!-- Counter Item -->
-                                <div class="counter-item d-inline-block mb-3">
-                                    <span class="counter color-1 fw-7">{{counterList.number}}</span><span class="color-1 fw-7">+</span>
+                <div class="col-12 col-lg-6">
+                    <!-- About Content -->
+                    <div class="about-content section-heading text-center text-lg-left pl-md-4 mt-5 mt-lg-0 mb-0" *ngFor="let sectionList of aboutUs.sectionList">
+                        <h2 class="mb-3">{{sectionList.header}}</h2>
+                        <p>{{sectionList.statement1}}</p><br>
+                        <p>{{sectionList.statement2}}</p>
+                        <!-- Counter Area -->
+                        <div class="couter-area mt-5">
+                            <!-- Single Counter -->
+                            <div class="single-counter d-block d-md-inline-block m-4 m-md-2" *ngFor="let counterList of aboutUs.counterList">
+                                <div class="counter-inner">
+                                    <!-- Counter Item -->
+                                    <div class="counter-item d-inline-block mb-3">
+                                        <span class="counter color-1 fw-7">{{counterList.number}}</span><span class="color-1 fw-7">+</span>
+                                    </div>
                                 </div>
+                                <h4 class="text-uppercase fw-7">{{counterList.text}}</h4>
                             </div>
-                            <h4 class="text-uppercase fw-7">{{counterList.text}}</h4>
+                            <!-- multiple of these ^ counters were here before -->
+                    
                         </div>
-                        <!-- multiple of these ^ counters were here before -->
-                
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+</ng-container>
+
+
+
+
+<ng-container *ngIf="view =='edit'" >
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showPreview()">Preview About Us Section</button>
     </div>
-</section>
+    <section class="section about-area ptb_100">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-12 col-lg-6">
+                    <!-- About Thumb -->
+                    <div class="about-thumb text-center">
+                        <dx-text-box [(ngModel)]="aboutUs.aboutThumbUrl" ></dx-text-box>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <!-- About Content -->
+                    <div class="about-content section-heading text-center text-lg-left pl-md-4 mt-5 mt-lg-0 mb-0" *ngFor="let sectionList of aboutUs.sectionList">
+                        <dx-text-box [(ngModel)]="sectionList.header" ></dx-text-box>
+                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100"></dx-text-area>
+                        <dx-text-area [(ngModel)]="sectionList.statement2" [height]="100"></dx-text-area>
+                        <!-- Counter Area -->
+                        <div class="couter-area mt-5">
+                            <!-- Single Counter -->
+                            <div class="single-counter d-block d-md-inline-block m-4 m-md-2" *ngFor="let counterList of aboutUs.counterList">
+                                <dx-text-box [(ngModel)]="counterList.text" ></dx-text-box>
+                                <dx-text-box [(ngModel)]="counterList.number" ></dx-text-box>
+                            </div>
+                            <!-- multiple of these ^ counters were here before -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</ng-container>

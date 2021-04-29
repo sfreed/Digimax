@@ -1,256 +1,460 @@
-<section id="blog" class="section blog-area ptb_100">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-3">
-                <aside class="sidebar mb-5 mb-lg-0">
-                    <!-- Single Widget -->
-                    <div class="single-widget">
-                        <!-- Search Widget -->
-                        <div class="widget-content search-widget">
-                            <form action="#">
-                                <input type="text" placeholder="Enter your keywords">
-                            </form>
+<ng-container *ngIf="view == 'preview'">
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showConfigure()">Configure Blog Section</button>
+    </div>  
+    <section id="blog" class="section blog-area ptb_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-3">
+                    <aside class="sidebar mb-5 mb-lg-0">
+                        <!-- Single Widget -->
+                        <div class="single-widget">
+                            <!-- Search Widget -->
+                            <div class="widget-content search-widget">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter your keywords">
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Single Widget -->
-                    <div class="single-widget">
-                        <!-- Category Widget -->
-                        <div class="widget catagory-widget">
-                            <h5 class="text-uppercase d-block py-3">Categories</h5>
-                            <!-- Category Widget Content -->
-                            <div class="widget-content">
-                                <!-- Category Widget Items -->
-                                <ul class="widget-items"  *ngFor="let category of blog.categories">
-                                    <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
-                                    <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
-                                    <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
-                                    <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
-                                    <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
-                                    <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
+                        <!-- Single Widget -->
+                        <div class="single-widget">
+                            <!-- Category Widget -->
+                            <div class="widget catagory-widget">
+                                <h5 class="text-uppercase d-block py-3">Categories</h5>
+                                <!-- Category Widget Content -->
+                                <div class="widget-content">
+                                    <!-- Category Widget Items -->
+                                    <ul class="widget-items"  *ngFor="let category of blog.categories">
+                                        <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
+                                        <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
+                                        <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
+                                        <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
+                                        <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
+                                        <li><a href="{{category.url}}" class="d-flex py-3"><span>{{category.name}}</span><span class="ml-auto">({{category.number}})</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Widget -->
+                        <div class="single-widget">
+                            <!-- Post Widget -->
+                            <div class="widget post-widget">
+                                <h5 class="text-uppercase d-block py-3">Popular Post</h5>
+                                <!-- Post Widget Content -->
+                                <div class="widget-content">
+                                    <!-- Post Widget Items -->
+                                    <ul class="widget-items"  *ngFor="let popular of blog.popular">
+                                        <li>
+                                            <a href="{{popular.url}}" class="single-post media py-3">
+                                                <!-- Post Thumb -->
+                                                <div class="post-thumb avatar-lg h-100 d-flex align-self-center">
+                                                    <img src="{{popular.img}}" alt="">
+                                                </div>
+                                                <div class="post-content media-body ml-3 py-2">
+                                                    <p class="post-date mb-2">{{popular.date}}</p>
+                                                    <h6>{{popular.title}}</h6>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{popular.url}}" class="single-post media py-3">
+                                                <!-- Post Thumb -->
+                                                <div class="post-thumb avatar-lg h-100 d-flex align-self-center">
+                                                    <img src="{{popular.img}}" alt="">
+                                                </div>
+                                                <div class="post-content media-body ml-3 py-2">
+                                                    <p class="post-date mb-2">{{popular.date}}</p>
+                                                    <h6>{{popular.title}}</h6>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{popular.url}}" class="single-post media py-3">
+                                                <!-- Post Thumb -->
+                                                <div class="post-thumb avatar-lg h-100 d-flex align-self-center">
+                                                    <img src="{{popular.img}}" alt="">
+                                                </div>
+                                                <div class="post-content media-body ml-3 py-2">
+                                                    <p class="post-date mb-2">{{popular.date}}</p>
+                                                    <h6>{{popular.title}}</h6>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{popular.url}}" class="single-post media py-3">
+                                                <!-- Post Thumb -->
+                                                <div class="post-thumb avatar-lg h-100 d-flex align-self-center">
+                                                    <img src="{{popular.img}}" alt="">
+                                                </div>
+                                                <div class="post-content media-body ml-3 py-2">
+                                                    <p class="post-date mb-2">{{popular.date}}</p>
+                                                    <h6>{{popular.title}}</h6>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Widget -->
+                        <div class="single-widget">
+                            <!-- Tags Widget -->
+                            <div class="widget tags-widget">
+                                <h5 class="text-uppercase d-block py-3">Popular Tags</h5>
+                                <!-- Tags Widget Content -->
+                                <div class="widget-content">
+                                    <!-- Tags Widget Items -->
+                                    <div class="widget-content tags-widget-items pt-2"  *ngFor="let popular of blog.popular">
+                                        <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                        <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                        <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                        <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                        <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                        <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                        <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                        <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                        <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                        <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                        <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                        <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                <div class="col-12 col-lg-9">
+                    <!-- Single Blog Details -->
+                    <article class="single-blog-details">
+                        <!-- Blog Thumb -->
+                        <div class="blog-thumb">
+                            <a href="{{blog.url}}"><img src="{{blog.img}}" alt=""></a>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="blog-content digimax-blog p-3">
+                            <!-- Meta Info -->
+                            <div class="meta-info d-flex flex-wrap align-items-center py-2">
+                                <ul>
+                                    <li class="d-inline-block p-2">By <a href="{{blog.url}}">{{blog.name}}</a></li>
+                                    <li class="d-none d-md-inline-block p-2"><a href="{{blog.url}}">{{blog.date}}</a></li>
+                                    <li class="d-inline-block p-2"><a href="#">{{blog.commentsNum}} Comments</a></li>
                                 </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Widget -->
-                    <div class="single-widget">
-                        <!-- Post Widget -->
-                        <div class="widget post-widget">
-                            <h5 class="text-uppercase d-block py-3">Popular Post</h5>
-                            <!-- Post Widget Content -->
-                            <div class="widget-content">
-                                <!-- Post Widget Items -->
-                                <ul class="widget-items"  *ngFor="let popular of blog.popular">
-                                    <li>
-                                        <a href="{{popular.url}}" class="single-post media py-3">
-                                            <!-- Post Thumb -->
-                                            <div class="post-thumb avatar-lg h-100 d-flex align-self-center">
-                                                <img src="{{popular.img}}" alt="">
-                                            </div>
-                                            <div class="post-content media-body ml-3 py-2">
-                                                <p class="post-date mb-2">{{popular.date}}</p>
-                                                <h6>{{popular.title}}</h6>
-                                            </div>
+                                <!-- Blog Share -->
+                                <div class="blog-share ml-auto d-none d-sm-block">
+                                    <!-- Social Icons -->
+                                    <div class="social-icons d-flex justify-content-center">
+                                        <a class="bg-white facebook" href="{{blog.facebookUrl}}">
+                                            <i class="fab fa-facebook-f"></i>
+                                            <i class="fab fa-facebook-f"></i>
                                         </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{popular.url}}" class="single-post media py-3">
-                                            <!-- Post Thumb -->
-                                            <div class="post-thumb avatar-lg h-100 d-flex align-self-center">
-                                                <img src="{{popular.img}}" alt="">
-                                            </div>
-                                            <div class="post-content media-body ml-3 py-2">
-                                                <p class="post-date mb-2">{{popular.date}}</p>
-                                                <h6>{{popular.title}}</h6>
-                                            </div>
+                                        <a class="bg-white twitter" href="{{blog.twitterUrl}}">
+                                            <i class="fab fa-twitter"></i>
+                                            <i class="fab fa-twitter"></i>
                                         </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{popular.url}}" class="single-post media py-3">
-                                            <!-- Post Thumb -->
-                                            <div class="post-thumb avatar-lg h-100 d-flex align-self-center">
-                                                <img src="{{popular.img}}" alt="">
-                                            </div>
-                                            <div class="post-content media-body ml-3 py-2">
-                                                <p class="post-date mb-2">{{popular.date}}</p>
-                                                <h6>{{popular.title}}</h6>
-                                            </div>
+                                        <a class="bg-white google-plus" href="{{blog.googleUrl}}">
+                                            <i class="fab fa-google-plus-g"></i>
+                                            <i class="fab fa-google-plus-g"></i>
                                         </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{popular.url}}" class="single-post media py-3">
-                                            <!-- Post Thumb -->
-                                            <div class="post-thumb avatar-lg h-100 d-flex align-self-center">
-                                                <img src="{{popular.img}}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Blog Details -->
+                            <div class="blog-details">
+                                <h3 class="blog-title py-3"><a href="{{blog.url}}">{{blog.title}}</a></h3>
+                                <p class="d-none d-sm-block">{{blog.statement}}</p>
+                                <p class="d-block d-sm-none">{{blog.statementMobile}}</p>
+                                <blockquote class="blockquote px-4 py-3 my-3 ml-4">
+                                    <p class="font-italic d-none d-sm-block">{{blog.blockquote}}</p>
+                                    <p class="font-italic d-block d-sm-none">{{blog.blockquoteMobile}}</p>
+                                </blockquote>
+                                <p class="d-none d-sm-block">{{blog.statement}}</p>
+                                <p class="d-block d-sm-none">{{blog.statementMobile}}</p>
+                            </div>
+                        </div>
+                        <!-- Blog Comments -->
+                        <div class="blog-comments p-3">
+                            <!-- Admin -->
+                            <div class="admin media py-4">
+                                <!-- Admin Thumb -->
+                                <div class="admin-thumb avatar-lg">
+                                    <img class="rounded-circle" src="assets/img/avatar_1.png" alt="">
+                                </div>
+                                <!-- Admin Content -->
+                                <div class="admin-content media-body pl-3 pl-sm-4">
+                                    <h4 class="admin-name mb-2"><a href="#">Junaid Hasan</a></h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo eius nam facere enim, voluptas incidunt officiis molestiae, nostrum dolor? Fugit.</p>
+                                </div>
+                            </div>
+                            <!-- Comments -->
+                            <div class="comments mt-4 mb-3">
+                                <!-- Comments Title -->
+                                <h3 class="comments-title text-uppercase text-left text-lg-right mb-3">Recent Comments</h3>
+                                <!-- Single Comments -->
+                                <div class="single-comments media p-4">
+                                    <!-- Comments Thumb -->
+                                    <div class="comments-thumb avatar-lg">
+                                        <img class="rounded-circle" src="assets/img/avatar_2.png" alt="">
+                                    </div>
+                                    <!-- Comments Content -->
+                                    <div class="comments-content media-body pl-3">
+                                        <h5 class="d-flex mb-2">
+                                            <a href="#">Jassica William</a>
+                                            <a href="#" class="ml-auto">Reply</a>
+                                        </h5>
+                                        <p class="d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere optio ipsum maiores mollitia quisquam.</p>
+                                        <p class="d-block d-lg-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <!-- Single Comments -->
+                                <div class="single-comments media p-4">
+                                    <!-- Comments Thumb -->
+                                    <div class="comments-thumb avatar-lg">
+                                        <img class="rounded-circle" src="assets/img/avatar_3.png" alt="">
+                                    </div>
+                                    <!-- Comments Content -->
+                                    <div class="comments-content media-body pl-3">
+                                        <h5 class="d-flex mb-2">
+                                            <a href="#">Md. Arham</a>
+                                            <a href="#" class="ml-auto">Reply</a>
+                                        </h5>
+                                        <p class="d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere optio ipsum maiores mollitia quisquam.</p>
+                                        <p class="d-block d-lg-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Blog Contact -->
+                        <div class="blog-contact p-3">
+                            <!-- Contact Title -->
+                            <h3 class="comments-title text-uppercase text-left text-lg-right mb-3">Post your Comments</h3>
+                            <!-- Comment Box -->
+                            <div class="contact-box comment-box">
+                                <form method="POST" action="#">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="name" placeholder="Name" required="required">
                                             </div>
-                                            <div class="post-content media-body ml-3 py-2">
-                                                <p class="post-date mb-2">{{popular.date}}</p>
-                                                <h6>{{popular.title}}</h6>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" name="email" placeholder="Email" required="required">
                                             </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Widget -->
-                    <div class="single-widget">
-                        <!-- Tags Widget -->
-                        <div class="widget tags-widget">
-                            <h5 class="text-uppercase d-block py-3">Popular Tags</h5>
-                            <!-- Tags Widget Content -->
-                            <div class="widget-content">
-                                <!-- Tags Widget Items -->
-                                <div class="widget-content tags-widget-items pt-2"  *ngFor="let popular of blog.popular">
-                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
-                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
-                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
-                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
-                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
-                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
-                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
-                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
-                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
-                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
-                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
-                                    <a href="{{popular.tagUrl}}" class="d-inline-block mt-2 mr-1 px-2 py-1">{{popular.tagName}}</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-            <div class="col-12 col-lg-9">
-                <!-- Single Blog Details -->
-                <article class="single-blog-details">
-                    <!-- Blog Thumb -->
-                    <div class="blog-thumb">
-                        <a href="{{blog.url}}"><img src="{{blog.img}}" alt=""></a>
-                    </div>
-                    <!-- Blog Content -->
-                    <div class="blog-content digimax-blog p-3">
-                        <!-- Meta Info -->
-                        <div class="meta-info d-flex flex-wrap align-items-center py-2">
-                            <ul>
-                                <li class="d-inline-block p-2">By <a href="{{blog.url}}">{{blog.name}}</a></li>
-                                <li class="d-none d-md-inline-block p-2"><a href="{{blog.url}}">{{blog.date}}</a></li>
-                                <li class="d-inline-block p-2"><a href="#">{{blog.commentsNum}} Comments</a></li>
-                            </ul>
-                            <!-- Blog Share -->
-                            <div class="blog-share ml-auto d-none d-sm-block">
-                                <!-- Social Icons -->
-                                <div class="social-icons d-flex justify-content-center">
-                                    <a class="bg-white facebook" href="{{blog.facebookUrl}}">
-                                        <i class="fab fa-facebook-f"></i>
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <a class="bg-white twitter" href="{{blog.twitterUrl}}">
-                                        <i class="fab fa-twitter"></i>
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a class="bg-white google-plus" href="{{blog.googleUrl}}">
-                                        <i class="fab fa-google-plus-g"></i>
-                                        <i class="fab fa-google-plus-g"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Blog Details -->
-                        <div class="blog-details">
-                            <h3 class="blog-title py-3"><a href="{{blog.url}}">{{blog.title}}</a></h3>
-                            <p class="d-none d-sm-block">{{blog.statement}}</p>
-                            <p class="d-block d-sm-none">{{blog.statementMobile}}</p>
-                            <blockquote class="blockquote px-4 py-3 my-3 ml-4">
-                                <p class="font-italic d-none d-sm-block">{{blog.blockquote}}</p>
-                                <p class="font-italic d-block d-sm-none">{{blog.blockquoteMobile}}</p>
-                            </blockquote>
-                            <p class="d-none d-sm-block">{{blog.statement}}</p>
-                            <p class="d-block d-sm-none">{{blog.statementMobile}}</p>
-                        </div>
-                    </div>
-                    <!-- Blog Comments -->
-                    <div class="blog-comments p-3">
-                        <!-- Admin -->
-                        <div class="admin media py-4">
-                            <!-- Admin Thumb -->
-                            <div class="admin-thumb avatar-lg">
-                                <img class="rounded-circle" src="assets/img/avatar_1.png" alt="">
-                            </div>
-                            <!-- Admin Content -->
-                            <div class="admin-content media-body pl-3 pl-sm-4">
-                                <h4 class="admin-name mb-2"><a href="#">Junaid Hasan</a></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo eius nam facere enim, voluptas incidunt officiis molestiae, nostrum dolor? Fugit.</p>
-                            </div>
-                        </div>
-                        <!-- Comments -->
-                        <div class="comments mt-4 mb-3">
-                            <!-- Comments Title -->
-                            <h3 class="comments-title text-uppercase text-left text-lg-right mb-3">Recent Comments</h3>
-                            <!-- Single Comments -->
-                            <div class="single-comments media p-4">
-                                <!-- Comments Thumb -->
-                                <div class="comments-thumb avatar-lg">
-                                    <img class="rounded-circle" src="assets/img/avatar_2.png" alt="">
-                                </div>
-                                <!-- Comments Content -->
-                                <div class="comments-content media-body pl-3">
-                                    <h5 class="d-flex mb-2">
-                                        <a href="#">Jassica William</a>
-                                        <a href="#" class="ml-auto">Reply</a>
-                                    </h5>
-                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere optio ipsum maiores mollitia quisquam.</p>
-                                    <p class="d-block d-lg-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                </div>
-                            </div>
-                            <!-- Single Comments -->
-                            <div class="single-comments media p-4">
-                                <!-- Comments Thumb -->
-                                <div class="comments-thumb avatar-lg">
-                                    <img class="rounded-circle" src="assets/img/avatar_3.png" alt="">
-                                </div>
-                                <!-- Comments Content -->
-                                <div class="comments-content media-body pl-3">
-                                    <h5 class="d-flex mb-2">
-                                        <a href="#">Md. Arham</a>
-                                        <a href="#" class="ml-auto">Reply</a>
-                                    </h5>
-                                    <p class="d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere optio ipsum maiores mollitia quisquam.</p>
-                                    <p class="d-block d-lg-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Blog Contact -->
-                    <div class="blog-contact p-3">
-                        <!-- Contact Title -->
-                        <h3 class="comments-title text-uppercase text-left text-lg-right mb-3">Post your Comments</h3>
-                        <!-- Comment Box -->
-                        <div class="contact-box comment-box">
-                            <form method="POST" action="#">
-                                <div class="row">
-                                    <div class="col-12 col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="name" placeholder="Name" required="required">
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <textarea class="form-control" name="message" placeholder="Message" required="required"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-bordered mt-3" type="submit">Send Message</button>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" name="email" placeholder="Email" required="required">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <textarea class="form-control" name="message" placeholder="Message" required="required"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button class="btn btn-bordered mt-3" type="submit">Send Message</button>
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
+                </div>
             </div>
         </div>
+    </section>
+</ng-container>
+
+
+
+<ng-container *ngIf="view =='edit'" >
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showPreview()">Preview Blog Section</button>
     </div>
-</section>
+    <section id="blog" class="section blog-area ptb_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-3">
+                    <aside class="sidebar mb-5 mb-lg-0">
+                        <!-- Single Widget -->
+                        <div class="single-widget">
+                            <!-- Search Widget -->
+                            <div class="widget-content search-widget">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter your keywords">
+                                </form>
+                            </div>
+                        </div>
+                        <!-- Single Widget -->
+                        <div class="single-widget">
+                            <!-- Category Widget -->
+                            <div class="widget catagory-widget">
+                                <h5 class="text-uppercase d-block py-3">Categories</h5>
+                                <!-- Category Widget Content -->
+                                <div class="widget-content">
+                                    <!-- Category Widget Items -->
+                                    <ul class="widget-items"  *ngFor="let category of blog.categories">
+                                        <dx-text-box [(ngModel)]="category.url" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="category.name" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="category.number" ></dx-text-box>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Widget -->
+                        <div class="single-widget">
+                            <!-- Post Widget -->
+                            <div class="widget post-widget">
+                                <h5 class="text-uppercase d-block py-3">Popular Post</h5>
+                                <!-- Post Widget Content -->
+                                <div class="widget-content">
+                                    <!-- Post Widget Items -->
+                                    <ul class="widget-items"  *ngFor="let popular of blog.popular">
+                                        <dx-text-box [(ngModel)]="popular.url" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="popular.img" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="popular.date" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="popular.title" ></dx-text-box>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Widget -->
+                        <div class="single-widget">
+                            <!-- Tags Widget -->
+                            <div class="widget tags-widget">
+                                <h5 class="text-uppercase d-block py-3">Popular Tags</h5>
+                                <!-- Tags Widget Content -->
+                                <div class="widget-content">
+                                    <!-- Tags Widget Items -->
+                                    <div class="widget-content tags-widget-items pt-2"  *ngFor="let popular of blog.popular">
+                                        <dx-text-box [(ngModel)]="popular.tagUrl" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="popular.tagName" ></dx-text-box>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                <div class="col-12 col-lg-9">
+                    <!-- Single Blog Details -->
+                    <article class="single-blog-details">
+                        <!-- Blog Thumb -->
+                        <div class="blog-thumb">
+                            <dx-text-box [(ngModel)]="blog.url" ></dx-text-box>
+                            <dx-text-box [(ngModel)]="blog.img" ></dx-text-box>
+                        </div>
+                        <!-- Blog Content -->
+                        <div class="blog-content digimax-blog p-3">
+                            <!-- Meta Info -->
+                            <div class="meta-info d-flex flex-wrap align-items-center py-2">
+                                <ul>
+                                    <dx-text-box [(ngModel)]="blog.name" ></dx-text-box>
+                                    <dx-text-box [(ngModel)]="blog.date" ></dx-text-box>
+                                    <li class="d-inline-block p-2"><a href="#">{{blog.commentsNum}} Comments</a></li>
+                                </ul>
+                                <!-- Blog Share -->
+                                <div class="blog-share ml-auto d-none d-sm-block">
+                                    <!-- Social Icons -->
+                                    <div class="social-icons d-flex justify-content-center">
+                                        <dx-text-box [(ngModel)]="blog.facebookUrl" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="blog.twitterUrl" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="blog.googleUrl" ></dx-text-box>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Blog Details -->
+                            <div class="blog-details">
+                                <dx-text-box [(ngModel)]="blog.title" ></dx-text-box>
+                                <dx-text-area [(ngModel)]="blog.statement" height="100"></dx-text-area>
+                                <dx-text-box [(ngModel)]="blog.statementMobile" ></dx-text-box>
+                                <blockquote class="blockquote px-4 py-3 my-3 ml-4">
+                                    <dx-text-area [ngModel]="blog.blockquote" height="100"></dx-text-area>
+                                    <dx-text-box [ngModel]="blog.blockquoteMobile" ></dx-text-box>
+                                </blockquote>
+                                <dx-text-area [(ngModel)]="blog.statement" height="100"></dx-text-area>
+                                <dx-text-box [(ngModel)]="blog.statementMobile" ></dx-text-box>
+                            </div>
+                        </div>
+                        <!-- Blog Comments -->
+                        <div class="blog-comments p-3">
+                            <!-- Admin -->
+                            <div class="admin media py-4">
+                                <!-- Admin Thumb -->
+                                <div class="admin-thumb avatar-lg">
+                                    <img class="rounded-circle" src="assets/img/avatar_1.png" alt="">
+                                </div>
+                                <!-- Admin Content -->
+                                <div class="admin-content media-body pl-3 pl-sm-4">
+                                    <h4 class="admin-name mb-2"><a href="#">Junaid Hasan</a></h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo eius nam facere enim, voluptas incidunt officiis molestiae, nostrum dolor? Fugit.</p>
+                                </div>
+                            </div>
+                            <!-- Comments -->
+                            <div class="comments mt-4 mb-3">
+                                <!-- Comments Title -->
+                                <h3 class="comments-title text-uppercase text-left text-lg-right mb-3">Recent Comments</h3>
+                                <!-- Single Comments -->
+                                <div class="single-comments media p-4">
+                                    <!-- Comments Thumb -->
+                                    <div class="comments-thumb avatar-lg">
+                                        <img class="rounded-circle" src="assets/img/avatar_2.png" alt="">
+                                    </div>
+                                    <!-- Comments Content -->
+                                    <div class="comments-content media-body pl-3">
+                                        <h5 class="d-flex mb-2">
+                                            <a href="#">Jassica William</a>
+                                            <a href="#" class="ml-auto">Reply</a>
+                                        </h5>
+                                        <p class="d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere optio ipsum maiores mollitia quisquam.</p>
+                                        <p class="d-block d-lg-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <!-- Single Comments -->
+                                <div class="single-comments media p-4">
+                                    <!-- Comments Thumb -->
+                                    <div class="comments-thumb avatar-lg">
+                                        <img class="rounded-circle" src="assets/img/avatar_3.png" alt="">
+                                    </div>
+                                    <!-- Comments Content -->
+                                    <div class="comments-content media-body pl-3">
+                                        <h5 class="d-flex mb-2">
+                                            <a href="#">Md. Arham</a>
+                                            <a href="#" class="ml-auto">Reply</a>
+                                        </h5>
+                                        <p class="d-none d-lg-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere optio ipsum maiores mollitia quisquam.</p>
+                                        <p class="d-block d-lg-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Blog Contact -->
+                        <div class="blog-contact p-3">
+                            <!-- Contact Title -->
+                            <h3 class="comments-title text-uppercase text-left text-lg-right mb-3">Post your Comments</h3>
+                            <!-- Comment Box -->
+                            <div class="contact-box comment-box">
+                                <form method="POST" action="#">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="name" placeholder="Name" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <textarea class="form-control" name="message" placeholder="Message" required="required"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-bordered mt-3" type="submit">Send Message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+</ng-container>

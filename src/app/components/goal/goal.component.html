@@ -1,21 +1,58 @@
-<section class="section our-goal ptb_100">
-    <div class="container">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-12 col-lg-6">
-                <!-- Goal Content -->
-                <div class="goal-content section-heading text-center text-lg-left pr-md-4 mb-0" *ngFor="let sectionList of goal.sectionList">
-                    <h2 class="mb-3">{{sectionList.header}}</h2>
-                    <p>{{sectionList.statement1}}</p><br>
-                    <p>{{sectionList.statement2}}</p>
-                    <a *ngFor="let button of goal.buttons" href="{{button.url}}" class="btn btn-bordered mt-4">{{button.name}}</a>
+<ng-container *ngIf="view == 'preview'">
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showConfigure()">Configure Goal Section</button>
+    </div>    
+    <section class="section our-goal ptb_100">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-12 col-lg-6">
+                    <!-- Goal Content -->
+                    <div class="goal-content section-heading text-center text-lg-left pr-md-4 mb-0" *ngFor="let sectionList of goal.sectionList">
+                        <h2 class="mb-3">{{sectionList.header}}</h2>
+                        <p>{{sectionList.statement1}}</p><br>
+                        <p>{{sectionList.statement2}}</p>
+                        <a *ngFor="let button of goal.buttons" href="{{button.url}}" class="btn btn-bordered mt-4">{{button.name}}</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <!-- Goal Thumb -->
-                <div class="goal-thumb mt-5 mt-lg-0" >
-                    <img src="{{goal.goalThumBUrl}}" alt="">
+                <div class="col-12 col-lg-6">
+                    <!-- Goal Thumb -->
+                    <div class="goal-thumb mt-5 mt-lg-0" >
+                        <img src="{{goal.goalThumBUrl}}" alt="">
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+</ng-container>
+
+
+
+<ng-container *ngIf="view =='edit'" >
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showPreview()">Preview Goal Section</button>
     </div>
-</section>
+    <section class="section our-goal ptb_100">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-12 col-lg-6">
+                    <!-- Goal Content -->
+                    <div class="goal-content section-heading text-center text-lg-left pr-md-4 mb-0" *ngFor="let sectionList of goal.sectionList">
+                        <dx-text-box [(ngModel)]="sectionList.header" ></dx-text-box>
+                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100"></dx-text-area>
+                        <dx-text-box [(ngModel)]="sectionList.statementMobile" ></dx-text-box>
+                        <a *ngFor="let button of goal.buttons" href="{{button.url}}" class="btn btn-bordered mt-4">
+                            <dx-text-box [(ngModel)]="button.name"></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.url"></dx-text-box>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <!-- Goal Thumb -->
+                    <div class="goal-thumb mt-5 mt-lg-0" >
+                        <dx-text-box [(ngModel)]="goal.goalThumBUrl" ></dx-text-box>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</ng-container>

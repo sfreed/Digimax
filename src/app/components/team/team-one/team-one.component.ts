@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SectionList } from '../../components.model';
 import { Team } from '../team.model';
 
@@ -7,6 +7,8 @@ import { Team } from '../team.model';
   templateUrl: './team-one.component.html'
 })
 export class TeamOneComponent implements OnInit {
+  @Input('view') view: string = "preview";
+
   team: Team = new Team();
 
   constructor() { }
@@ -14,6 +16,13 @@ export class TeamOneComponent implements OnInit {
   ngOnInit(): void {
     let sectionList: SectionList = new SectionList();
     this.team.sectionList.push(sectionList);
+  }
+
+  showConfigure() {
+    this.view = 'edit';
+  }
+  showPreview() {
+    this.view = 'preview';
   }
 
 }

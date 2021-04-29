@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SectionList } from '../components.model';
 import { Branding, PartnerImages } from './branding.model';
 
@@ -7,6 +7,8 @@ import { Branding, PartnerImages } from './branding.model';
   templateUrl: './branding.component.html'
 })
 export class BrandingComponent implements OnInit {
+  @Input('view') view: string = "preview";
+
   branding: Branding = new Branding();
 
   constructor() { }
@@ -18,6 +20,13 @@ export class BrandingComponent implements OnInit {
 
     let sectionList: SectionList = new SectionList();
     this.branding.sectionList.push(sectionList);
+  }
+
+  showConfigure() {
+    this.view = 'edit';
+  }
+  showPreview() {
+    this.view = 'preview';
   }
 
 }

@@ -1,31 +1,76 @@
-<section class="section brand-partner ptb_100">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-7">
-                <!-- Section Heading -->
-                <div class="section-heading text-center mb-2" *ngFor="let sectionList of branding.sectionList">
-                    <h2>{{sectionList.header}}</h2>
-                    <p class="d-none d-sm-block mt-4">{{sectionList.statement1}}</p>
-                    <p class="d-block d-sm-none mt-4">{{sectionList.statementMobile}}</p>
+<ng-container *ngIf="view == 'preview'">
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showConfigure()">Configure CTA Section</button>
+    </div>  
+    <section class="section brand-partner ptb_100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-7">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center mb-2" *ngFor="let sectionList of branding.sectionList">
+                        <h2>{{sectionList.header}}</h2>
+                        <p class="d-none d-sm-block mt-4">{{sectionList.statement1}}</p>
+                        <p class="d-block d-sm-none mt-4">{{sectionList.statementMobile}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <!-- Brand Partner Wrapper -->
+                    <ul class="brand-partner-wrapper list-inline text-center" *ngFor="let partnerImages of branding.partnerUrls">
+                        <!-- Single Partner -->
+                        <li class="single-partner list-inline-item p-lg-3">
+                            <img src="{{partnerImages.url}}" alt="">
+                        </li>
+                        <li class="single-partner list-inline-item p-lg-3">
+                            <img src="{{partnerImages.url}}" alt="">
+                        </li>
+                        <li class="single-partner list-inline-item p-lg-3">
+                            <img src="{{partnerImages.url}}" alt="">
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <!-- Brand Partner Wrapper -->
-                <ul class="brand-partner-wrapper list-inline text-center" *ngFor="let partnerImages of branding.partnerUrls">
-                    <!-- Single Partner -->
-                    <li class="single-partner list-inline-item p-lg-3">
-                        <img src="{{partnerImages.url}}" alt="">
-                    </li>
-                    <li class="single-partner list-inline-item p-lg-3">
-                        <img src="{{partnerImages.url}}" alt="">
-                    </li>
-                    <li class="single-partner list-inline-item p-lg-3">
-                        <img src="{{partnerImages.url}}" alt="">
-                    </li>
-                </ul>
+    </section>
+</ng-container>
+
+
+
+
+<ng-container *ngIf="view =='edit'" >
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showPreview()">Preview CTA Section</button>
+    </div>
+    <section class="section brand-partner ptb_100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-7">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center mb-2" *ngFor="let sectionList of branding.sectionList">
+                        <dx-text-box [(ngModel)]="sectionList.header" ></dx-text-box>
+                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100"></dx-text-area>
+                        <dx-text-box [(ngModel)]="sectionList.statementMobile" ></dx-text-box>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <!-- Brand Partner Wrapper -->
+                    <ul class="brand-partner-wrapper list-inline text-center" *ngFor="let partnerImages of branding.partnerUrls">
+                        <!-- Single Partner -->
+                        <li class="single-partner list-inline-item p-lg-3">
+                            <dx-text-box [(ngModel)]="partnerImages.url" ></dx-text-box>
+                        </li>
+                        <li class="single-partner list-inline-item p-lg-3">
+                            <dx-text-box [(ngModel)]="partnerImages.url" ></dx-text-box>
+                        </li>
+                        <li class="single-partner list-inline-item p-lg-3">
+                            <dx-text-box [(ngModel)]="partnerImages.url" ></dx-text-box>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</ng-container>

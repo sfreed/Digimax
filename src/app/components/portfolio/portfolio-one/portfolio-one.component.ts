@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SectionList, Button } from '../../components.model';
 import { Marketing, Portfolio } from '../portfolio.model';
 
@@ -7,6 +7,8 @@ import { Marketing, Portfolio } from '../portfolio.model';
   templateUrl: './portfolio-one.component.html'
 })
 export class PortfolioOneComponent implements OnInit {
+  @Input('view') view: string = "preview";
+
   portfolio: Portfolio = new Portfolio(); 
 
   constructor() { }
@@ -21,6 +23,13 @@ export class PortfolioOneComponent implements OnInit {
     let marketing: Marketing = new Marketing();
     this.portfolio.marketing.push(marketing);
 
+  }
+
+  showConfigure() {
+    this.view = 'edit';
+  }
+  showPreview() {
+    this.view = 'preview';
   }
 
 }

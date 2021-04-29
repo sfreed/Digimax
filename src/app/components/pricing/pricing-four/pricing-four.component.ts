@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Pricing } from '../pricing.model';
 
 @Component({
@@ -6,6 +6,8 @@ import { Pricing } from '../pricing.model';
   templateUrl: './pricing-four.component.html'
 })
 export class PricingFourComponent implements OnInit {
+  @Input('view') view: string = "preview";
+
   pricing: Pricing = new Pricing();
 
   constructor() { }
@@ -13,5 +15,12 @@ export class PricingFourComponent implements OnInit {
   ngOnInit(): void {
   
   }
+  showConfigure() {
+    this.view = 'edit';
+  }
+  showPreview() {
+    this.view = 'preview';
+  }
+
 
 }

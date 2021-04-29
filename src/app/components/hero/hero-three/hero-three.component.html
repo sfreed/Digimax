@@ -1,47 +1,109 @@
-<section id="home" class="section welcome-area bg-overlay overflow-hidden d-flex align-items-center">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Welcome Intro Start -->
-            <div class="col-12 col-md-6">
-                <div class="welcome-intro" *ngFor="let sectionItem of hero.sectionList">
-                    <h1 class="text-white text-center text-md-left">{{sectionItem.headerBold}} <br> <span class="fw-4">{{sectionItem.header}}</span></h1>
-                    <p class="text-white text-center text-md-left my-4">{{sectionItem.statement1}}</p>
-                    <!-- Buttons -->
-                    <div class="button-group d-flex align-items-center justify-content-center justify-content-md-start" *ngFor="let button of hero.buttons">
-                        <a href="{{button.url}}" class="btn btn-bordered-white">{{button.name}}</a>
-                        <!-- Play Button -->
-                        <a class="play-btn" data-fancybox data-width="640" data-height="360" data-small-btn="true" href="{{button.playVideoUrl}}">
-                            <div class="btn-circle play-animation"></div>
-                            <div class="btn-circle play-animation animation-short"></div>
-                            <!-- Play Icon -->
-                            <div class="play-icon">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </a>
+<ng-container *ngIf="view == 'preview'">
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showConfigure()">Configure Hero Section</button>
+    </div>
+    <section id="home" class="section welcome-area bg-overlay overflow-hidden d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Welcome Intro Start -->
+                <div class="col-12 col-md-6">
+                    <div class="welcome-intro" *ngFor="let sectionItem of hero.sectionList">
+                        <h1 class="text-white text-center text-md-left">{{sectionItem.header}}<br> <span class="fw-4">{{sectionItem.headerBold}}</span></h1>
+                        <p class="text-white text-center text-md-left my-4">{{sectionItem.statement1}}</p>
+                        <!-- Buttons -->
+                        <div class="button-group d-flex align-items-center justify-content-center justify-content-md-start" *ngFor="let button of hero.buttons">
+                            <a href="{{button.url}}" class="btn btn-bordered-white">{{button.name}}</a>
+                            <!-- Play Button -->
+                            <a class="play-btn" data-fancybox data-width="640" data-height="360" data-small-btn="true" href="{{button.playVideoUrl}}">
+                                <div class="btn-circle play-animation"></div>
+                                <div class="btn-circle play-animation animation-short"></div>
+                                <!-- Play Icon -->
+                                <div class="play-icon">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <!-- Welcome Thumb -->
+                    <div class="welcome-thumb-wrapper pt-3 pt-md-5 mt-5" *ngFor="let imageItem of hero.images">
+                        <span class="welcome-thumb-1">
+                            <img class="welcome-animation d-block ml-auto" src="{{imageItem.url640x410}}" alt="">
+                        </span>
+                        <span class="welcome-thumb-2">
+                            <img class="welcome-animation d-block" src="{{imageItem.url410x269}}" alt="">
+                        </span>
+                        <span class="welcome-thumb-3">
+                            <img class="welcome-animation d-block" src="{{imageItem.url411x261}}" alt="">
+                        </span>
+                        <span class="welcome-thumb-4">
+                            <img class="welcome-animation d-block" src="{{imageItem.url411x261}}" alt="">
+                        </span>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6">
-                <!-- Welcome Thumb -->
-                <div class="welcome-thumb-wrapper pt-3 pt-md-5 mt-5" *ngFor="let imageItem of hero.images">
-                    <span class="welcome-thumb-1">
-                        <img class="welcome-animation d-block ml-auto" src="{{imageItem.url640x410}}" alt="">
-                    </span>
-                    <span class="welcome-thumb-2">
-                        <img class="welcome-animation d-block" src="{{imageItem.url410x269}}" alt="">
-                    </span>
-                    <span class="welcome-thumb-3">
-                        <img class="welcome-animation d-block" src="{{imageItem.url411x261}}" alt="">
-                    </span>
-                    <span class="welcome-thumb-4">
-                        <img class="welcome-animation d-block" src="{{imageItem.url411x261}}" alt="">
-                    </span>
+        </div>
+        <!-- Shape Bottom -->
+        <div class="welcome-shape">
+            <img src="assets/img/hero_shape.png" alt="">
+        </div>
+    </section>
+</ng-container>
+
+
+
+
+
+<ng-container *ngIf="view =='edit'" >
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showPreview()">Preview Hero Section</button>
+    </div>
+    <section id="home" class="section welcome-area bg-overlay overflow-hidden d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Welcome Intro Start -->
+                <div class="col-12 col-md-6">
+                    <div class="welcome-intro" *ngFor="let sectionItem of hero.sectionList">
+                        <dx-text-box [(ngModel)]="sectionItem.header"></dx-text-box>
+                        <dx-text-box [(ngModel)]="sectionItem.headerBold"></dx-text-box>
+                        <dx-text-area [(ngModel)]="sectionItem.statement1" height="100"></dx-text-area>
+                        <!-- Buttons -->
+                        <div class="button-group d-flex align-items-center justify-content-center justify-content-md-start" *ngFor="let button of hero.buttons">
+                            <dx-text-box [(ngModel)]="button.url"></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.name"></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.playVideoUrl"></dx-text-box>
+                        </div>
+                        <div  *ngFor="let imageItem of hero.images">
+                            <dx-text-box [(ngModel)]="imageItem.url640x410" placeholder="640 x 410 Image"></dx-text-box>
+                            <dx-text-box [(ngModel)]="imageItem.url410x269" placeholder="410 x 269 Image"></dx-text-box>
+                            <dx-text-box [(ngModel)]="imageItem.url411x261" placeholder="411 x 261 Image"></dx-text-box>
+                            <dx-text-box [(ngModel)]="imageItem.url411x261" placeholder="411 x 261 Image"></dx-text-box>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <!-- Welcome Thumb -->
+                    <div class="welcome-thumb-wrapper pt-3 pt-md-5 mt-5" *ngFor="let imageItem of hero.images">
+                        <span class="welcome-thumb-1">
+                            <img class="welcome-animation d-block ml-auto" src="{{imageItem.url640x410}}" alt="">
+                        </span>
+                        <span class="welcome-thumb-2">
+                            <img class="welcome-animation d-block" src="{{imageItem.url410x269}}" alt="">
+                        </span>
+                        <span class="welcome-thumb-3">
+                            <img class="welcome-animation d-block" src="{{imageItem.url411x261}}" alt="">
+                        </span>
+                        <span class="welcome-thumb-4">
+                            <img class="welcome-animation d-block" src="{{imageItem.url411x261}}" alt="">
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Shape Bottom -->
-    <div class="welcome-shape">
-        <img src="assets/img/hero_shape.png" alt="">
-    </div>
-</section>
+        <!-- Shape Bottom -->
+        <div class="welcome-shape">
+            <img src="assets/img/hero_shape.png" alt="">
+        </div>
+    </section>
+</ng-container>

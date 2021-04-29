@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SectionList, Button } from '../../components.model';
 import { Hero, Image } from '../hero.model';
 
@@ -7,6 +7,8 @@ import { Hero, Image } from '../hero.model';
   templateUrl: './hero-five.component.html'
 })
 export class HeroFiveComponent implements OnInit {
+  @Input('view') view: string = "preview";
+
   hero: Hero = new Hero();
 
   constructor() { }
@@ -22,6 +24,12 @@ export class HeroFiveComponent implements OnInit {
     image.url373x437 = "assets/img/welcome_thumb_11.png";
     image.url237x281 = "assets/img/welcome_thumb_12.png";
     this.hero.images.push(image);
+  }
+  showConfigure() {
+    this.view = 'edit';
+  }
+  showPreview() {
+    this.view = 'preview';
   }
 
 }

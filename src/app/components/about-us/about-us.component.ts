@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SectionList } from '../components.model';
 import { AboutUs, Counter } from './about-us.model';
 
@@ -7,6 +7,8 @@ import { AboutUs, Counter } from './about-us.model';
   templateUrl: './about-us.component.html'
 })
 export class AboutUsComponent implements OnInit {
+  @Input('view') view: string = "preview";
+
   aboutUs: AboutUs = new AboutUs();
 
   constructor() { }
@@ -17,6 +19,13 @@ export class AboutUsComponent implements OnInit {
 
     let counterList: Counter = new Counter();
     this.aboutUs.counterList.push(counterList);
+  }
+
+  showConfigure() {
+    this.view = 'edit';
+  }
+  showPreview() {
+    this.view = 'preview';
   }
 
 }

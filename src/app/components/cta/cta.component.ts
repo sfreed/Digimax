@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SectionList, Button } from '../components.model';
 import { CTA } from './cta.model';
 
@@ -7,6 +7,8 @@ import { CTA } from './cta.model';
   templateUrl: './cta.component.html'
 })
 export class CtaComponent implements OnInit {
+  @Input('view') view: string = "preview";
+
   cta: CTA = new CTA();
 
   constructor() { }
@@ -19,5 +21,13 @@ export class CtaComponent implements OnInit {
     this.cta.buttons.push(buttons);
 
   }
+
+  showConfigure() {
+    this.view = 'edit';
+  }
+  showPreview() {
+    this.view = 'preview';
+  }
+
 
 }

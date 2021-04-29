@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Team } from '../team.model';
 
 @Component({
@@ -6,11 +6,20 @@ import { Team } from '../team.model';
   templateUrl: './team-two.component.html'
 })
 export class TeamTwoComponent implements OnInit {
+  @Input('view') view: string = "preview";
+
   team: Team = new Team();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showConfigure() {
+    this.view = 'edit';
+  }
+  showPreview() {
+    this.view = 'preview';
   }
 
 }

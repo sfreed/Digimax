@@ -1,88 +1,133 @@
-<section id="service" class="section service-area dark-bg ptb_150">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-7">
-                <!-- Section Heading -->
-                <div class="section-heading text-center"  *ngFor="let sectionList of service.sectionList">
-                    <h2 class="text-white">{{sectionList.header}}</h2>
-                    <p class="text-white-50 d-none d-sm-block mt-4">{{sectionList.statement1}}</p>
-                    <p class="text-white-50 d-block d-sm-none mt-4">{{sectionList.statementMobile}}</p>
+<ng-container *ngIf="view == 'preview'">
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showConfigure()">Configure Service Section</button>
+    </div>   
+    <section id="service" class="section service-area dark-bg ptb_150">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-7">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center"  *ngFor="let sectionList of service.sectionList">
+                        <h2 class="text-white">{{sectionList.header}}</h2>
+                        <p class="text-white-50 d-none d-sm-block mt-4">{{sectionList.statement1}}</p>
+                        <p class="text-white-50 d-block d-sm-none mt-4">{{sectionList.statementMobile}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <!-- Single Service -->
+                    <div class="single-service media p-3">
+                        <span class="flaticon-rocket-launch color-1 icon-bg-1"></span>
+                        <!-- Service Text -->
+                        <div class="media-body ml-4">
+                            <h3 class="text-white">{{service.header}}</h3>
+                            <p class="text-white-50 mt-2 mb-3">{{service.statement}}</p>
+                            <a *ngFor="let button of service.buttons"  class="service-btn" href="{{button.url}}">{{button.name}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <!-- Single Service -->
+                    <div class="single-service media p-3">
+                        <span class="flaticon-monitoring color-2 icon-bg-2"></span>
+                        <!-- Service Text -->
+                        <div class="media-body ml-4">
+                            <h3 class="text-white">{{service.header}}</h3>
+                            <p class="text-white-50 mt-2 mb-3">{{service.statement}}</p>
+                            <a *ngFor="let button of service.buttons"  class="service-btn" href="{{button.url}}">{{button.name}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <!-- Single Service -->
+                    <div class="single-service media p-3">
+                        <span class="flaticon-web color-3 icon-bg-3"></span>
+                        <!-- Service Text -->
+                        <div class="media-body ml-4">
+                            <h3 class="text-white">{{service.header}}</h3>
+                            <p class="text-white-50 mt-2 mb-3">{{service.statement}}</p>
+                            <a *ngFor="let button of service.buttons"  class="service-btn" href="{{button.url}}">{{button.name}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <!-- Single Service -->
+                    <div class="single-service media p-3">
+                        <span class="flaticon-smartphone color-4 icon-bg-4"></span>
+                        <!-- Service Text -->
+                        <div class="media-body ml-4">
+                            <h3 class="text-white">{{service.header}}</h3>
+                            <p class="text-white-50 mt-2 mb-3">{{service.statement}}</p>
+                            <a *ngFor="let button of service.buttons"  class="service-btn" href="{{button.url}}">{{button.name}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <!-- Single Service -->
+                    <div class="single-service media p-3">
+                        <span class="flaticon-email color-5 icon-bg-5"></span>
+                        <!-- Service Text -->
+                        <div class="media-body ml-4">
+                            <h3 class="text-white">{{service.header}}</h3>
+                            <p class="text-white-50 mt-2 mb-3">{{service.statement}}</p>
+                            <a *ngFor="let button of service.buttons"  class="service-btn" href="{{button.url}}">{{button.name}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <!-- Single Service -->
+                    <div class="single-service media p-3">
+                        <span class="flaticon-affiliate color-6 icon-bg-6"></span>
+                        <!-- Service Text -->
+                        <div class="media-body ml-4">
+                            <h3 class="text-white">{{service.header}}</h3>
+                            <p class="text-white-50 mt-2 mb-3">{{service.statement}}</p>
+                            <a *ngFor="let button of service.buttons"  class="service-btn" href="{{button.url}}">{{button.name}}</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">
-                <!-- Single Service -->
-                <div class="single-service media p-3">
-                    <span class="flaticon-rocket-launch color-1 icon-bg-1"></span>
-                    <!-- Service Text -->
-                    <div class="media-body ml-4">
-                        <h3 class="text-white">{{service.header}}</h3>
-                        <p class="text-white-50 mt-2 mb-3">{{service.statement}}</p>
-                        <a *ngFor="let button of service.buttons"  class="service-btn" href="{{button.url}}">{{button.name}}</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <!-- Single Service -->
-                <div class="single-service media p-3">
-                    <span class="flaticon-monitoring color-2 icon-bg-2"></span>
-                    <!-- Service Text -->
-                    <div class="media-body ml-4">
-                        <h3 class="text-white">{{service.header}}</h3>
-                        <p class="text-white-50 mt-2 mb-3">{{service.statement}}</p>
-                        <a *ngFor="let button of service.buttons"  class="service-btn" href="{{button.url}}">{{button.name}}</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <!-- Single Service -->
-                <div class="single-service media p-3">
-                    <span class="flaticon-web color-3 icon-bg-3"></span>
-                    <!-- Service Text -->
-                    <div class="media-body ml-4">
-                        <h3 class="text-white">{{service.header}}</h3>
-                        <p class="text-white-50 mt-2 mb-3">{{service.statement}}</p>
-                        <a *ngFor="let button of service.buttons"  class="service-btn" href="{{button.url}}">{{button.name}}</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <!-- Single Service -->
-                <div class="single-service media p-3">
-                    <span class="flaticon-smartphone color-4 icon-bg-4"></span>
-                    <!-- Service Text -->
-                    <div class="media-body ml-4">
-                        <h3 class="text-white">{{service.header}}</h3>
-                        <p class="text-white-50 mt-2 mb-3">{{service.statement}}</p>
-                        <a *ngFor="let button of service.buttons"  class="service-btn" href="{{button.url}}">{{button.name}}</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <!-- Single Service -->
-                <div class="single-service media p-3">
-                    <span class="flaticon-email color-5 icon-bg-5"></span>
-                    <!-- Service Text -->
-                    <div class="media-body ml-4">
-                        <h3 class="text-white">{{service.header}}</h3>
-                        <p class="text-white-50 mt-2 mb-3">{{service.statement}}</p>
-                        <a *ngFor="let button of service.buttons"  class="service-btn" href="{{button.url}}">{{button.name}}</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <!-- Single Service -->
-                <div class="single-service media p-3">
-                    <span class="flaticon-affiliate color-6 icon-bg-6"></span>
-                    <!-- Service Text -->
-                    <div class="media-body ml-4">
-                        <h3 class="text-white">{{service.header}}</h3>
-                        <p class="text-white-50 mt-2 mb-3">{{service.statement}}</p>
-                        <a *ngFor="let button of service.buttons"  class="service-btn" href="{{button.url}}">{{button.name}}</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </section>
+</ng-container>
+
+
+
+
+<ng-container *ngIf="view =='edit'" >
+    <div class="mt-5 mb-5 text-center justify-content-around">
+        <button class="btn btn-primary mr-3" id="edit-component-buttons" (click)="showPreview()">Preview Service Section</button>
     </div>
-</section>
+    <section id="service" class="section service-area dark-bg ptb_150">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-7">
+                    <!-- Section Heading -->
+                    <div class="section-heading text-center"  *ngFor="let sectionList of service.sectionList">
+                        <dx-text-box [(ngModel)]="sectionList.header" ></dx-text-box>
+                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100"></dx-text-area>
+                        <dx-text-box [(ngModel)]="sectionList.statementMobile" ></dx-text-box>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <!-- Single Service -->
+                    <div class="single-service media p-3">
+                        <span class="flaticon-rocket-launch color-1 icon-bg-1"></span>
+                        <!-- Service Text -->
+                        <div class="media-body ml-4">
+                            <dx-text-box [(ngModel)]="service.header" ></dx-text-box>
+                            <dx-text-area [(ngModel)]="service.statement" height="100" ></dx-text-area>
+                            <a *ngFor="let button of service.buttons"  class="service-btn">
+                                <dx-text-box [(ngModel)]="button.name" ></dx-text-box>
+                                <dx-text-box [(ngModel)]="button.url" ></dx-text-box>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</ng-container>
