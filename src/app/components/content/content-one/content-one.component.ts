@@ -32,4 +32,12 @@ export class ContentOneComponent implements OnInit {
     this.view = 'preview';
   }
 
+  addListItem() {
+    let content: ContentList = new ContentList();
+    this.content.contentList.push(content);
+  }
+  deleteListItem(e) {
+    this.content.contentList.splice(e);
+  }
+
 }

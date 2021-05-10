@@ -10,4 +10,6 @@ export class Button {
     url: string = "#";
     name: string = "button name";
     playVideoUrl?: string;
+    urlMobile: string = "#";
+    nameMobile: string = "mobile button name";
 }

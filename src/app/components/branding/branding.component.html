@@ -17,15 +17,9 @@
             <div class="row justify-content-center">
                 <div class="col-12">
                     <!-- Brand Partner Wrapper -->
-                    <ul class="brand-partner-wrapper list-inline text-center" *ngFor="let partnerImages of branding.partnerUrls">
+                    <ul class="brand-partner-wrapper list-inline text-center">
                         <!-- Single Partner -->
-                        <li class="single-partner list-inline-item p-lg-3">
-                            <img src="{{partnerImages.url}}" alt="">
-                        </li>
-                        <li class="single-partner list-inline-item p-lg-3">
-                            <img src="{{partnerImages.url}}" alt="">
-                        </li>
-                        <li class="single-partner list-inline-item p-lg-3">
+                        <li class="single-partner list-inline-item p-lg-3"  *ngFor="let partnerImages of branding.partnerUrls">
                             <img src="{{partnerImages.url}}" alt="">
                         </li>
                     </ul>
@@ -48,25 +42,21 @@
                 <div class="col-12 col-md-10 col-lg-7">
                     <!-- Section Heading -->
                     <div class="section-heading text-center mb-2" *ngFor="let sectionList of branding.sectionList">
-                        <dx-text-box [(ngModel)]="sectionList.header" ></dx-text-box>
-                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100"></dx-text-area>
-                        <dx-text-box [(ngModel)]="sectionList.statementMobile" ></dx-text-box>
+                        <dx-text-box [(ngModel)]="sectionList.header" placeholder="Header" ></dx-text-box>
+                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100" placeholder="Statement for Websites or bigger screens"></dx-text-area>
+                        <dx-text-box [(ngModel)]="sectionList.statementMobile" placeholder="Statement for Mobile screens" ></dx-text-box>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-12">
                     <!-- Brand Partner Wrapper -->
-                    <ul class="brand-partner-wrapper list-inline text-center" *ngFor="let partnerImages of branding.partnerUrls">
+                    <ul class="brand-partner-wrapper list-inline text-center">
                         <!-- Single Partner -->
-                        <li class="single-partner list-inline-item p-lg-3">
-                            <dx-text-box [(ngModel)]="partnerImages.url" ></dx-text-box>
-                        </li>
-                        <li class="single-partner list-inline-item p-lg-3">
-                            <dx-text-box [(ngModel)]="partnerImages.url" ></dx-text-box>
-                        </li>
-                        <li class="single-partner list-inline-item p-lg-3">
-                            <dx-text-box [(ngModel)]="partnerImages.url" ></dx-text-box>
+                        <li class="single-partner list-inline-item p-lg-3"  *ngFor="let partnerImages of branding.partnerUrls; let i = index">
+                            <dx-button [icon]="'add'" (onClick)="addImage()"></dx-button>
+                            <dx-button [icon]="'close'" (onClick)="deleteImage(i)"></dx-button>
+                            <dx-text-box [(ngModel)]="partnerImages.url" placeholder="Image URL" ></dx-text-box>
                         </li>
                     </ul>
                 </div>

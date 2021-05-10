@@ -37,19 +37,19 @@
                 <div class="col-12 col-lg-6">
                     <!-- Goal Content -->
                     <div class="goal-content section-heading text-center text-lg-left pr-md-4 mb-0" *ngFor="let sectionList of goal.sectionList">
-                        <dx-text-box [(ngModel)]="sectionList.header" ></dx-text-box>
-                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100"></dx-text-area>
-                        <dx-text-box [(ngModel)]="sectionList.statementMobile" ></dx-text-box>
+                        <dx-text-box [(ngModel)]="sectionList.header"   placeholder="Header"></dx-text-box>
+                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100" placeholder="Statement for Websites or larger screens" ></dx-text-area>
+                        <dx-text-box [(ngModel)]="sectionList.statementMobile"  placeholder="Statement for Mobile Screens" ></dx-text-box>
                         <a *ngFor="let button of goal.buttons" href="{{button.url}}" class="btn btn-bordered mt-4">
-                            <dx-text-box [(ngModel)]="button.name"></dx-text-box>
-                            <dx-text-box [(ngModel)]="button.url"></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.name" placeholder="Button Name" ></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.url" placeholder="Button URL"></dx-text-box>
                         </a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <!-- Goal Thumb -->
                     <div class="goal-thumb mt-5 mt-lg-0" >
-                        <dx-text-box [(ngModel)]="goal.goalThumBUrl" ></dx-text-box>
+                        <dx-text-box [(ngModel)]="goal.goalThumBUrl" placeholder="Image URL" ></dx-text-box>
                     </div>
                 </div>
             </div>

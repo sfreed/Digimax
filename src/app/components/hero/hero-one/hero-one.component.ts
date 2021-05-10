@@ -37,4 +37,5 @@ export class HeroOneComponent implements OnInit {
     this.view = 'preview';
   }
 
+
 }

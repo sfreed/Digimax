@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SectionList } from '../../components.model';
-import { Team } from '../team.model';
+import { Team, TeamMember } from '../team.model';
 
 @Component({
   selector: 'app-team-one',
@@ -16,6 +16,9 @@ export class TeamOneComponent implements OnInit {
   ngOnInit(): void {
     let sectionList: SectionList = new SectionList();
     this.team.sectionList.push(sectionList);
+
+    let teamMember: TeamMember = new TeamMember();
+    this.team.teamMember.push(teamMember);
   }
 
   showConfigure() {
@@ -23,6 +26,13 @@ export class TeamOneComponent implements OnInit {
   }
   showPreview() {
     this.view = 'preview';
+  }
+  addTeamMember() {
+    let teamMember: TeamMember = new TeamMember();
+    this.team.teamMember.push(teamMember);
+  }
+  deleteTeamMember(i) {
+    this.team.teamMember.splice(i, 1);
   }
 
 }

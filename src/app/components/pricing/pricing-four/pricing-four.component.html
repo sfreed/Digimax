@@ -225,9 +225,9 @@
                 <div class="col-12 col-md-10 col-lg-7">
                     <!-- Section Heading -->
                     <div class="section-heading text-center"  *ngFor="let sectionList of pricing.sectionList">
-                        <dx-text-box [(ngModel)]="sectionList.header" ></dx-text-box>
-                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100"></dx-text-area>
-                        <dx-text-box [(ngModel)]="sectionList.statementMobile" ></dx-text-box>
+                        <dx-text-box [(ngModel)]="sectionList.header"  placeholder="Header"></dx-text-box>
+                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100" placeholder="Statement for Websites or larger screens"></dx-text-area>
+                        <dx-text-box [(ngModel)]="sectionList.statementMobile"  placeholder="Statement for Mobile Screens"></dx-text-box>
                     </div>
                 </div>
             </div>
@@ -239,22 +239,22 @@
                             <div class="single-price-plan color-1 bg-hover hover-top text-center p-5">
                                 <!-- Plan Title -->
                                 <div class="plan-title mb-2 mb-sm-3">
-                                    <dx-text-box [(ngModel)]="pricing.title1" ></dx-text-box>
-                                    <dx-text-box [(ngModel)]="pricing.statement1" ></dx-text-box>
+                                    <dx-text-box [(ngModel)]="pricing.title1" placeholder="Price Title 1"></dx-text-box>
+                                    <dx-text-box [(ngModel)]="pricing.statement1" placeholder="Statement 1" ></dx-text-box>
                                 </div>
                                 <!-- Plan Price -->
                                 <div class="plan-price pb-2 pb-sm-3">
                                     <span class="color-primary fw-7">$</span>
-                                    <dx-text-box [(ngModel)]="pricing.price1" ></dx-text-box>
-                                    <dx-text-box [(ngModel)]="pricing.frequency" ></dx-text-box>
+                                    <dx-text-box [(ngModel)]="pricing.price1" placeholder="Price 1"></dx-text-box>
+                                    <dx-text-box [(ngModel)]="pricing.frequency" placeholder="Frequency of Charge (week, month, year, etc.)"></dx-text-box>
                                 </div>
                                 <!-- Plan Description -->
                                 <div class="plan-description">
                                     <ul class="plan-features">
-                                        <dx-text-box [(ngModel)]="pricing.feature" ></dx-text-box>
-                                        <dx-text-box [(ngModel)]="pricing.feature" ></dx-text-box>
-                                        <dx-text-box [(ngModel)]="pricing.feature" ></dx-text-box>
-                                        <dx-text-box [(ngModel)]="pricing.feature" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="pricing.feature" placeholder="A Feature of this pricing option" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="pricing.feature" placeholder="A Feature of this pricing option" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="pricing.feature" placeholder="A Feature of this pricing option" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="pricing.feature" placeholder="A Feature of this pricing option" ></dx-text-box>
                                     </ul>
                                 </div>
                                 <!-- Plan Button -->
@@ -268,23 +268,23 @@
                             <div class="single-price-plan color-2 bg-hover active hover-top text-center p-5">
                                 <!-- Plan Title -->
                                 <div class="plan-title mb-2 mb-sm-3">
-                                    <dx-text-box [(ngModel)]="pricing.title2" ></dx-text-box>
-                                    <dx-text-box [(ngModel)]="pricing.statement2" ></dx-text-box>
-                                    <dx-text-box [(ngModel)]="pricing.badge" ></dx-text-box>
+                                    <dx-text-box [(ngModel)]="pricing.title2" placeholder="Price Title 2" ></dx-text-box>
+                                    <dx-text-box [(ngModel)]="pricing.statement2" placeholder="Statement 2" ></dx-text-box>
+                                    <dx-text-box [(ngModel)]="pricing.badge" placeholder="Special Feature of this option (recommended, 20% off, etc.)" ></dx-text-box>
                                 </div>
                                 <!-- Plan Price -->
                                 <div class="plan-price pb-2 pb-sm-3">
                                     <span class="color-primary fw-7">$</span>
                                     <dx-text-box [(ngModel)]="pricing.price2" ></dx-text-box>
-                                    <dx-text-box [(ngModel)]="pricing.frequency" ></dx-text-box>
+                                    <dx-text-box [(ngModel)]="pricing.frequency" placeholder="Frequency of Charge (week, month, year, etc.)"></dx-text-box>
                                 </div>
                                 <!-- Plan Description -->
                                 <div class="plan-description">
                                     <ul class="plan-features">
-                                        <dx-text-box [(ngModel)]="pricing.feature" ></dx-text-box>
-                                        <dx-text-box [(ngModel)]="pricing.feature" ></dx-text-box>
-                                        <dx-text-box [(ngModel)]="pricing.feature" ></dx-text-box>
-                                        <dx-text-box [(ngModel)]="pricing.feature" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="pricing.feature" placeholder="A Feature of this pricing option" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="pricing.feature" placeholder="A Feature of this pricing option" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="pricing.feature" placeholder="A Feature of this pricing option" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="pricing.feature" placeholder="A Feature of this pricing option" ></dx-text-box>
                                     </ul>
                                 </div>
                                 <!-- Plan Button -->

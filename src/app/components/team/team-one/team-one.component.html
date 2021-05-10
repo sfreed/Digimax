@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-4" *ngFor="let team of team.teamMember">
                     <!-- Single Team -->
                     <div class="single-team">
                         <!-- Team Photo -->
@@ -39,86 +39,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <!-- Single Team -->
-                    <div class="single-team">
-                        <!-- Team Photo -->
-                        <div class="team-photo">
-                            <a href="#"><img src="{{team.imgUrl}}" alt=""></a>
-                        </div>
-                        <!-- Team Content -->
-                        <div class="team-content p-3">
-                            <a href="#">
-                                <h3 class="mb-2">{{team.name}}</h3>
-                            </a>
-                            <h5 class="text-uppercase">{{team.title}}</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <!-- Single Team -->
-                    <div class="single-team">
-                        <!-- Team Photo -->
-                        <div class="team-photo">
-                            <a href="#"><img src="{{team.imgUrl}}" alt=""></a>
-                        </div>
-                        <!-- Team Content -->
-                        <div class="team-content p-3">
-                            <a href="#">
-                                <h3 class="mb-2">{{team.name}}</h3>
-                            </a>
-                            <h5 class="text-uppercase">{{team.title}}</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <!-- Single Team -->
-                    <div class="single-team">
-                        <!-- Team Photo -->
-                        <div class="team-photo">
-                            <a href="#"><img src="{{team.imgUrl}}" alt=""></a>
-                        </div>
-                        <!-- Team Content -->
-                        <div class="team-content p-3">
-                            <a href="#">
-                                <h3 class="mb-2">{{team.name}}</h3>
-                            </a>
-                            <h5 class="text-uppercase">{{team.title}}</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <!-- Single Team -->
-                    <div class="single-team">
-                        <!-- Team Photo -->
-                        <div class="team-photo">
-                            <a href="#"><img src="{{team.imgUrl}}" alt=""></a>
-                        </div>
-                        <!-- Team Content -->
-                        <div class="team-content p-3">
-                            <a href="#">
-                                <h3 class="mb-2">{{team.name}}</h3>
-                            </a>
-                            <h5 class="text-uppercase">{{team.title}}</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <!-- Single Team -->
-                    <div class="single-team">
-                        <!-- Team Photo -->
-                        <div class="team-photo">
-                            <a href="#"><img src="{{team.imgUrl}}" alt=""></a>
-                        </div>
-                        <!-- Team Content -->
-                        <div class="team-content p-3">
-                            <a href="#">
-                                <h3 class="mb-2">{{team.name}}</h3>
-                            </a>
-                            <h5 class="text-uppercase">{{team.title}}</h5>
-                        </div>
-                    </div>
-                </div>
+       
+          
+         
+            
+         
             </div>
         </div>
         <!-- Shape Bottom -->
@@ -154,106 +79,28 @@
                 <div class="col-12 col-md-10 col-lg-7">
                     <!-- Section Heading -->
                     <div class="section-heading text-center" *ngFor="let sectionList of team.sectionList">
-                        <dx-text-box [(ngModel)]="sectionList.header" ></dx-text-box>
-                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100"></dx-text-area>
-                        <dx-text-box [(ngModel)]="sectionList.statementMobile" ></dx-text-box>
+                        <dx-text-box [(ngModel)]="sectionList.header"   placeholder="Header"></dx-text-box>
+                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100" placeholder="Statement for Websites or larger screens" ></dx-text-area>
+                        <dx-text-box [(ngModel)]="sectionList.statementMobile" placeholder="Statement for Mobile Screens" ></dx-text-box>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-4"  *ngFor="let team of team.teamMember; let i = index">
+                    <dx-button [icon]="'add'" (onClick)="addTeamMember()"></dx-button>
+                    <dx-button [icon]="'close'" (onClick)="deleteTeamMember(i)"></dx-button>
                     <!-- Single Team -->
                     <div class="single-team">
                         <!-- Team Photo -->
                         <div class="team-photo">
-                            <dx-text-box [(ngModel)]="team.imgUrl" ></dx-text-box>
+                            <dx-text-box [(ngModel)]="team.imgUrl" placeholder="Image URL" ></dx-text-box>
                         </div>
                         <!-- Team Content -->
                         <div class="team-content p-3">
                             <a href="#">
-                                <dx-text-box [(ngModel)]="team.name" ></dx-text-box>
+                                <dx-text-box [(ngModel)]="team.name" placeholder="Team Member Name" ></dx-text-box>
                             </a>
-                            <dx-text-box [(ngModel)]="team.title" ></dx-text-box>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <!-- Single Team -->
-                    <div class="single-team">
-                        <!-- Team Photo -->
-                        <div class="team-photo">
-                            <a href="#"><img src="{{team.imgUrl}}" alt=""></a>
-                        </div>
-                        <!-- Team Content -->
-                        <div class="team-content p-3">
-                            <a href="#">
-                                <h3 class="mb-2">{{team.name}}</h3>
-                            </a>
-                            <h5 class="text-uppercase">{{team.title}}</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <!-- Single Team -->
-                    <div class="single-team">
-                        <!-- Team Photo -->
-                        <div class="team-photo">
-                            <a href="#"><img src="{{team.imgUrl}}" alt=""></a>
-                        </div>
-                        <!-- Team Content -->
-                        <div class="team-content p-3">
-                            <a href="#">
-                                <h3 class="mb-2">{{team.name}}</h3>
-                            </a>
-                            <h5 class="text-uppercase">{{team.title}}</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <!-- Single Team -->
-                    <div class="single-team">
-                        <!-- Team Photo -->
-                        <div class="team-photo">
-                            <a href="#"><img src="{{team.imgUrl}}" alt=""></a>
-                        </div>
-                        <!-- Team Content -->
-                        <div class="team-content p-3">
-                            <a href="#">
-                                <h3 class="mb-2">{{team.name}}</h3>
-                            </a>
-                            <h5 class="text-uppercase">{{team.title}}</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <!-- Single Team -->
-                    <div class="single-team">
-                        <!-- Team Photo -->
-                        <div class="team-photo">
-                            <a href="#"><img src="{{team.imgUrl}}" alt=""></a>
-                        </div>
-                        <!-- Team Content -->
-                        <div class="team-content p-3">
-                            <a href="#">
-                                <h3 class="mb-2">{{team.name}}</h3>
-                            </a>
-                            <h5 class="text-uppercase">{{team.title}}</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <!-- Single Team -->
-                    <div class="single-team">
-                        <!-- Team Photo -->
-                        <div class="team-photo">
-                            <a href="#"><img src="{{team.imgUrl}}" alt=""></a>
-                        </div>
-                        <!-- Team Content -->
-                        <div class="team-content p-3">
-                            <a href="#">
-                                <h3 class="mb-2">{{team.name}}</h3>
-                            </a>
-                            <h5 class="text-uppercase">{{team.title}}</h5>
+                            <dx-text-box [(ngModel)]="team.title" placeholder="Team Member Title"></dx-text-box>
                         </div>
                     </div>
                 </div>

@@ -65,14 +65,16 @@
                 <!-- Welcome Intro Start -->
                 <div class="col-12 col-md-6">
                     <div class="welcome-intro" *ngFor="let sectionItem of hero.sectionList">
-                        <dx-text-box [(ngModel)]="sectionItem.header"></dx-text-box>
-                        <dx-text-box [(ngModel)]="sectionItem.headerBold"></dx-text-box>
-                        <dx-text-area [(ngModel)]="sectionItem.statement1" height="100"></dx-text-area>
+                        <dx-text-box [(ngModel)]="sectionItem.header" placeholder="Header"></dx-text-box>
+                        <dx-text-box [(ngModel)]="sectionItem.headerBold" placeholder="Header BOLD"></dx-text-box>
+                        <dx-text-area [(ngModel)]="sectionItem.statement1" height="100" placeholder="Statement for Websites or larger screens"></dx-text-area>
                         <!-- Buttons -->
                         <div class="button-group d-flex align-items-center justify-content-center justify-content-md-start" *ngFor="let button of hero.buttons">
-                            <dx-text-box [(ngModel)]="button.url"></dx-text-box>
-                            <dx-text-box [(ngModel)]="button.name"></dx-text-box>
-                            <dx-text-box [(ngModel)]="button.playVideoUrl"></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.url" placeholder="Button URL"></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.name" placeholder="Button Name"></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.url" placeholder="Button URL"></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.name" placeholder="Button Name"></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.playVideoUrl" placeholder="Video URL"></dx-text-box>
                         </div>
                         <div  *ngFor="let imageItem of hero.images">
                             <dx-text-box [(ngModel)]="imageItem.url640x410" placeholder="640 x 410 Image"></dx-text-box>

@@ -77,21 +77,12 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <!-- Single Service -->
                     <div class="single-service text-center p-4">
-                        <span class="flaticon-rocket-launch color-1 icon-bg-1"></span>
-                        <h3 class="my-3">{{service.header}}</h3>
-                        <p>{{service.statement}}</p>
-                        <a *ngFor="let button of service.buttons"  class="service-btn mt-3" href="{{button.url}}">{{button.name}}</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <!-- Single Service -->
-                    <div class="single-service text-center p-4">
                         <span class="flaticon-monitoring color-2 icon-bg-2"></span>
-                        <dx-text-box [(ngModel)]="service.header" ></dx-text-box>
-                        <dx-text-area [(ngModel)]="service.statement" height="100" ></dx-text-area>
+                        <dx-text-box [(ngModel)]="service.header"  placeholder="Header"></dx-text-box>
+                        <dx-text-area [(ngModel)]="service.statement" height="100" placeholder="Statement for Websites or larger screens" ></dx-text-area>
                         <a *ngFor="let button of service.buttons"  class="service-btn mt-3">
-                            <dx-text-box [(ngModel)]="button.name" ></dx-text-box>
-                            <dx-text-box [(ngModel)]="button.url" ></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.name"  placeholder="Button Name"></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.url"  placeholder="Button URL"></dx-text-box>
                         </a>
                     </div>
                 </div>

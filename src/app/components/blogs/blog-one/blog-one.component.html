@@ -171,21 +171,21 @@
                     <div class="single-blog res-margin">
                         <!-- Blog Thumb -->
                         <div class="blog-thumb">
-                            <dx-text-box [(ngModel)]="blog.url" ></dx-text-box>
-                            <dx-text-box [(ngModel)]="blog.img" ></dx-text-box>
+                            <dx-text-box [(ngModel)]="blog.url" placeholder="Blog URL" ></dx-text-box>
+                            <dx-text-box [(ngModel)]="blog.img"  placeholder="Blog Image"></dx-text-box>
                         </div>
                         <!-- Blog Content -->
                         <div class="blog-content">
                             <!-- Meta Info -->
                             <ul class="meta-info d-flex justify-content-between">
-                                <dx-text-box [(ngModel)]="blog.name" ></dx-text-box>
-                                <dx-text-box [(ngModel)]="blog.date" ></dx-text-box>
+                                <dx-text-box [(ngModel)]="blog.name" placeholder="Blog Author Name" ></dx-text-box>
+                                <dx-text-box [(ngModel)]="blog.date" placeholder="Blog Date Published" ></dx-text-box>
                             </ul>
                             <!-- Blog Title -->
-                            <dx-text-box [(ngModel)]="blog.title" ></dx-text-box>
-                            <dx-text-area [(ngModel)]="blog.statement" height="100"></dx-text-area>
+                            <dx-text-box [(ngModel)]="blog.title"  placeholder="Blog Title" ></dx-text-box>
+                                    <dx-text-area [(ngModel)]="blog.statement" height="100" placeholder="Blog content for Websites or bigger screens"></dx-text-area>
                             <a *ngFor="let button of blog.buttons" class="blog-btn mt-3">
-                                <dx-text-box [(ngModel)]="button.name" ></dx-text-box>
+                                <dx-text-box [(ngModel)]="button.name" placeholder="Button Name" ></dx-text-box>
                             </a>
                         </div>
                     </div>

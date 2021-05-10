@@ -118,11 +118,11 @@
                         <span class="flaticon-rocket-launch color-1 icon-bg-1"></span>
                         <!-- Service Text -->
                         <div class="media-body ml-4">
-                            <dx-text-box [(ngModel)]="service.header" ></dx-text-box>
-                            <dx-text-area [(ngModel)]="service.statement" height="100" ></dx-text-area>
+                            <dx-text-box [(ngModel)]="service.header"  placeholder="Header"></dx-text-box>
+                            <dx-text-area [(ngModel)]="service.statement" height="100"  placeholder="Statement for Websites or larger screens"></dx-text-area>
                             <a *ngFor="let button of service.buttons"  class="service-btn">
-                                <dx-text-box [(ngModel)]="button.name" ></dx-text-box>
-                                <dx-text-box [(ngModel)]="button.url" ></dx-text-box>
+                                <dx-text-box [(ngModel)]="button.name"  placeholder="Button Name"></dx-text-box>
+                                <dx-text-box [(ngModel)]="button.url"  placeholder="Button URL"></dx-text-box>
                             </a>
                         </div>
                     </div>

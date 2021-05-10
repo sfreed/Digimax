@@ -89,9 +89,9 @@
                 <div class="col-12 col-lg-5">
                     <!-- Section Heading -->
                     <div class="section-heading text-center mb-3" *ngFor="let sectionList of contact.sectionList">
-                        <dx-text-box [(ngModel)]="sectionList.header" ></dx-text-box>
-                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100" ></dx-text-area>
-                        <dx-text-box [(ngModel)]="sectionList.statementMobile" ></dx-text-box>
+                        <dx-text-box [(ngModel)]="sectionList.header" placeholder="Header"></dx-text-box>
+                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100" placeholder="Statement for Websites or larger screens"></dx-text-area>
+                        <dx-text-box [(ngModel)]="sectionList.statementMobile" placeholder="Statement for Mobile screens"></dx-text-box>
                     </div>
                     <!-- Contact Us -->
                     <div class="contact-us">
@@ -100,19 +100,19 @@
                             <li class="contact-info color-1 bg-hover active hover-bottom text-center p-5 m-3"  *ngFor="let phoneInfo of contact.phoneInfo">
                                 <span><i class="fas fa-mobile-alt fa-3x"></i></span>
                                 <a class="d-block my-2">
-                                    <dx-text-box [(ngModel)]="phoneInfo.phone" ></dx-text-box>
-                                    <dx-text-box [(ngModel)]="phoneInfo.url" ></dx-text-box>
+                                    <dx-text-box [(ngModel)]="phoneInfo.phone" placeholder="Phone Number"></dx-text-box>
+                                    <dx-text-box [(ngModel)]="phoneInfo.url" placeholder="A Link to the phone number"></dx-text-box>
                                 </a>
-                                <dx-text-box [(ngModel)]="phoneInfo.statement" ></dx-text-box>
+                                <dx-text-box [(ngModel)]="phoneInfo.statement" placeholder="Statement under the phone number"></dx-text-box>
                             </li>
                             <!-- Contact Info -->
                             <li class="contact-info color-3 bg-hover active hover-bottom text-center p-5 m-3" *ngFor="let emailInfo of contact.emailInfo">
                                 <span><i class="fas fa-envelope-open-text fa-3x"></i></span>
                                 <a class="d-none d-sm-block my-2">
-                                    <dx-text-box [(ngModel)]="emailInfo.email" ></dx-text-box>
-                                    <dx-text-box [(ngModel)]="emailInfo.url" ></dx-text-box>
+                                    <dx-text-box [(ngModel)]="emailInfo.email" placeholder="Email Address" ></dx-text-box>
+                                    <dx-text-box [(ngModel)]="emailInfo.url" placeholder="A Link to the email"></dx-text-box>
                                 </a>
-                                <dx-text-box [(ngModel)]="emailInfo.statement" ></dx-text-box>
+                                <dx-text-box [(ngModel)]="emailInfo.statement" placeholder="Statement under the email address"></dx-text-box>
                             </li>
                         </ul>
                     </div>

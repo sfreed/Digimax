@@ -35,14 +35,19 @@
                 <!-- Welcome Intro Start -->
                 <div class="col-12 col-md-10">
                     <div class="welcome-intro text-center mt-0 py-5" *ngFor="let sectionItem of hero.sectionList">
-                        <dx-text-box [(ngModel)]="sectionItem.header"></dx-text-box>
-                        <dx-text-area [(ngModel)]="sectionItem.statement1" height="100"></dx-text-area>
+                        <dx-text-box [(ngModel)]="sectionItem.header" placeholder="Header"></dx-text-box>
+                        <dx-text-area [(ngModel)]="sectionItem.statement1" height="100" placeholder="Statement for Websites or larger screens"></dx-text-area>
                         <!-- Buttons -->
                         <div class="button-group" *ngFor="let button of hero.buttons">
-                            <dx-text-box [(ngModel)]="button.url"></dx-text-box>
-                            <dx-text-box [(ngModel)]="button.name"></dx-text-box>
-                            <dx-text-box [(ngModel)]="button.url"></dx-text-box>
-                            <dx-text-box [(ngModel)]="button.name"></dx-text-box>
+                            <div class="btn btn-bordered-white">
+                                <dx-text-box [(ngModel)]="button.url" placeholder="Button URL"></dx-text-box>
+                                <dx-text-box [(ngModel)]="button.name" placeholder="Button Name"></dx-text-box>
+                            </div>
+                            <div  class="btn btn-bordered-white d-none d-sm-inline-block">
+                                <p class="text-white">On Mobile devices, this will be the ONLY button that shows. </p>
+                                <dx-text-box [(ngModel)]="button.url" placeholder="Button URL"></dx-text-box>
+                                <dx-text-box [(ngModel)]="button.name" placeholder="Button Name"></dx-text-box>
+                            </div>
                         </div>
                     </div>
                 </div>

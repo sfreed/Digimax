@@ -28,5 +28,13 @@ export class BrandingComponent implements OnInit {
   showPreview() {
     this.view = 'preview';
   }
+  addImage() {
+    let img: PartnerImages = new PartnerImages();
+    img.url = "assets/img/brand_partner_1.png";
+    this.branding.partnerUrls.push(img);
+  }
+  deleteImage(i) {
+    this.branding.partnerUrls.splice(i, 1);
+  }
 
 }

@@ -68,14 +68,14 @@
             <!-- Welcome Intro Start -->
             <div class="col-12 col-md-7">
                 <div class="welcome-intro text-right" *ngFor="let sectionItem of hero.sectionList">
-                    <dx-text-box [(ngModel)]="sectionItem.header"></dx-text-box>
-                        <dx-text-area [(ngModel)]="sectionItem.statement1" height="100"></dx-text-area>
+                    <dx-text-box [(ngModel)]="sectionItem.header" placeholder="Header"></dx-text-box>
+                    <dx-text-area [(ngModel)]="sectionItem.statement1" height="100" placeholder="Statement for Websites or larger screens"></dx-text-area>
                     <!-- Buttons -->
                     <div class="button-group" *ngFor="let button of hero.buttons">
-                        <dx-text-box [(ngModel)]="button.url"></dx-text-box>
-                        <dx-text-box [(ngModel)]="button.name"></dx-text-box>
-                        <dx-text-box [(ngModel)]="button.url"></dx-text-box>
-                        <dx-text-box [(ngModel)]="button.name"></dx-text-box>
+                        <dx-text-box [(ngModel)]="button.url" placeholder="Button URL"></dx-text-box>
+                        <dx-text-box [(ngModel)]="button.name" placeholder="Button Name"></dx-text-box>
+                        <dx-text-box [(ngModel)]="button.url" placeholder="Button URL"></dx-text-box>
+                        <dx-text-box [(ngModel)]="button.name" placeholder="Button Name"></dx-text-box>
                     </div>
                     <div *ngFor="let imageItem of hero.images">
                         <dx-text-box [(ngModel)]="imageItem.url342x400" placeholder="342 x 400 Image"></dx-text-box>

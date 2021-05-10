@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Team } from '../team.model';
+import { Team, TeamMember } from '../team.model';
 
 @Component({
   selector: 'app-team-two',
@@ -13,6 +13,8 @@ export class TeamTwoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    let teamMember: TeamMember = new TeamMember();
+    this.team.teamMember.push(teamMember);
   }
 
   showConfigure() {
@@ -20,6 +22,14 @@ export class TeamTwoComponent implements OnInit {
   }
   showPreview() {
     this.view = 'preview';
+  }
+
+  addTeamMember() {
+    let teamMember: TeamMember = new TeamMember();
+    this.team.teamMember.push(teamMember);
+  }
+  deleteTeamMember(i) {
+    this.team.teamMember.splice(i, 1);
   }
 
 }

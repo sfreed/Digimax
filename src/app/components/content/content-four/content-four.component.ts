@@ -33,4 +33,19 @@ export class ContentFourComponent implements OnInit {
   showPreview() {
     this.view = 'preview';
   }
+
+  addListItem() {
+    let content: ContentList = new ContentList();
+    this.content.contentList.push(content);
+  }
+  deleteListItem(e) {
+    this.content.contentList.splice(e, 1);
+  }
+  addImageItem() {
+    let img: ContentImages = new ContentImages();
+    this.content.contentImages.push(img);
+  }
+  deleteImageItem(e) {
+    this.content.contentImages.splice(e, 1);
+  }
 }

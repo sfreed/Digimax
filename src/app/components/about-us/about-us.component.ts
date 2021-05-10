@@ -28,4 +28,12 @@ export class AboutUsComponent implements OnInit {
     this.view = 'preview';
   }
 
+  addListItem() {
+    let counterList: Counter = new Counter();
+    this.aboutUs.counterList.push(counterList);
+  }
+  deleteListItem(i) {
+    this.aboutUs.counterList.splice(i, 1);
+  }
+
 }

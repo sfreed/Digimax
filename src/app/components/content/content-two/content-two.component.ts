@@ -31,4 +31,12 @@ export class ContentTwoComponent implements OnInit {
     this.view = 'preview';
   }
 
+  addListItem() {
+    let content: ContentList = new ContentList();
+    this.content.contentList.push(content);
+  }
+  deleteListItem(i) {
+    this.content.contentList.splice(i, 1);
+  }
+
 }

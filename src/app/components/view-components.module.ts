@@ -105,7 +105,7 @@ import { TeamTwoComponent } from './team/team-two/team-two.component';
 import { VideoComponent } from './video/video.component';
 import { NavbarComponent } from '../views/navbar/navbar.component';
 import { ViewsModule } from '../views/views.module';
-import { DxTextAreaModule, DxTextBoxModule } from 'devextreme-angular';
+import { DxButtonModule, DxTextAreaModule, DxTextBoxModule } from 'devextreme-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -222,7 +222,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DxTextBoxModule,
     FormsModule,
     ReactiveFormsModule,
-    DxTextAreaModule
+    DxTextAreaModule,
+    DxButtonModule
   
   ],
   exports: [

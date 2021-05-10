@@ -52,21 +52,23 @@
                 <div class="col-12 col-lg-6">
                     <!-- About Thumb -->
                     <div class="about-thumb text-center">
-                        <dx-text-box [(ngModel)]="aboutUs.aboutThumbUrl" ></dx-text-box>
+                        <dx-text-box [(ngModel)]="aboutUs.aboutThumbUrl" placeholder="Image Url" ></dx-text-box>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">
                     <!-- About Content -->
                     <div class="about-content section-heading text-center text-lg-left pl-md-4 mt-5 mt-lg-0 mb-0" *ngFor="let sectionList of aboutUs.sectionList">
-                        <dx-text-box [(ngModel)]="sectionList.header" ></dx-text-box>
-                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100"></dx-text-area>
-                        <dx-text-area [(ngModel)]="sectionList.statement2" [height]="100"></dx-text-area>
+                        <dx-text-box [(ngModel)]="sectionList.header" placeholder="Header" ></dx-text-box>
+                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100"  placeholder="First Paragraph Statement"></dx-text-area>
+                        <dx-text-area [(ngModel)]="sectionList.statement2" [height]="100"  placeholder="Second Paragraph Statement"></dx-text-area>
                         <!-- Counter Area -->
                         <div class="couter-area mt-5">
                             <!-- Single Counter -->
-                            <div class="single-counter d-block d-md-inline-block m-4 m-md-2" *ngFor="let counterList of aboutUs.counterList">
-                                <dx-text-box [(ngModel)]="counterList.text" ></dx-text-box>
-                                <dx-text-box [(ngModel)]="counterList.number" ></dx-text-box>
+                            <div class="single-counter d-block d-md-inline-block m-4 m-md-2" *ngFor="let counterList of aboutUs.counterList; let i = index">
+                                <dx-button [icon]="'add'" (onClick)="addListItem()"></dx-button>
+                                <dx-button [icon]="'close'" (onClick)="deleteListItem(i)"></dx-button>
+                                <dx-text-box [(ngModel)]="counterList.text"  placeholder="Counter Text" ></dx-text-box>
+                                <dx-text-box [(ngModel)]="counterList.number" placeholder="Counter Number" ></dx-text-box>
                             </div>
                             <!-- multiple of these ^ counters were here before -->
                         </div>

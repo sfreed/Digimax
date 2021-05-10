@@ -32,4 +32,12 @@ export class ContentThreeComponent implements OnInit {
     this.view = 'preview';
   }
 
+  addListItem() {
+    let content: ContentList = new ContentList();
+    this.content.contentList.push(content);
+  }
+  deleteListItem(e) {
+    this.content.contentList.splice(e, 1);
+  }
+
 }

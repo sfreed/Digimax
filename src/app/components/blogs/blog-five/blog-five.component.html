@@ -289,9 +289,9 @@
                                 <div class="widget-content">
                                     <!-- Category Widget Items -->
                                     <ul class="widget-items"  *ngFor="let category of blog.categories">
-                                        <dx-text-box [(ngModel)]="category.url" ></dx-text-box>
-                                        <dx-text-box [(ngModel)]="category.name" ></dx-text-box>
-                                        <dx-text-box [(ngModel)]="category.number" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="category.url"  placeholder="Url Link to the category" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="category.name"  placeholder="Category Name"></dx-text-box>
+                                        <dx-text-box [(ngModel)]="category.number"  placeholder="Number of blogs in this category" ></dx-text-box>
                                     </ul>
                                 </div>
                             </div>
@@ -305,10 +305,10 @@
                                 <div class="widget-content">
                                     <!-- Post Widget Items -->
                                     <ul class="widget-items"  *ngFor="let popular of blog.popular">
-                                        <dx-text-box [(ngModel)]="popular.url" ></dx-text-box>
-                                        <dx-text-box [(ngModel)]="popular.img" ></dx-text-box>
-                                        <dx-text-box [(ngModel)]="popular.date" ></dx-text-box>
-                                        <dx-text-box [(ngModel)]="popular.title" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="popular.url"  placeholder="Popular Blog Post URL" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="popular.img" placeholder="Popular Blog Post Image URL" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="popular.date" placeholder="Popular Blog Date Published" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="popular.title" placeholder="Popular Blog Title" ></dx-text-box>
                                     </ul>
                                 </div>
                             </div>
@@ -322,8 +322,8 @@
                                 <div class="widget-content">
                                     <!-- Tags Widget Items -->
                                     <div class="widget-content tags-widget-items pt-2"  *ngFor="let popular of blog.popular">
-                                        <dx-text-box [(ngModel)]="popular.tagUrl" ></dx-text-box>
-                                        <dx-text-box [(ngModel)]="popular.tagName" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="popular.tagUrl"  placeholder="Popular Blog Tag URL"></dx-text-box>
+                                        <dx-text-box [(ngModel)]="popular.tagName" placeholder="Popular Blog Tag Name" ></dx-text-box>
                                     </div>
                                 </div>
                             </div>
@@ -335,39 +335,39 @@
                     <article class="single-blog-details">
                         <!-- Blog Thumb -->
                         <div class="blog-thumb">
-                            <dx-text-box [(ngModel)]="blog.url" ></dx-text-box>
-                            <dx-text-box [(ngModel)]="blog.img" ></dx-text-box>
+                            <dx-text-box [(ngModel)]="blog.url" placeholder="Blog URL" ></dx-text-box>
+                            <dx-text-box [(ngModel)]="blog.img"  placeholder="Blog Image"></dx-text-box>
                         </div>
                         <!-- Blog Content -->
                         <div class="blog-content digimax-blog p-3">
                             <!-- Meta Info -->
                             <div class="meta-info d-flex flex-wrap align-items-center py-2">
                                 <ul>
-                                    <dx-text-box [(ngModel)]="blog.name" ></dx-text-box>
-                                    <dx-text-box [(ngModel)]="blog.date" ></dx-text-box>
+                                    <dx-text-box [(ngModel)]="blog.name" placeholder="Blog Author Name" ></dx-text-box>
+                                    <dx-text-box [(ngModel)]="blog.date" placeholder="Blog Date Published" ></dx-text-box>
                                     <li class="d-inline-block p-2"><a href="#">{{blog.commentsNum}} Comments</a></li>
                                 </ul>
                                 <!-- Blog Share -->
                                 <div class="blog-share ml-auto d-none d-sm-block">
                                     <!-- Social Icons -->
                                     <div class="social-icons d-flex justify-content-center">
-                                        <dx-text-box [(ngModel)]="blog.facebookUrl" ></dx-text-box>
-                                        <dx-text-box [(ngModel)]="blog.twitterUrl" ></dx-text-box>
-                                        <dx-text-box [(ngModel)]="blog.googleUrl" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="blog.facebookUrl" placeholder="Facebook URL" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="blog.twitterUrl" placeholder="Twitter URL" ></dx-text-box>
+                                        <dx-text-box [(ngModel)]="blog.googleUrl" placeholder="Google + URL" ></dx-text-box>
                                     </div>
                                 </div>
                             </div>
                             <!-- Blog Details -->
                             <div class="blog-details">
-                                <dx-text-box [(ngModel)]="blog.title" ></dx-text-box>
-                                <dx-text-area [(ngModel)]="blog.statement" height="100"></dx-text-area>
-                                <dx-text-box [(ngModel)]="blog.statementMobile" ></dx-text-box>
+                                <dx-text-box [(ngModel)]="blog.title" placeholder="Blog Title" ></dx-text-box>
+                                <dx-text-area [(ngModel)]="blog.statement" height="100" placeholder="Blog content for Websites or bigger screens"></dx-text-area>
+                                <dx-text-box [(ngModel)]="blog.statementMobile"  placeholder="Blog content for Mobile screens"></dx-text-box>
                                 <blockquote class="blockquote px-4 py-3 my-3 ml-4">
-                                    <dx-text-area [ngModel]="blog.blockquote" height="100"></dx-text-area>
-                                    <dx-text-box [ngModel]="blog.blockquoteMobile" ></dx-text-box>
+                                    <dx-text-area [ngModel]="blog.blockquote" height="100" placeholder="Blog quote to be highlighted for Websites or bigger screens"></dx-text-area>
+                                    <dx-text-box [ngModel]="blog.blockquoteMobile" placeholder="Blog quote for mobile screens" ></dx-text-box>
                                 </blockquote>
-                                <dx-text-area [(ngModel)]="blog.statement" height="100"></dx-text-area>
-                                <dx-text-box [(ngModel)]="blog.statementMobile" ></dx-text-box>
+                                <dx-text-area [(ngModel)]="blog.statement" height="100" placeholder="Blog content for Websites or bigger screens"></dx-text-area>
+                                <dx-text-box [(ngModel)]="blog.statementMobile"  placeholder="Blog content for Mobile screens"></dx-text-box>
                             </div>
                         </div>
                         <!-- Blog Comments -->

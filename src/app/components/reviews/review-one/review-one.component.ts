@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SectionList } from '../../components.model';
-import { Review } from '../review.model';
+import { Review, SingleReview } from '../review.model';
 
 @Component({
   selector: 'app-review-one',
@@ -16,6 +16,9 @@ export class ReviewOneComponent implements OnInit {
   ngOnInit(): void {
     let sectionList: SectionList = new SectionList();
     this.review.sectionList.push(sectionList);
+
+    let review: SingleReview = new SingleReview();
+    this.review.singleReview.push(review);
   }
 
   showConfigure() {
@@ -23,6 +26,13 @@ export class ReviewOneComponent implements OnInit {
   }
   showPreview() {
     this.view = 'preview';
+  }
+  addReview() {
+    let review: SingleReview = new SingleReview();
+    this.review.singleReview.push(review);
+  }
+  deleteReview(i) {
+    this.review.singleReview.splice(i, 1);
   }
 
 }

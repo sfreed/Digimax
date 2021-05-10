@@ -16,7 +16,7 @@
                 </div>
                 <div class="col-12 col-lg-8">
                     <div class="row mt-5 mt-lg-0">
-                        <div class="col-12 col-md-6 res-margin">
+                        <div class="col-12 col-md-6 res-margin"  *ngFor="let review of review.singleReview">
                             <!-- Single Review -->
                             <div class="single-review bg-inherit p-5">
                                 <!-- Review Content -->
@@ -44,34 +44,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6">
-                            <!-- Single Review -->
-                            <div class="single-review bg-inherit p-5">
-                                <!-- Review Content -->
-                                <div class="review-content">
-                                    <!-- Review Text -->
-                                    <div class="review-text">
-                                        <p class="text-white-50">{{review.quote}}</p>
-                                    </div>
-                                    <!-- Quotation Icon -->
-                                    <div class="quot-icon">
-                                        <img class="avatar-sm" src="assets/img/quote.png" alt="">
-                                    </div>
-                                </div>
-                                <!-- Reviewer -->
-                                <div class="reviewer media mt-3">
-                                    <!-- Reviewer Thumb -->
-                                    <div class="reviewer-thumb">
-                                        <img class="avatar-lg radius-100" src="assets/img/avatar_2.png" alt="">
-                                    </div>
-                                    <!-- Reviewer Media -->
-                                    <div class="reviewer-meta media-body align-self-center ml-4">
-                                        <h5 class="reviewer-name text-white mb-2">Yasmin Akter</h5>
-                                        <h6 class="text-white-50 fw-6">Designer, Themeland</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -94,59 +66,33 @@
                 <div class="col-12 col-lg-4">
                     <!-- Section Heading -->
                     <div class="section-heading m-0" *ngFor="let sectionList of review.sectionList">
-                        <dx-text-box [(ngModel)]="sectionList.header" ></dx-text-box>
-                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100"></dx-text-area>
-                        <dx-text-box [(ngModel)]="sectionList.statementMobile" ></dx-text-box>
+                        <dx-text-box [(ngModel)]="sectionList.header"  placeholder="Header" ></dx-text-box>
+                        <dx-text-area [(ngModel)]="sectionList.statement1" [height]="100" placeholder="Statement for Websites or larger screens"></dx-text-area>
+                        <dx-text-box [(ngModel)]="sectionList.statementMobile" placeholder="Statement for Mobile Screens"></dx-text-box>
                         <a *ngFor="let button of review.buttons" class="btn btn-bordered-white mt-4">
-                            <dx-text-box [(ngModel)]="button.name" ></dx-text-box>
-                            <dx-text-box [(ngModel)]="button.url" ></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.name" placeholder="Button Name" ></dx-text-box>
+                            <dx-text-box [(ngModel)]="button.url"   placeholder="Button URL"></dx-text-box>
                         </a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-8">
                     <div class="row mt-5 mt-lg-0">
-                        <div class="col-12 col-md-6 res-margin">
+                        <div class="col-12 col-md-6 res-margin"   *ngFor="let review of review.singleReview; let i = index">
+                            <dx-button [icon]="'add'" (onClick)="addReview()"></dx-button>
+                            <dx-button [icon]="'close'" (onClick)="deleteReview(i)"></dx-button>
                             <!-- Single Review -->
                             <div class="single-review bg-inherit p-5">
                                 <!-- Review Content -->
                                 <div class="review-content">
                                     <!-- Review Text -->
-                                    <dx-text-area [(ngModel)]="review.quote" height="100"></dx-text-area>
+                                    <dx-text-area [(ngModel)]="review.quote" height="100"  placeholder="Review Quote"></dx-text-area>
                                 </div>
                                 <!-- Reviewer -->
                                 <!-- Reviewer Thumb -->
-                                <dx-text-box [(ngModel)]="review.thumbUrl" ></dx-text-box>
+                                <dx-text-box [(ngModel)]="review.thumbUrl"  placeholder="Image URL"></dx-text-box>
                                 <!-- Reviewer Media -->
-                                <dx-text-box [(ngModel)]="review.name" ></dx-text-box>
-                                <dx-text-box [(ngModel)]="review.title" ></dx-text-box>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <!-- Single Review -->
-                            <div class="single-review bg-inherit p-5">
-                                <!-- Review Content -->
-                                <div class="review-content">
-                                    <!-- Review Text -->
-                                    <div class="review-text">
-                                        <p class="text-white-50">{{review.quote}}</p>
-                                    </div>
-                                    <!-- Quotation Icon -->
-                                    <div class="quot-icon">
-                                        <img class="avatar-sm" src="assets/img/quote.png" alt="">
-                                    </div>
-                                </div>
-                                <!-- Reviewer -->
-                                <div class="reviewer media mt-3">
-                                    <!-- Reviewer Thumb -->
-                                    <div class="reviewer-thumb">
-                                        <img class="avatar-lg radius-100" src="assets/img/avatar_2.png" alt="">
-                                    </div>
-                                    <!-- Reviewer Media -->
-                                    <div class="reviewer-meta media-body align-self-center ml-4">
-                                        <h5 class="reviewer-name text-white mb-2">Yasmin Akter</h5>
-                                        <h6 class="text-white-50 fw-6">Designer, Themeland</h6>
-                                    </div>
-                                </div>
+                                <dx-text-box [(ngModel)]="review.name" placeholder="Review Customer Name"></dx-text-box>
+                                <dx-text-box [(ngModel)]="review.title" placeholder="Review Customer Title"></dx-text-box>
                             </div>
                         </div>
                     </div>
